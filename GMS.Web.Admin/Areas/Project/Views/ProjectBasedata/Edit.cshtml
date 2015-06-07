@@ -1,0 +1,147 @@
+﻿@using GMS.Framework.Contract
+@using GMS.Framework.Web.Controls
+@using GMS.Project.Contract
+@using GMS.Web
+@model ProjectBasedata
+@{
+  
+    Layout = "~/Views/Shared/_Layout.Edit.cshtml";
+}
+@section PageSpecificStyleSheetIncludes{
+}
+@section PageSpecificJavascriptIncludes{
+    <script type="text/javascript">
+   </script>
+}
+@section MainContent{
+<div class="portlet-body form-horizontal form-bordered form-row-stripped">
+    <div class="row-fluid"> 
+            <div class="control-group" >
+                <label class="control-label"><span class="required">项目</span>：</label>
+                <div class="controls">
+                @Html.TextBoxFor(m => m.ProjName, new { @class = "m-wrap" })
+                <span class="help-inline">@Html.ValidationMessageFor(m => m.ProjName)</span>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label">负责人：</label>
+                <div class="controls">
+                @Html.TextBoxFor(m => m.ProjChargeman, new { @class = "m-wrap small" })
+                <span class="help-inline">@Html.ValidationMessageFor(m => m.ProjChargeman)</span>
+                </div>
+            </div>
+         <div class="control-group">
+                <label class="control-label">联系电话：</label>
+                <div class="controls">
+                @Html.TextBoxFor(m => m.ProjPhone, new { @class = "m-wrap small" })
+                <span class="help-inline">@Html.ValidationMessageFor(m => m.ProjPhone)</span>
+                </div>
+            </div>
+
+
+
+        </div>
+             <div class="row-fluid"> 
+        <div class="control-group">
+                <label class="control-label"><span class="required"></span>位置：</label>
+                <div class="controls">
+                @Html.TextBoxFor(m => m.ProjLocation, new { @class = "m-wrap" })
+                <span class="help-inline">@Html.ValidationMessageFor(m => m.ProjLocation)</span>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label">面积：</label>
+                <div class="controls">
+                @Html.TextBoxFor(m => m.ProjChargeman, new { @class = "m-wrap small" })
+                <span class="help-inline">@Html.ValidationMessageFor(m => m.ProjChargeman)</span>
+                </div>
+            </div>
+
+        <div class="control-group">
+                <label class="control-label">开工时间：</label>
+                <div class="controls">
+                @Html.TextBoxFor(m => m.ProjStartdate, new { @class = "m-wrap" })
+                <span class="help-inline">@Html.ValidationMessageFor(m => m.ProjStartdate)</span>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label">工期：</label>
+                <div class="controls">
+                @Html.TextBoxFor(m => m.Projdate, new { @class = "m-wrap large" })
+                <span class="help-inline">@Html.ValidationMessageFor(m => m.Projdate)</span>
+                </div>
+            </div>
+
+        <div class="control-group">
+                <label class="control-label">项目状态：</label>   @*二期施工 已结束 施工中 ，未施工，三期施工*@
+                <div class="controls">
+                @Html.TextBoxFor(m => m.state, new { @class = "m-wrap" })
+                <span class="help-inline">@Html.ValidationMessageFor(m => m.state)</span>
+                </div>
+            </div>
+
+           
+
+        <div class="control-group">
+                <label class="control-label">项目内容：</label>
+                <div class="controls">
+                @Html.TextBoxFor(m => m.ProjContent, new { @class = "m-wrap" })
+                <span class="help-inline">@Html.ValidationMessageFor(m => m.ProjContent)</span>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label">工程规模：</label>
+                <div class="controls">
+                @Html.TextBoxFor(m => m.ProjScale, new { @class = "m-wrap large" })
+                <span class="help-inline">@Html.ValidationMessageFor(m => m.ProjScale)</span>
+                </div>
+            </div>
+
+        <div class="control-group">
+                <label class="control-label">结构形式：</label>
+                <div class="controls">
+                @Html.TextBoxFor(m => m.ProjStructure, new { @class = "m-wrap" })
+                <span class="help-inline">@Html.ValidationMessageFor(m => m.ProjStructure)</span>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label">资金来源：</label>
+                <div class="controls">
+                @Html.TextBoxFor(m => m.ProjFunds, new { @class = "m-wrap large" })
+                <span class="help-inline">@Html.ValidationMessageFor(m => m.ProjFunds)</span>
+                </div>
+            </div>
+
+        <div class="control-group">
+                <label class="control-label">报价：</label>
+                <div class="controls">
+                @Html.TextBoxFor(m => m.ProjPrice, new { @class = "m-wrap" })
+                <span class="help-inline">@Html.ValidationMessageFor(m => m.ProjPrice)</span>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label">成本预算：</label>
+                <div class="controls">
+                @Html.TextBoxFor(m => m.ProjCostBudget, new { @class = "m-wrap large" })
+                <span class="help-inline">@Html.ValidationMessageFor(m => m.ProjCostBudget)</span>
+                </div>
+            </div>
+
+        <div class="control-group">
+                <label class="control-label">备注：</label>
+                <div class="controls">
+                @Html.TextBoxFor(m => m.Remark, new { @class = "m-wrap" })
+                <text class="help-inline">@Html.ValidationMessageFor(m => m.Remark)</text>
+                </div>
+            </div>
+
+         
+    </div>
+</div>
+}

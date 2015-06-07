@@ -1,0 +1,4 @@
+F:\GMS\GMS\bin\GMS.Cms.Contract.dll
+F:\GMS\GMS\bin\GMS.Cms.Contract.pdb
+F:\GMS\GMS\Src\GMS.Cms.Contract\obj\Debug\GMS.Cms.Contract.dll
+F:\GMS\GMS\Src\GMS.Cms.Contract\obj\Debug\GMS.Cms.Contract.pdb

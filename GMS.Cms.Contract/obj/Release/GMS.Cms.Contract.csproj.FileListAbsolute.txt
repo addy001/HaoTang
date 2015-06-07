@@ -1,0 +1,11 @@
+F:\GMS\GMS\Src\GMS.Cms.Contract\bin\Release\GMS.Cms.Contract.dll
+F:\GMS\GMS\Src\GMS.Cms.Contract\bin\Release\GMS.Cms.Contract.pdb
+F:\GMS\GMS\Src\GMS.Cms.Contract\bin\Release\EntityFramework.dll
+F:\GMS\GMS\Src\GMS.Cms.Contract\bin\Release\GMS.Framework.Contract.dll
+F:\GMS\GMS\Src\GMS.Cms.Contract\bin\Release\GMS.Framework.Utility.dll
+F:\GMS\GMS\Src\GMS.Cms.Contract\bin\Release\Newtonsoft.Json.dll
+F:\GMS\GMS\Src\GMS.Cms.Contract\bin\Release\GMS.Framework.Contract.pdb
+F:\GMS\GMS\Src\GMS.Cms.Contract\bin\Release\GMS.Framework.Utility.pdb
+F:\GMS\GMS\Src\GMS.Cms.Contract\bin\Release\EntityFramework.xml
+F:\GMS\GMS\Src\GMS.Cms.Contract\obj\Release\GMS.Cms.Contract.dll
+F:\GMS\GMS\Src\GMS.Cms.Contract\obj\Release\GMS.Cms.Contract.pdb

@@ -1,0 +1,17 @@
+F:\GMS\GMS\Src\GMS.Core.Log\bin\Release\GMS.Core.Log.dll
+F:\GMS\GMS\Src\GMS.Core.Log\bin\Release\GMS.Core.Log.pdb
+F:\GMS\GMS\Src\GMS.Core.Log\bin\Release\EntityFramework.dll
+F:\GMS\GMS\Src\GMS.Core.Log\bin\Release\GMS.Core.Config.dll
+F:\GMS\GMS\Src\GMS.Core.Log\bin\Release\GMS.Framework.Contract.dll
+F:\GMS\GMS\Src\GMS.Core.Log\bin\Release\GMS.Framework.DAL.dll
+F:\GMS\GMS\Src\GMS.Core.Log\bin\Release\log4net.dll
+F:\GMS\GMS\Src\GMS.Core.Log\bin\Release\Newtonsoft.Json.dll
+F:\GMS\GMS\Src\GMS.Core.Log\bin\Release\GMS.Framework.Utility.dll
+F:\GMS\GMS\Src\GMS.Core.Log\bin\Release\GMS.Core.Config.pdb
+F:\GMS\GMS\Src\GMS.Core.Log\bin\Release\GMS.Framework.Contract.pdb
+F:\GMS\GMS\Src\GMS.Core.Log\bin\Release\GMS.Framework.DAL.pdb
+F:\GMS\GMS\Src\GMS.Core.Log\bin\Release\EntityFramework.xml
+F:\GMS\GMS\Src\GMS.Core.Log\bin\Release\GMS.Framework.Utility.pdb
+F:\GMS\GMS\Src\GMS.Core.Log\obj\Release\GMS.Core.Log.csprojResolveAssemblyReference.cache
+F:\GMS\GMS\Src\GMS.Core.Log\obj\Release\GMS.Core.Log.dll
+F:\GMS\GMS\Src\GMS.Core.Log\obj\Release\GMS.Core.Log.pdb

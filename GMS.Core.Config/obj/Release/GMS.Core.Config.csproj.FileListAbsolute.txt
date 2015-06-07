@@ -1,0 +1,8 @@
+F:\GMS\GMS\Src\GMS.Core.Config\bin\Release\GMS.Core.Config.dll
+F:\GMS\GMS\Src\GMS.Core.Config\bin\Release\GMS.Core.Config.pdb
+F:\GMS\GMS\Src\GMS.Core.Config\bin\Release\GMS.Framework.Utility.dll
+F:\GMS\GMS\Src\GMS.Core.Config\bin\Release\log4net.dll
+F:\GMS\GMS\Src\GMS.Core.Config\bin\Release\GMS.Framework.Utility.pdb
+F:\GMS\GMS\Src\GMS.Core.Config\obj\Release\GMS.Core.Config.csprojResolveAssemblyReference.cache
+F:\GMS\GMS\Src\GMS.Core.Config\obj\Release\GMS.Core.Config.dll
+F:\GMS\GMS\Src\GMS.Core.Config\obj\Release\GMS.Core.Config.pdb

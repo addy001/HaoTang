@@ -1,0 +1,6 @@
+F:\GMS\GMS\bin\GMS.Framework.Utility.XML
+F:\GMS\GMS\bin\GMS.Framework.Utility.dll
+F:\GMS\GMS\bin\GMS.Framework.Utility.pdb
+F:\GMS\GMS\Src\GMS.Framework.Utility\obj\Debug\GMS.Framework.Utility.csprojResolveAssemblyReference.cache
+F:\GMS\GMS\Src\GMS.Framework.Utility\obj\Debug\GMS.Framework.Utility.dll
+F:\GMS\GMS\Src\GMS.Framework.Utility\obj\Debug\GMS.Framework.Utility.pdb

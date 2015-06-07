@@ -1,0 +1,5 @@
+F:\GMS\GMS\bin\GMS.Cms.BLL.dll
+F:\GMS\GMS\bin\GMS.Cms.BLL.pdb
+F:\GMS\GMS\Src\GMS.Cms.BLL\obj\Debug\GMS.Cms.BLL.csprojResolveAssemblyReference.cache
+F:\GMS\GMS\Src\GMS.Cms.BLL\obj\Debug\GMS.Cms.BLL.dll
+F:\GMS\GMS\Src\GMS.Cms.BLL\obj\Debug\GMS.Cms.BLL.pdb
