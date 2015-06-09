@@ -55,30 +55,23 @@
             <th>
                位置
             </th>
-            <th>
-                面积
-            </th>
+           
             <th>
                 开工时间
             </th>
             <th>
                工期
             </th>
-            <th>
-                状态
-            </th>
-            <th>
-                结束日期
-            </th>
+         
             
             <th>
-               负责人电话
+              电话
             </th>
             <th>
-                项目内容
+               内容
             </th>
             <th>
-                项目规模
+               规模
             </th>
             <th>
                结构形式
@@ -96,7 +89,9 @@
                 备注
             </th>
            
-            
+             <th>
+                操作
+            </th>
 
         </tr>
     </thead>
@@ -104,6 +99,9 @@
         @foreach (var m in Model)
         {
         <tr>
+              <td>
+                <input type="checkbox" class="checkboxes" name='ids' value='@m.ID' />
+            </td>
            
             <td>
                 @m.codeID
@@ -117,23 +115,16 @@
             <td>
                 @m.ProjLocation
             </td>
-            <td>
-                @m.ProjArea
-            </td>
+          
             <td>
                 @m.ProjStartdate
             </td>
             <td>
                 @m.Projdate
             </td>
-            <td>
-                @m.state
-                </td>
+         
            
-            <td>
-                @m.ProjEnddate
-
-            </td>
+           
              <td>
                 @m.ProjPhone
 
@@ -142,10 +133,7 @@
                 @m.ProjContent
 
             </td>
-             <td>
-                @m.ProjContent
-
-            </td>
+             
              <td>
                 @m.ProjScale
 
@@ -173,7 +161,7 @@
          
          
             <td>
-                <a class="btn mini purple thickbox" title='编辑分类内容' href="@Url.Action("Edit", new { id = m.ID })?TB_iframe=true&height=200&width=450">
+                <a class="btn mini purple thickbox" title='编辑分类内容' href="@Url.Action("Edit", new { id = m.ID })?TB_iframe=true&height=530&width=1000">
                     <i class="icon-edit"></i>
                     编辑
                 </a>

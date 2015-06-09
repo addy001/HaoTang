@@ -3,3 +3,8 @@ F:\GMS\GMS\bin\GMS.Web.pdb
 F:\GMS\GMS\Src\GMS.Web\obj\Debug\GMS.Web.csprojResolveAssemblyReference.cache
 F:\GMS\GMS\Src\GMS.Web\obj\Debug\GMS.Web.dll
 F:\GMS\GMS\Src\GMS.Web\obj\Debug\GMS.Web.pdb
+F:\GMS\bin\GMS.Web.dll
+F:\GMS\bin\GMS.Web.pdb
+F:\GMS\Src\GMS.Web\obj\Debug\GMS.Web.csprojResolveAssemblyReference.cache
+F:\GMS\Src\GMS.Web\obj\Debug\GMS.Web.dll
+F:\GMS\Src\GMS.Web\obj\Debug\GMS.Web.pdb

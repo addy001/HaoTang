@@ -23,7 +23,7 @@ namespace GMS.Project.Contract
         /// </summary>
         [StringLength(100)]
         [Required]
-        public Guid codeID {get;set;}
+        public string codeID {get;set;}
        
         /// <summary>
         /// 项目名称
@@ -43,11 +43,6 @@ namespace GMS.Project.Contract
         [Required]
         public string ProjLocation {get;set;}
        
-        /// <summary>
-        /// 项目面积
-        /// </summary>
-        [Required]
-        public decimal ProjArea {get;set;}
        
         /// <summary>
         /// 项目开工时间
@@ -59,17 +54,6 @@ namespace GMS.Project.Contract
         /// </summary>
         public string Projdate { get; set; }
        
-        /// <summary>
-        /// 项目是否结束
-        /// </summary>
-        [Required]
-        public string state { get; set; }
-      
-        /// <summary>
-        /// 
-        /// </summary>
-        public DateTime? ProjEnddate { get; set; }
-      
         /// <summary>
         /// 工地负责人联系电话
         /// </summary>

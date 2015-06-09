@@ -15,12 +15,12 @@
         <!--<AdminMenu name="材料明细" url="/Basedata/Channel/Index" info="添加修改删除文章频道" permission="CmsManage_Channel" />-->
       </AdminMenuArray>
     </AdminMenuGroup>
-    <!--<AdminMenuGroup name="CMS管理" icon="icon-leaf">
+    <AdminMenuGroup name="CMS管理" icon="icon-leaf">
       <AdminMenuArray>
         <AdminMenu name="文章管理" url="/Cms/Article/Index" info="添加修改删除文章" permission="CmsManage_Article" />
         <AdminMenu name="文章频道管理" url="/Cms/Channel/Index" info="添加修改删除文章频道" permission="CmsManage_Channel" />
       </AdminMenuArray>
-    </AdminMenuGroup>-->
+    </AdminMenuGroup>
 
     <AdminMenuGroup name="OA管理" icon="icon-sitemap">
       <AdminMenuArray>
@@ -30,7 +30,7 @@
       </AdminMenuArray>
     </AdminMenuGroup>
 
-    <!--<AdminMenuGroup name="CRM管理" icon="icon-phone-sign">
+    <AdminMenuGroup name="CRM管理" icon="icon-phone-sign">
       <AdminMenuArray>
         <AdminMenu name="来访来电" url="/Crm/VisitRecord/Index" info="添加修改删除来访来电" permission="CrmManage_VisitRecord" />
         <AdminMenu name="客户管理" url="/Crm/Customer/Index" info="添加修改删除客户" permission="CrmManage_Customer" />
@@ -38,7 +38,7 @@
         <AdminMenu name="业绩统计" url="/Crm/Analysis/Index" info="查看业绩统计" permission="CrmManage_Analysis" />
         <AdminMenu name="来电统计" url="/Crm/Analysis/VisitStatistics" info="查看来电统计" permission="CrmManage_Analysis" />
       </AdminMenuArray>
-    </AdminMenuGroup>-->
+    </AdminMenuGroup>
 
     <AdminMenuGroup name="项目管理" icon="icon-phone-sign">
       <AdminMenuArray>

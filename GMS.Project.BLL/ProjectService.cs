@@ -17,7 +17,7 @@ namespace GMS.Project.BLL
         {
             using (var dbContext = new ProjectDbContext())
             {
-                return dbContext.ProjectBasedatas.Include("ProjectDbContext").FirstOrDefault(a => a.ID == id);
+                return dbContext.Find<ProjectBasedata>(id);
             }
         }
 
