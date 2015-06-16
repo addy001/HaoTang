@@ -7,11 +7,16 @@
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@section PageSpecificStyleSheetIncludes{
+    <style type="text/css">
+       
+    </style>
+}
 <div class="row-fluid">
     <div class="span4">
         <div>
             <a class="btn red" id="delete" href="javascript:;"><i class="icon-trash icon-white"></i> 删除</a>
-            <a class="btn blue thickbox" title='添加新项目' href="@Url.Action("Create")?TB_iframe=true&height=530&width=1000"><i class="icon-plus icon-white"></i> 新增</a>
+            <a class="btn blue thickbox" title='添加新项目' href="@Url.Action("Create")?TB_iframe=true&height=470&width=1000"><i class="icon-plus icon-white"></i> 新增</a>
         </div>
     </div>
     <div class="span8">
@@ -23,7 +28,7 @@
              </label>
             <label>
                 <span>项目名称：</span>
-                @Html.TextBox("ProjName", null, new { @class = "m-wrap small" })
+                @Html.TextBox("PName", null, new { @class = "m-wrap small" })
             </label>
         </div>
         }
@@ -44,26 +49,25 @@
             </th>
             
             <th>
-               项目编码
+               项目编号
             </th>
             <th>
                 项目名称
             </th>
             <th>
-                负责人
+                位置
             </th>
-            <th>
-               位置
-            </th>
+          
            
             <th>
                 开工时间
             </th>
             <th>
                工期
-            </th>
-         
-            
+            </th> 
+              <th>
+               负责人
+            </th>        
             <th>
               电话
             </th>
@@ -74,7 +78,7 @@
                规模
             </th>
             <th>
-               结构形式
+               结构
             </th>
             <th>
                 资金来源
@@ -89,7 +93,7 @@
                 备注
             </th>
            
-             <th>
+             <th >
                 操作
             </th>
 
@@ -104,63 +108,63 @@
             </td>
            
             <td>
-                @m.codeID
+                @m.ProjectID
             </td>
             <td>
-                @m.ProjName
+                @m.PName
             </td>
             <td>
-                @m.ProjChargeman
+                @m.PLocation
             </td>
             <td>
-                @m.ProjLocation
+                @m.PSDate
             </td>
           
             <td>
-                @m.ProjStartdate
+                @m.Pdate
             </td>
             <td>
-                @m.Projdate
+                @m.PCharger
             </td>
          
            
            
              <td>
-                @m.ProjPhone
+                @m.PPhone
 
             </td>
              <td>
-                @m.ProjContent
+                @m.PContent
 
             </td>
              
              <td>
-                @m.ProjScale
+                @m.PScale
 
             </td>
              <td>
-                @m.ProjStructure
+                @m.PStructure
 
             </td>
              <td>
-                @m.ProjFunds
+                @m.PFund
 
             </td> 
             <td>
-                @m.ProjPrice
+                @m.PPrice
 
             </td> 
             <td>
-                @m.ProjCostBudget
+                @m.PBuget
 
             </td>
             <td>
-                @m.Remark
+                @m.PRemark
 
             </td>
          
          
-            <td>
+            <td style="width:70px">
                 <a class="btn mini purple thickbox" title='编辑分类内容' href="@Url.Action("Edit", new { id = m.ID })?TB_iframe=true&height=530&width=1000">
                     <i class="icon-edit"></i>
                     编辑

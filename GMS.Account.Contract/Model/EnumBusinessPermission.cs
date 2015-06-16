@@ -59,5 +59,8 @@ namespace GMS.Account.Contract
         [EnumTitle("Project项目管理")]
         ProjectManage_Basedata = 601,
 
+
+        [EnumTitle("Project预算管理")]
+        ProjectManage_Budget = 602,
     }
 }

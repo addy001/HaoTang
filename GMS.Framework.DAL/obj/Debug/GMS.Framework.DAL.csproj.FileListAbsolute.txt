@@ -4,3 +4,15 @@ F:\GMS\GMS\bin\GMS.Framework.DAL.pdb
 F:\GMS\GMS\Src\GMS.Framework.DAL\obj\Debug\GMS.Framework.DAL.csprojResolveAssemblyReference.cache
 F:\GMS\GMS\Src\GMS.Framework.DAL\obj\Debug\GMS.Framework.DAL.dll
 F:\GMS\GMS\Src\GMS.Framework.DAL\obj\Debug\GMS.Framework.DAL.pdb
+F:\GMS\Src1\HaoTang\GMS.Framework.DAL\obj\Debug\GMS.Framework.DAL.csprojResolveAssemblyReference.cache
+F:\GMS\Src1\HaoTang\GMS.Framework.DAL\obj\Debug\GMS.Framework.DAL.dll
+F:\GMS\Src1\HaoTang\GMS.Framework.DAL\obj\Debug\GMS.Framework.DAL.pdb
+F:\GMS\Src1\bin\GMS.Framework.DAL.XML
+F:\GMS\Src1\bin\GMS.Framework.DAL.dll
+F:\GMS\Src1\bin\GMS.Framework.DAL.pdb
+F:\GMS\bin\GMS.Framework.DAL.XML
+F:\GMS\bin\GMS.Framework.DAL.dll
+F:\GMS\bin\GMS.Framework.DAL.pdb
+F:\GMS\Src\GMS.Framework.DAL\obj\Debug\GMS.Framework.DAL.csprojResolveAssemblyReference.cache
+F:\GMS\Src\GMS.Framework.DAL\obj\Debug\GMS.Framework.DAL.dll
+F:\GMS\Src\GMS.Framework.DAL\obj\Debug\GMS.Framework.DAL.pdb

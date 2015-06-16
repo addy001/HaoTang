@@ -85,6 +85,7 @@
     <Compile Include="Areas\OA\Controllers\OrgController.cs" />
     <Compile Include="Areas\OA\Controllers\StaffController.cs" />
     <Compile Include="Areas\OA\OAAreaRegistration.cs" />
+    <Compile Include="Areas\Project\Controllers\BudgetController.cs" />
     <Compile Include="Areas\Project\Controllers\ProjectBasedataController.cs" />
     <Compile Include="Areas\Project\ProjectAreaRegistration.cs" />
     <Compile Include="Common\AdminCookieContext.cs" />
@@ -1301,6 +1302,8 @@
     <Content Include="Areas\Project\Views\Web.config" />
     <Content Include="Areas\Project\Views\ProjectBasedata\Index.cshtml" />
     <Content Include="Areas\Project\Views\ProjectBasedata\Edit.cshtml" />
+    <Content Include="Areas\Project\Views\Budget\Edit.cshtml" />
+    <Content Include="Areas\Project\Views\Budget\Index.cshtml" />
     <None Include="Assets\bootstrap-colorpicker\less\colorpicker.less" />
     <None Include="Assets\bootstrap-datepicker\less\datepicker.less" />
     <None Include="Assets\bootstrap-daterangepicker\README.md" />

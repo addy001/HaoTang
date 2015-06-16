@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IProjectService.cs" />
+    <Compile Include="Model\Budget.cs" />
     <Compile Include="Model\ProjectBasedata.cs" />
     <Compile Include="Model\Request.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

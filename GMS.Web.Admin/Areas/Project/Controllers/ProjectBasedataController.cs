@@ -47,7 +47,7 @@ namespace GMS.Web.Admin.Areas.Project.Controllers
         public ActionResult Create(FormCollection collection)
         {
             var model = new ProjectBasedata();
-            model.codeID =DateTime.Now.ToString();
+            model.ProjectID = DateTime.Now.ToString("yyyyMMddHHmmss");
             this.TryUpdateModel<ProjectBasedata>(model);
 
             this.ProjectService.SaveProjectBasedata(model);

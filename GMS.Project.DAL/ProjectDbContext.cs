@@ -24,6 +24,8 @@ namespace GMS.Project.DAL
             base.OnModelCreating(modelBuilder);
         }
 
-        public DbSet<ProjectBasedata> ProjectBasedatas { get; set; } 
+        public DbSet<ProjectBasedata> ProjectBasedatas { get; set; }
+
+        public DbSet<Budget> Budget { get; set; } 
     }
 }

@@ -4,3 +4,15 @@ F:\GMS\GMS\bin\GMS.Framework.Contract.pdb
 F:\GMS\GMS\Src\GMS.Framework.Contract\obj\Debug\GMS.Framework.Contract.csprojResolveAssemblyReference.cache
 F:\GMS\GMS\Src\GMS.Framework.Contract\obj\Debug\GMS.Framework.Contract.dll
 F:\GMS\GMS\Src\GMS.Framework.Contract\obj\Debug\GMS.Framework.Contract.pdb
+F:\GMS\Src1\HaoTang\GMS.Framework.Contract\obj\Debug\GMS.Framework.Contract.csprojResolveAssemblyReference.cache
+F:\GMS\Src1\HaoTang\GMS.Framework.Contract\obj\Debug\GMS.Framework.Contract.dll
+F:\GMS\Src1\HaoTang\GMS.Framework.Contract\obj\Debug\GMS.Framework.Contract.pdb
+F:\GMS\Src1\bin\GMS.Framework.Contract.XML
+F:\GMS\Src1\bin\GMS.Framework.Contract.dll
+F:\GMS\Src1\bin\GMS.Framework.Contract.pdb
+F:\GMS\bin\GMS.Framework.Contract.XML
+F:\GMS\bin\GMS.Framework.Contract.dll
+F:\GMS\bin\GMS.Framework.Contract.pdb
+F:\GMS\Src\GMS.Framework.Contract\obj\Debug\GMS.Framework.Contract.csprojResolveAssemblyReference.cache
+F:\GMS\Src\GMS.Framework.Contract\obj\Debug\GMS.Framework.Contract.dll
+F:\GMS\Src\GMS.Framework.Contract\obj\Debug\GMS.Framework.Contract.pdb

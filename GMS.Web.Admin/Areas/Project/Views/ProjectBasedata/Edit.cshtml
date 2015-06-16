@@ -31,131 +31,109 @@
               <div class="control-group" style="float:left;width:50%">
                 <label class="control-label"><span class="required">项目</span>：</label>
                 <div class="controls">
-                @Html.TextBoxFor(m => m.ProjName, new { @class = "m-wrap large" })
-                <span class="help-inline">@Html.ValidationMessageFor(m => m.ProjName)</span>
+                @Html.TextBoxFor(m => m.PName, new { @class = "m-wrap large" })
+                <span class="help-inline">@Html.ValidationMessageFor(m => m.PName)</span>
                 </div>
             </div>
 
              <div class="control-group" style="float:left;width:50%">
                 <label class="control-label "><span class="required"></span>位置：</label>
                 <div class="controls ">
-                @Html.TextBoxFor(m => m.ProjLocation, new { @class = "m-wrap large" })
-                <span class="help-inline">@Html.ValidationMessageFor(m => m.ProjLocation)</span>
+                @Html.TextBoxFor(m => m.PLocation, new { @class = "m-wrap large" })
+                <span class="help-inline">@Html.ValidationMessageFor(m => m.PLocation)</span>
                 </div>
             </div>
         
-            <div class="control-group" style="float:left;width:50%">
-                <label class="control-label ">负责人：</label>
-                <div class="controls">
-                @Html.TextBoxFor(m => m.ProjChargeman, new { @class = "m-wrap small" })
-                <span class="help-inline">@Html.ValidationMessageFor(m => m.ProjChargeman)</span>
-                </div>
-            </div>
 
-
-
-
-            <div class="control-group" style="float:left;width:50%">
-                <label class="control-label">联系电话：</label>
-                <div class="controls">
-                @Html.TextBoxFor(m => m.ProjPhone, new { @class = "m-wrap small" })
-                <span class="help-inline">@Html.ValidationMessageFor(m => m.ProjPhone)</span>
-                </div>
-            </div>
-     
-     
-       
-
-
-              <div class="control-group"  style="float:left;width:50%">
+          <div class="control-group"  style="float:left;width:50%">
                 <label class="control-label">开工时间：</label>
                 <div class="controls">
-                @Html.TextBoxFor(m => m.ProjStartdate, new { @class = "m-wrap" })
-               
+                @Html.TextBoxFor(m => m.PSDate, new { @class = "m-wrap small" })
+                @Html.Hidden("PSDate", string.IsNullOrEmpty(Request["PSDate"]) ? "0" : Request["PSDate"]) 
                 </div>
             </div>
 
             <div class="control-group" style="float:left;width:50%">
                 <label class="control-label" >工期：</label>
                 <div class="controls">
-                @Html.TextBoxFor(m => m.Projdate, new { @class = "m-wrap small" })
-                <span class="help-inline">@Html.ValidationMessageFor(m => m.Projdate)</span>
+                @Html.TextBoxFor(m => m.Pdate, new { @class = "m-wrap small" })
+                <span class="help-inline">@Html.ValidationMessageFor(m => m.Pdate)</span>
                 </div>
             </div>
 
-       
 
-           
-
-      
-          @*  <div class="control-group">
-                <label class="control-label">工程规模：</label>
+            <div class="control-group" style="float:left;width:50%">
+                <label class="control-label ">负责人：</label>
                 <div class="controls">
-                @Html.TextBoxFor(m => m.ProjScale, new { @class = "m-wrap large" })
-                <span class="help-inline">@Html.ValidationMessageFor(m => m.ProjScale)</span>
-                </div>
-            </div>*@
-
-        <div class="control-group" style="float:left;width:50%">
-                <label class="control-label">结构形式：</label>
-                <div class="controls">
-                @Html.TextBoxFor(m => m.ProjStructure, new { @class = "m-wrap" })
-                <span class="help-inline">@Html.ValidationMessageFor(m => m.ProjStructure)</span>
-                </div>
-            </div>
-
-            <div class="control-group"style="float:left;width:50%">
-                <label class="control-label">资金来源：</label>
-                <div class="controls">
-                @Html.TextBoxFor(m => m.ProjFunds, new { @class = "m-wrap large" })
-                <span class="help-inline">@Html.ValidationMessageFor(m => m.ProjFunds)</span>
-                </div>
-            </div>
-
-        <div class="control-group" style="float:left;width:50%">
-                <label class="control-label">报价：</label>
-                <div class="controls">
-                @Html.TextBoxFor(m => m.ProjPrice, new { @class = "m-wrap" })
-                <span class="help-inline">@Html.ValidationMessageFor(m => m.ProjPrice)</span>
+                @Html.TextBoxFor(m => m.PCharger, new { @class = "m-wrap small" })
+                <span class="help-inline">@Html.ValidationMessageFor(m => m.PCharger)</span>
                 </div>
             </div>
 
             <div class="control-group" style="float:left;width:50%">
-                <label class="control-label">成本预算：</label>
+                <label class="control-label">电话：</label>
                 <div class="controls">
-                @Html.TextBoxFor(m => m.ProjCostBudget, new { @class = "m-wrap large" })
-                <span class="help-inline">@Html.ValidationMessageFor(m => m.ProjCostBudget)</span>
+                @Html.TextBoxFor(m => m.PPhone, new { @class = "m-wrap small" })
+                <span class="help-inline">@Html.ValidationMessageFor(m => m.PPhone)</span>
                 </div>
             </div>
-          @*<div class="control-group">
-                <label class="control-label">报价：</label>
-                <div class="controls" style="width:30%">
-                      @Html.TextBoxFor(m => m.ProjPrice, new { @class = "m-wrap small" })
-            
-                </div>
-            
-                <label class="control-label">成本预算：</label>
-                <div class="controls"  style="width:30%">
-               @Html.TextBoxFor(m => m.ProjCostBudget, new { @class = "m-wrap small" })
+     
+     
+           
 
-                </div>
-            </div>*@
-           <div class="control-group">
-                <label class="control-label">工程规模：</label>
-                <div class="controls" >
-                @Html.TextArea("ProjScale", new { style="width:80%,padding-top:10px"}) 
-                </div>
-            </div>
-         <div class="control-group">
-                <label class="control-label">项目内容：</label>
+        <div class="control-group" style="float:left;width:50%">
+                <label class="control-label">规模：</label>
                 <div class="controls">
-                @Html.TextArea("ProjContent", new { style="width:80%"}) 
+                @Html.TextBoxFor(m => m.PScale, new { @class = "m-wrap" })
+                <span class="help-inline">@Html.ValidationMessageFor(m => m.PScale)</span>
                 </div>
             </div>
-          <div class="control-group">
+
+            <div class="control-group"style="float:left;width:50%">
+                <label class="control-label">结构形式：</label>
+                <div class="controls">
+                @Html.TextBoxFor(m => m.PStructure, new { @class = "m-wrap large" })
+                <span class="help-inline">@Html.ValidationMessageFor(m => m.PStructure)</span>
+                </div>
+            </div>
+
+                 <div class="control-group"style="float:left;width:50%">
+                <label class="control-label">资金来源：</label>
+                <div class="controls">
+                @Html.TextBoxFor(m => m.PFund, new { @class = "m-wrap large" })
+                <span class="help-inline">@Html.ValidationMessageFor(m => m.PFund)</span>
+                </div>
+            </div>
+
+        <div class="control-group" style="float:left;width:50%">
+                <label class="control-label">报价：</label>
+                <div class="controls">
+                @Html.TextBoxFor(m => m.PPrice, new { @class = "m-wrap" })
+                <span class="help-inline">@Html.ValidationMessageFor(m => m.PPrice)</span>
+                </div>
+            </div>
+
+            <div class="control-group" style="float:left;width:90%">
+                <label class="control-label">成本预算：</label>
+                <div class="controls">
+                @Html.TextBoxFor(m => m.PBuget, new { @class = "m-wrap large" })
+                <span class="help-inline">@Html.ValidationMessageFor(m => m.PBuget)</span>
+                </div>
+            </div>     
+        
+         <div class="control-group" style="float:left;width:50%">
+                <label class="control-label">内容：</label>
+                <div class="controls" style="padding-top:10px">
+                @Html.TextAreaFor(m => m.PContent,new{  @class = "m-wrap large"})
+                <span class="help-inline">@Html.ValidationMessageFor(m => m.PContent)</span>
+                </div>
+            </div>
+        
+          <div class="control-group" style="float:left;width:50%">
                 <label class="control-label">备注：</label>
                 <div class="controls">
-                @Html.TextArea("Remark", new { style="width:80%"}) 
+                     @Html.TextAreaFor(m => m.PRemark, new { @class = "m-wrap large" })
+                @*@Html.TextArea("Remark", new { style="width:80%"})*@ 
                 </div>
             </div>
 

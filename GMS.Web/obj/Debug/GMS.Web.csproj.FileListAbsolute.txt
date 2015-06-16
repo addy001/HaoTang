@@ -8,3 +8,8 @@ F:\GMS\bin\GMS.Web.pdb
 F:\GMS\Src\GMS.Web\obj\Debug\GMS.Web.csprojResolveAssemblyReference.cache
 F:\GMS\Src\GMS.Web\obj\Debug\GMS.Web.dll
 F:\GMS\Src\GMS.Web\obj\Debug\GMS.Web.pdb
+F:\GMS\Src1\HaoTang\GMS.Web\obj\Debug\GMS.Web.csprojResolveAssemblyReference.cache
+F:\GMS\Src1\HaoTang\GMS.Web\obj\Debug\GMS.Web.dll
+F:\GMS\Src1\HaoTang\GMS.Web\obj\Debug\GMS.Web.pdb
+F:\GMS\Src1\bin\GMS.Web.dll
+F:\GMS\Src1\bin\GMS.Web.pdb

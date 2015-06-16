@@ -544,18 +544,22 @@ textarea[class*="span"].m-wrap
 
 .m-wrap.xsmall {
   width: 50px !important;
+   
 }
 
 .m-wrap.small {
   width: 120px !important;
+  
 }
 
 .m-wrap.medium {
   width: 206px !important;
+ 
 }
 
 .m-wrap.large {
   width: 320px !important;
+  
 }
 
 .m-wrap.huge {
@@ -586,6 +590,7 @@ select.m-wrap.large {
 
   .m-wrap.small {
     width: 100px !important;
+     
   }
 
   .m-wrap.medium {
@@ -594,6 +599,7 @@ select.m-wrap.large {
 
   .m-wrap.large {
     width: 200px !important;
+    
   }
 
   .m-wrap.huge {

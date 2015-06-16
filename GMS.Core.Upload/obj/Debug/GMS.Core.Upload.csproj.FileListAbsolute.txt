@@ -3,3 +3,13 @@ F:\GMS\GMS\bin\GMS.Core.Upload.pdb
 F:\GMS\GMS\Src\GMS.Core.Upload\obj\Debug\GMS.Core.Upload.csprojResolveAssemblyReference.cache
 F:\GMS\GMS\Src\GMS.Core.Upload\obj\Debug\GMS.Core.Upload.dll
 F:\GMS\GMS\Src\GMS.Core.Upload\obj\Debug\GMS.Core.Upload.pdb
+F:\GMS\Src1\HaoTang\GMS.Core.Upload\obj\Debug\GMS.Core.Upload.csprojResolveAssemblyReference.cache
+F:\GMS\Src1\HaoTang\GMS.Core.Upload\obj\Debug\GMS.Core.Upload.dll
+F:\GMS\Src1\HaoTang\GMS.Core.Upload\obj\Debug\GMS.Core.Upload.pdb
+F:\GMS\Src1\bin\GMS.Core.Upload.dll
+F:\GMS\Src1\bin\GMS.Core.Upload.pdb
+F:\GMS\bin\GMS.Core.Upload.dll
+F:\GMS\bin\GMS.Core.Upload.pdb
+F:\GMS\Src\GMS.Core.Upload\obj\Debug\GMS.Core.Upload.csprojResolveAssemblyReference.cache
+F:\GMS\Src\GMS.Core.Upload\obj\Debug\GMS.Core.Upload.dll
+F:\GMS\Src\GMS.Core.Upload\obj\Debug\GMS.Core.Upload.pdb

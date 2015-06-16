@@ -28,8 +28,8 @@ namespace GMS.Project.BLL
             {
                 IQueryable<ProjectBasedata> ProjectBasedatas = dbContext.ProjectBasedatas;
 
-                if (!string.IsNullOrEmpty(request.ProjName))
-                    ProjectBasedatas = ProjectBasedatas.Where(u => u.ProjName.Contains(request.ProjName));
+                if (!string.IsNullOrEmpty(request.PName))
+                    ProjectBasedatas = ProjectBasedatas.Where(u => u.PName.Contains(request.PName));
 
                 return ProjectBasedatas.OrderByDescending(u => u.ID).ToPagedList(request.PageIndex, request.PageSize);
             }
@@ -56,6 +56,54 @@ namespace GMS.Project.BLL
             using (var dbContext = new ProjectDbContext())
             {
                 dbContext.ProjectBasedatas.Where(u => ids.Contains(u.ID)).Delete();
+            }
+        }
+        #endregion
+
+        #region Budget CURD
+        public Budget GetBudget(int id)
+        {
+            using (var dbContext = new ProjectDbContext())
+            {
+                return dbContext.Find<Budget>(id);
+            }
+        }
+
+        public IEnumerable<Budget> GetBudgetList(BudgetRequest request = null)
+        {
+            request = request ?? new BudgetRequest();
+            using (var dbContext = new ProjectDbContext())
+            {
+                IQueryable<Budget> Budget = dbContext.Budget;
+
+                if (!string.IsNullOrEmpty(request.ProjectName))
+                    Budget = Budget.Where(u => u.ProjectName.Contains(request.ProjectName));
+
+                return Budget.OrderByDescending(u => u.ID).ToPagedList(request.PageIndex, request.PageSize);
+            }
+        }
+
+        public void SaveBudget(Budget budget)
+        {
+            using (var dbContext = new ProjectDbContext())
+            {
+
+                if (budget.ID != null)
+                {
+                    dbContext.Update<Budget>(budget);
+                }
+                else
+                {
+                    dbContext.Insert<Budget>(budget);
+                }
+            }
+        }
+
+        public void DeleteBudget(List<int> ids)
+        {
+            using (var dbContext = new ProjectDbContext())
+            {
+                dbContext.Budget.Where(u => ids.Contains(u.ID)).Delete();
             }
         }
         #endregion

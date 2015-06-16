@@ -3,3 +3,13 @@ F:\GMS\GMS\bin\GMS.Framework.Web.pdb
 F:\GMS\GMS\Src\GMS.Framework.Web\obj\Debug\GMS.Framework.Web.csprojResolveAssemblyReference.cache
 F:\GMS\GMS\Src\GMS.Framework.Web\obj\Debug\GMS.Framework.Web.dll
 F:\GMS\GMS\Src\GMS.Framework.Web\obj\Debug\GMS.Framework.Web.pdb
+F:\GMS\Src1\HaoTang\GMS.Framework.Web\obj\Debug\GMS.Framework.Web.csprojResolveAssemblyReference.cache
+F:\GMS\Src1\HaoTang\GMS.Framework.Web\obj\Debug\GMS.Framework.Web.dll
+F:\GMS\Src1\HaoTang\GMS.Framework.Web\obj\Debug\GMS.Framework.Web.pdb
+F:\GMS\Src1\bin\GMS.Framework.Web.dll
+F:\GMS\Src1\bin\GMS.Framework.Web.pdb
+F:\GMS\bin\GMS.Framework.Web.dll
+F:\GMS\bin\GMS.Framework.Web.pdb
+F:\GMS\Src\GMS.Framework.Web\obj\Debug\GMS.Framework.Web.csprojResolveAssemblyReference.cache
+F:\GMS\Src\GMS.Framework.Web\obj\Debug\GMS.Framework.Web.dll
+F:\GMS\Src\GMS.Framework.Web\obj\Debug\GMS.Framework.Web.pdb

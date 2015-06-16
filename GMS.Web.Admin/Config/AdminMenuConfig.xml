@@ -42,9 +42,9 @@
 
     <AdminMenuGroup name="项目管理" icon="icon-phone-sign">
       <AdminMenuArray>
-        <AdminMenu name="项目基本信息" url="/Project/ProjectBasedata/Index" info="项目基本信息的管理" permission="CrmManage_VisitRecord" />
-        <AdminMenu name="项目预算" url="" info="项目费用预算管理" permission="CrmManage_Customer" />
-        <AdminMenu name="项目运营管理" url="" info="各项目每月的运营管理" permission="CrmManage_Project" />
+        <AdminMenu name="项目基本信息" url="/Project/ProjectBasedata/Index" info="项目基本信息的管理" permission="ProjectManage_Basedata" />
+        <AdminMenu name="项目预算" url="/Project/Budget/Index" info="项目费用预算管理" permission="ProjectManage_Budget" />
+        <AdminMenu name="项目即时管理" url="" info="各项目每月的运营管理" permission="CrmManage_Project" />
       </AdminMenuArray>
     </AdminMenuGroup>
 

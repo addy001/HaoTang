@@ -1,0 +1,117 @@
+﻿@using GMS.Framework.Contract
+@using GMS.Framework.Web.Controls
+@using GMS.Project.Contract
+@using GMS.Web
+@model Budget
+@{
+  
+    Layout = "~/Views/Shared/_Layout.Edit.cshtml";
+}
+@section PageSpecificStyleSheetIncludes{
+      <style type="css/text"> 
+          .control-group{
+              width:50%;
+              display:inline;
+              float:left;
+              background-color:#969393 
+          }
+   </style>
+}
+@section PageSpecificJavascriptIncludes{
+    <script type="text/javascript">
+       
+   
+   </script>
+}
+@section MainContent{
+
+  
+
+<div class="portlet-body form-horizontal form-bordered form-row-stripped" >
+    <div class="row-fluid"> 
+              <div class="control-group" style="float:left;width:50%">
+                <label class="control-label"><span class="required">项目</span>：</label>
+                <div class="controls">
+                @Html.TextBoxFor(m => m.ProjectName, new { @class = "m-wrap large" })
+                <span class="help-inline">@Html.ValidationMessageFor(m => m.ProjectName)</span>
+                </div>
+            </div>
+
+             <div class="control-group" style="float:left;width:50%">
+                <label class="control-label "><span class="required"></span>人工费：</label>
+                <div class="controls ">
+                @Html.TextBoxFor(m => m.Labour, new { @class = "m-wrap large" })
+                <span class="help-inline">@Html.ValidationMessageFor(m => m.Labour)</span>
+                </div>
+            </div>
+         <div class="control-group" style="float:left;width:50%">
+                <label class="control-label "><span class="required"></span>材料费：</label>
+                <div class="controls ">
+                @Html.TextBoxFor(m => m.Material, new { @class = "m-wrap large" })
+                <span class="help-inline">@Html.ValidationMessageFor(m => m.Material)</span>
+                </div>
+            </div>
+        
+            <div class="control-group" style="float:left;width:50%">
+                <label class="control-label ">机械费：</label>
+                <div class="controls">
+                @Html.TextBoxFor(m => m.MachineryCost, new { @class = "m-wrap small" })
+                <span class="help-inline">@Html.ValidationMessageFor(m => m.MachineryCost)</span>
+                </div>
+            </div>
+
+
+
+
+            <div class="control-group" style="float:left;width:50%">
+                <label class="control-label">措施费：</label>
+                <div class="controls">
+                @Html.TextBoxFor(m => m.Measure, new { @class = "m-wrap small" })
+                <span class="help-inline">@Html.ValidationMessageFor(m => m.Measure)</span>
+                </div>
+            </div>
+     
+     
+       
+
+
+              <div class="control-group"  style="float:left;width:50%">
+                <label class="control-label">间接费：</label>
+                <div class="controls">
+                @Html.TextBoxFor(m => m.Overhead, new { @class = "m-wrap" })
+               
+                </div>
+            </div>
+
+            <div class="control-group" style="float:left;width:50%">
+                <label class="control-label" >工程保修金：</label>
+                <div class="controls">
+                @Html.TextBoxFor(m => m.Warranty, new { @class = "m-wrap small" })
+                <span class="help-inline">@Html.ValidationMessageFor(m => m.Warranty)</span>
+                </div>
+            </div>
+
+        <div class="control-group" style="float:left;width:50%">
+                <label class="control-label">分包工程：</label>
+                <div class="controls">
+                @Html.TextBoxFor(m => m.Subcontracting, new { @class = "m-wrap" })
+                <span class="help-inline">@Html.ValidationMessageFor(m => m.Subcontracting)</span>
+                </div>
+            </div>
+
+            <div class="control-group"style="float:left;width:50%">
+                <label class="control-label">其他费用：</label>
+                <div class="controls">
+                @Html.TextBoxFor(m => m.OtherBudget, new { @class = "m-wrap large" })
+                <span class="help-inline">@Html.ValidationMessageFor(m => m.OtherBudget)</span>
+                </div>
+            </div>
+
+     
+
+      
+
+         
+    </div>
+</div>
+}

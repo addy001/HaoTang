@@ -8,7 +8,12 @@ namespace GMS.Project.Contract
 {
     public class ProjectRequest : Request
     {
-        public string ProjName { get; set; }
-        public string ProjChargeman { get; set; }
+        public string PName { get; set; }
+        public string PCharger { get; set; }
     }
+    public class BudgetRequest : Request
+    {
+        public string ProjectName { get; set; }       
+    }
+
 }
