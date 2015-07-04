@@ -79,8 +79,6 @@ F:\GMS\Src\GMS.Web.Admin\bin\GMS.Web.Admin.dll
 F:\GMS\Src\GMS.Web.Admin\bin\GMS.Web.Admin.pdb
 F:\GMS\Src\GMS.Web.Admin\bin\GMS.Account.BLL.dll
 F:\GMS\Src\GMS.Web.Admin\bin\GMS.Account.Contract.dll
-F:\GMS\Src\GMS.Web.Admin\bin\GMS.Basedata.BLL.dll
-F:\GMS\Src\GMS.Web.Admin\bin\GMS.Basedata.Contract.dll
 F:\GMS\Src\GMS.Web.Admin\bin\GMS.Cms.BLL.dll
 F:\GMS\Src\GMS.Web.Admin\bin\GMS.Cms.Contract.dll
 F:\GMS\Src\GMS.Web.Admin\bin\GMS.Core.Cache.dll
@@ -103,7 +101,6 @@ F:\GMS\Src\GMS.Web.Admin\bin\GMS.Account.DAL.dll
 F:\GMS\Src\GMS.Web.Admin\bin\GMS.Framework.DAL.dll
 F:\GMS\Src\GMS.Web.Admin\bin\EntityFramework.dll
 F:\GMS\Src\GMS.Web.Admin\bin\EntityFramework.Extended.dll
-F:\GMS\Src\GMS.Web.Admin\bin\GMS.Basedata.DAL.dll
 F:\GMS\Src\GMS.Web.Admin\bin\GMS.Cms.DAL.dll
 F:\GMS\Src\GMS.Web.Admin\bin\DevTrends.MvcDonutCaching.dll
 F:\GMS\Src\GMS.Web.Admin\bin\GMS.Crm.DAL.dll
@@ -115,8 +112,6 @@ F:\GMS\Src\GMS.Web.Admin\bin\log4net.dll
 F:\GMS\Src\GMS.Web.Admin\bin\Castle.Core.dll
 F:\GMS\Src\GMS.Web.Admin\bin\GMS.Account.BLL.pdb
 F:\GMS\Src\GMS.Web.Admin\bin\GMS.Account.Contract.pdb
-F:\GMS\Src\GMS.Web.Admin\bin\GMS.Basedata.BLL.pdb
-F:\GMS\Src\GMS.Web.Admin\bin\GMS.Basedata.Contract.pdb
 F:\GMS\Src\GMS.Web.Admin\bin\GMS.Cms.BLL.pdb
 F:\GMS\Src\GMS.Web.Admin\bin\GMS.Cms.Contract.pdb
 F:\GMS\Src\GMS.Web.Admin\bin\GMS.Core.Cache.pdb
@@ -142,7 +137,6 @@ F:\GMS\Src\GMS.Web.Admin\bin\GMS.Framework.DAL.pdb
 F:\GMS\Src\GMS.Web.Admin\bin\GMS.Framework.DAL.xml
 F:\GMS\Src\GMS.Web.Admin\bin\EntityFramework.xml
 F:\GMS\Src\GMS.Web.Admin\bin\EntityFramework.Extended.xml
-F:\GMS\Src\GMS.Web.Admin\bin\GMS.Basedata.DAL.pdb
 F:\GMS\Src\GMS.Web.Admin\bin\GMS.Cms.DAL.pdb
 F:\GMS\Src\GMS.Web.Admin\bin\GMS.Crm.DAL.pdb
 F:\GMS\Src\GMS.Web.Admin\bin\GMS.OA.DAL.pdb
@@ -229,3 +223,9 @@ F:\GMS\Src1\HaoTang\GMS.Web.Admin\bin\GMS.OA.DAL.pdb
 F:\GMS\Src1\HaoTang\GMS.Web.Admin\bin\GMS.Project.DAL.pdb
 F:\GMS\Src1\HaoTang\GMS.Web.Admin\bin\GMS.Core.Log.pdb
 F:\GMS\Src1\HaoTang\GMS.Web.Admin\bin\GMS.Core.Service.pdb
+F:\GMS\Src\GMS.Web.Admin\bin\GMS.BasisData.BLL.dll
+F:\GMS\Src\GMS.Web.Admin\bin\GMS.BasisData.Contract.dll
+F:\GMS\Src\GMS.Web.Admin\bin\GMS.BasisData.DAL.dll
+F:\GMS\Src\GMS.Web.Admin\bin\GMS.BasisData.BLL.pdb
+F:\GMS\Src\GMS.Web.Admin\bin\GMS.BasisData.Contract.pdb
+F:\GMS\Src\GMS.Web.Admin\bin\GMS.BasisData.DAL.pdb

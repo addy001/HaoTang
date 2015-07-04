@@ -6,8 +6,8 @@ using GMS.Core.Service;
 using GMS.Cms.Contract;
 using GMS.Crm.Contract;
 using GMS.OA.Contract;
-using GMS.Basedata.Contract;
 using GMS.Project.Contract;
+using GMS.BasisData.Contract;
 
 namespace GMS.Web
 {
@@ -52,10 +52,11 @@ namespace GMS.Web
                 return ServiceHelper.CreateService<IOAService>();
             }
         }
-        public IBasedataService BasedataService {
+        public IBasisDataService BasisDataService
+        {
             get 
             {
-                return ServiceHelper.CreateService<IBasedataService>();
+                return ServiceHelper.CreateService<IBasisDataService>();
             }
         }
         public IProjectService ProjectService

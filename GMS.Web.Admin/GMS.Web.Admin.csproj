@@ -71,8 +71,10 @@
     <Compile Include="Areas\Account\Controllers\CommonController.cs" />
     <Compile Include="Areas\Account\Controllers\RoleController.cs" />
     <Compile Include="Areas\Account\Controllers\UserController.cs" />
-    <Compile Include="Areas\Basedata\BasedataAreaRegistration.cs" />
-    <Compile Include="Areas\Basedata\Controllers\MaterialController.cs" />
+    <Compile Include="Areas\BasisData\BasisDataAreaRegistration.cs" />
+    <Compile Include="Areas\BasisData\Controllers\ClassificationController.cs" />
+    <Compile Include="Areas\BasisData\Controllers\MaterialController.cs" />
+    <Compile Include="Areas\BasisData\Controllers\SupplierController.cs" />
     <Compile Include="Areas\Cms\CmsAreaRegistration.cs" />
     <Compile Include="Areas\Cms\Controllers\ArticleController.cs" />
     <Compile Include="Areas\Cms\Controllers\ChannelController.cs" />
@@ -85,8 +87,25 @@
     <Compile Include="Areas\OA\Controllers\OrgController.cs" />
     <Compile Include="Areas\OA\Controllers\StaffController.cs" />
     <Compile Include="Areas\OA\OAAreaRegistration.cs" />
+    <Compile Include="Areas\Project\Controllers\AccountantController.cs" />
+    <Compile Include="Areas\Project\Controllers\AccountingController.cs" />
     <Compile Include="Areas\Project\Controllers\BudgetController.cs" />
+    <Compile Include="Areas\Project\Controllers\FilesController.cs" />
+    <Compile Include="Areas\Project\Controllers\LaborController.cs" />
+    <Compile Include="Areas\Project\Controllers\MachineController.cs" />
+    <Compile Include="Areas\Project\Controllers\MaterialController.cs" />
+    <Compile Include="Areas\Project\Controllers\MeasureController.cs" />
+    <Compile Include="Areas\Project\Controllers\OddmentsController.cs" />
+    <Compile Include="Areas\Project\Controllers\OfficeCtrlController.cs" />
+    <Compile Include="Areas\Project\Controllers\OverheadController.cs" />
     <Compile Include="Areas\Project\Controllers\ProjectBasedataController.cs" />
+    <Compile Include="Areas\Project\Controllers\IBudgetController.cs" />
+    <Compile Include="Areas\Project\Controllers\ILaborController.cs" />
+    <Compile Include="Areas\Project\Controllers\IMachineController.cs" />
+    <Compile Include="Areas\Project\Controllers\IMaterialController.cs" />
+    <Compile Include="Areas\Project\Controllers\IMeasureController.cs" />
+    <Compile Include="Areas\Project\Controllers\IOverheadController.cs" />
+    <Compile Include="Areas\Project\Controllers\ProjectCtrlController.cs" />
     <Compile Include="Areas\Project\ProjectAreaRegistration.cs" />
     <Compile Include="Common\AdminCookieContext.cs" />
     <Compile Include="Common\AdminUserContext.cs" />
@@ -1261,7 +1280,6 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Areas\Basedata\Models\" />
     <Folder Include="Assets\jquery-file-upload\server\php\files\thumbnail\" />
     <Folder Include="Models\" />
     <Folder Include="Upload\" />
@@ -1296,14 +1314,59 @@
     <Content Include="Areas\OA\Views\Staff\Edit.cshtml" />
     <Content Include="Areas\OA\Views\Staff\Index.cshtml" />
     <Content Include="Areas\OA\Views\Org\Index.cshtml" />
-    <Content Include="Areas\Basedata\Views\Web.config" />
-    <Content Include="Areas\Basedata\Views\Material\Edit.cshtml" />
-    <Content Include="Areas\Basedata\Views\Material\Index.cshtml" />
     <Content Include="Areas\Project\Views\Web.config" />
     <Content Include="Areas\Project\Views\ProjectBasedata\Index.cshtml" />
     <Content Include="Areas\Project\Views\ProjectBasedata\Edit.cshtml" />
     <Content Include="Areas\Project\Views\Budget\Edit.cshtml" />
     <Content Include="Areas\Project\Views\Budget\Index.cshtml" />
+    <Content Include="Areas\BasisData\Views\Classification\Edit.cshtml" />
+    <Content Include="Areas\BasisData\Views\Classification\Index.cshtml" />
+    <Content Include="Areas\BasisData\Views\Classification\Search.cshtml" />
+    <Content Include="Areas\BasisData\Views\Material\Edit.cshtml" />
+    <Content Include="Areas\BasisData\Views\Material\Index.cshtml" />
+    <Content Include="Areas\BasisData\Views\Material\Search.cshtml" />
+    <Content Include="Areas\BasisData\Views\Supplier\AddMaterial.cshtml" />
+    <Content Include="Areas\BasisData\Views\Supplier\Edit.cshtml" />
+    <Content Include="Areas\BasisData\Views\Supplier\Index.cshtml" />
+    <Content Include="Areas\BasisData\Views\Supplier\Search.cshtml" />
+    <Content Include="Areas\BasisData\Views\Supplier\ShowSupplierMaterial.cshtml" />
+    <Content Include="Areas\BasisData\Views\Web.config" />
+    <Content Include="Areas\Project\Views\Labor\Index.cshtml" />
+    <Content Include="Areas\Project\Views\Labor\Edit.cshtml" />
+    <Content Include="Areas\Project\Views\Machine\Index.cshtml" />
+    <Content Include="Areas\Project\Views\Machine\Edit.cshtml" />
+    <Content Include="Areas\Project\Views\Material\Edit.cshtml" />
+    <Content Include="Areas\Project\Views\Material\Index.cshtml" />
+    <Content Include="Areas\Project\Views\Measure\Index.cshtml" />
+    <Content Include="Areas\Project\Views\Measure\Edit.cshtml" />
+    <Content Include="Areas\Project\Views\Overhead\Index.cshtml" />
+    <Content Include="Areas\Project\Views\Overhead\Edit.cshtml" />
+    <Content Include="Areas\Project\Views\Accounting\Index.cshtml" />
+    <Content Include="Areas\Project\Views\Accounting\Edit.cshtml" />
+    <Content Include="Areas\Project\Views\Accountant\Index.cshtml" />
+    <Content Include="Areas\Project\Views\Accountant\Edit.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Areas\Project\Views\ILabor\Index.cshtml" />
+    <Content Include="Areas\Project\Views\ILabor\Edit.cshtml" />
+    <Content Include="Areas\Project\Views\IMachine\Index.cshtml" />
+    <Content Include="Areas\Project\Views\IMachine\Edit.cshtml" />
+    <Content Include="Areas\Project\Views\IMaterial\Edit.cshtml" />
+    <Content Include="Areas\Project\Views\IMaterial\Index.cshtml" />
+    <Content Include="Areas\Project\Views\IMeasure\Index.cshtml" />
+    <Content Include="Areas\Project\Views\IMeasure\Edit.cshtml" />
+    <Content Include="Areas\Project\Views\IOverhead\Edit.cshtml" />
+    <Content Include="Areas\Project\Views\IOverhead\Index.cshtml" />
+    <Content Include="Areas\Project\Views\IBudget\Edit.cshtml" />
+    <Content Include="Areas\Project\Views\IBudget\Index.cshtml" />
+    <Content Include="Areas\Project\Views\Files\Index.cshtml" />
+    <Content Include="Areas\Project\Views\Files\Edit.cshtml" />
+    <Content Include="Areas\Project\Views\Oddments\Edit.cshtml" />
+    <Content Include="Areas\Project\Views\Oddments\Index.cshtml" />
+    <Content Include="Areas\Project\Views\OfficeCtrl\Edit.cshtml" />
+    <Content Include="Areas\Project\Views\OfficeCtrl\Index.cshtml" />
+    <Content Include="Areas\Project\Views\ProjectCtrl\Edit.cshtml" />
+    <Content Include="Areas\Project\Views\ProjectCtrl\Index.cshtml" />
     <None Include="Assets\bootstrap-colorpicker\less\colorpicker.less" />
     <None Include="Assets\bootstrap-datepicker\less\datepicker.less" />
     <None Include="Assets\bootstrap-daterangepicker\README.md" />
@@ -1508,6 +1571,7 @@
     <None Include="Content\Uploadify\uploadify.fla" />
     <Content Include="FileUpload.ashx" />
     <None Include="Properties\PublishProfiles\gms.pubxml" />
+    <Content Include="Views\Shared\_Layout.supplier.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GMS.Account.BLL\GMS.Account.BLL.csproj">
@@ -1518,13 +1582,13 @@
       <Project>{08CFB8BA-AA0E-42F5-B6BF-140C64E34377}</Project>
       <Name>GMS.Account.Contract</Name>
     </ProjectReference>
-    <ProjectReference Include="..\GMS.Basedata.BLL\GMS.Basedata.BLL.csproj">
-      <Project>{332d6ff4-88cb-43ae-b528-5c8eb8ea4145}</Project>
-      <Name>GMS.Basedata.BLL</Name>
+    <ProjectReference Include="..\GMS.BasisData.BLL\GMS.BasisData.BLL.csproj">
+      <Project>{99706652-79be-4185-8896-aedd697a3236}</Project>
+      <Name>GMS.BasisData.BLL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\GMS.Basedata.Contract\GMS.Basedata.Contract.csproj">
-      <Project>{b9ba2662-0b56-4cc2-bd04-b2c1ee5a8483}</Project>
-      <Name>GMS.Basedata.Contract</Name>
+    <ProjectReference Include="..\GMS.BasisData.Contract\GMS.BasisData.Contract.csproj">
+      <Project>{fae18640-52ce-4cbb-aaa6-c088f8dd6ad2}</Project>
+      <Name>GMS.BasisData.Contract</Name>
     </ProjectReference>
     <ProjectReference Include="..\GMS.Cms.BLL\GMS.Cms.BLL.csproj">
       <Project>{b7cff757-e14d-418c-a75f-d8344d408bf2}</Project>

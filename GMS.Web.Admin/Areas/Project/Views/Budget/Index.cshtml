@@ -3,7 +3,7 @@
 @using GMS.Framework.Web.Controls
 @using GMS.Project.Contract
 
-@model PagedList<Budget>
+@model PagedList<BudgetInfo>
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -11,16 +11,21 @@
     <style type="text/css">
        
     </style>
+    <script>
+     
+    </script>
 }
 
 
 
-<div class="row-fluid" >
+<div class="row-fluid">
     <div class="span4">
-        <div>
-            <a class="btn red" id="delete" href="javascript:;"><i class="icon-trash icon-white"></i>删除</a>
-            <a class="btn blue thickbox" title='添加新项目' href="@Url.Action("Create")?TB_iframe=true&height=350&width=1000"><i class="icon-plus icon-white"></i>新增</a>
-        </div>
+      @*  <span style="margin-bottom:0" >单位：元</span>*@
+       @* <div>
+          <a class="btn red" id="delete" href="javascript:;"><i class="icon-trash icon-white"></i>删除</a>
+            <a class="btn blue thickbox" title='添加新项目' href="@Url.Action("Create")?TB_iframe=true&height=350&width=350"><i class="icon-plus icon-white"></i>新增</a>
+            
+        </div>*@
     </div>
 
     <div class="span8">
@@ -38,19 +43,16 @@
         }
     </div>
 </div>
-@*<div class="alert alert-info">
-    <button class="close" data-dismiss="alert"></button>
-    编辑部门从属关系（上级部门，下设部门）请到 <strong>“<a href="@Url.Action("Index", "Org")">组织结构管理</a>”</strong>菜单操作！
-</div>*@
+
 
 @using (Html.BeginForm("Delete", "ProjectBasedata", FormMethod.Post, new { id = "mainForm" }))
 {
     <table class="table table-striped table-hover ">
         <thead>
             <tr>
-                <th style="width: 8px;">
+             @*   <th style="width: 8px;">
                     <input type="checkbox" id="checkall" class="group-checkable" />
-                </th>
+                </th>*@
 
                 <th>项目名称
                 </th>
@@ -69,7 +71,9 @@
                 </th>
                 <th>分包工程
                 </th>
-                 <th>其他费用
+                <th>其他费用
+                </th>
+                <th>总额
                 </th>
                 <th>备注
                 </th>
@@ -83,55 +87,55 @@
             @foreach (var m in Model)
             {
                 <tr>
-                    <td>
+                  @*  <td>
                         <input type="checkbox" class="checkboxes" name='ids' value='@m.ID' />
-                    </td>
-
-                    <td>
-                        @m.ProjectID
-                    </td>
+                    </td>    *@               
                     <td>
                         @m.ProjectName
                     </td>
                     <td>
-                        @m.Labour
+                        @(m.LaborCost == null ? "未预算" : (m.LaborCost.LaborTotal).ToString("###,###")  )
                     </td>
                     <td>
-                        @m.Material
-                    </td>
+                        @(m.MaterialCost == null ? "未预算" : (m.MaterialCost.MaterialTotal).ToString("###,###")  )
 
-                    <td>
-                        @m.MachineryCost
                     </td>
 
                     <td>
-                        @m.Measure
+                        @(m.MachineryCost == null ? "未预算" : (m.MachineryCost.MachineryTotal).ToString("###,###")  )
 
                     </td>
-                     <td>
-                        @m.Overhead
+
+                    <td>
+                        @(m.Measure == null ? "未预算" : (m.Measure.MeasureTotal).ToString("###,###")  )
+
 
                     </td>
-                     <td>
-                        @m.Warranty
+                    <td>
+
+                        @(m.Overhead == null ? "未预算" : (m.Overhead.OverheadTotal).ToString("###,###")  )
+                    </td>
+                    <td>
+                        @m.Warranty.ToString("###,###")  
 
                     </td>
-                     <td>
-                        @m.Subcontracting
+                    <td>
+                        @m.Subcontracting.ToString("###,###")  
 
                     </td>
-                     <td>
-                        @m.OtherBudget
+                    <td>
+                        @m.OtherBudget.ToString("###,###")  
 
                     </td>
-                     <td>
+                    <td>
+                        @m.BudgetTotal.ToString("###,###")  
+                    </td>
+                    <td>
                         @m.Remark
 
                     </td>
-
-
                     <td style="width: 70px">
-                        <a class="btn mini purple thickbox" title='编辑分类内容' href="@Url.Action("Edit", new { id = m.ID })?TB_iframe=true&height=530&width=1000">
+                        <a class="btn mini purple thickbox" title='@m.ProjectName' href="@Url.Action("Edit", new { id = m.ID })?TB_iframe=true&height=350&width=450">
                             <i class="icon-edit"></i>
                             编辑
                         </a>

@@ -17,7 +17,7 @@
 }
 @section PageSpecificJavascriptIncludes{
     <script type="text/javascript">
-        $("#BirthDate").datepicker();
+        $("#BirthDate,#EntryDate").datepicker();
    </script>
 }
 @section MainContent{
@@ -35,6 +35,16 @@
                 <span class="help-inline">@Html.ValidationMessageFor(m => m.Name)</span>
                 </div>
             </div>
+
+        
+            <div class="control-group">
+                <label class="control-label">入职日期：</label>
+                <div class="controls">
+                @Html.TextBox("EntryDate", Model.EntryDate.ToCnDataString(),  new { @class = "m-wrap" })
+                <span class="help-inline">@Html.ValidationMessageFor(m => m.EntryDate)</span>
+                </div>
+            </div>
+
 
             <div class="control-group">
                 <label class="control-label">职位：</label>

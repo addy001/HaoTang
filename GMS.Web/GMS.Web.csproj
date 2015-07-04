@@ -55,9 +55,9 @@
       <Project>{08CFB8BA-AA0E-42F5-B6BF-140C64E34377}</Project>
       <Name>GMS.Account.Contract</Name>
     </ProjectReference>
-    <ProjectReference Include="..\GMS.Basedata.Contract\GMS.Basedata.Contract.csproj">
-      <Project>{b9ba2662-0b56-4cc2-bd04-b2c1ee5a8483}</Project>
-      <Name>GMS.Basedata.Contract</Name>
+    <ProjectReference Include="..\GMS.BasisData.Contract\GMS.BasisData.Contract.csproj">
+      <Project>{fae18640-52ce-4cbb-aaa6-c088f8dd6ad2}</Project>
+      <Name>GMS.BasisData.Contract</Name>
     </ProjectReference>
     <ProjectReference Include="..\GMS.Cms.Contract\GMS.Cms.Contract.csproj">
       <Project>{B5C93A51-4CBF-419C-A8B1-290B3F163B5E}</Project>

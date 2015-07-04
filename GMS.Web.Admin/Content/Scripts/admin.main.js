@@ -91,5 +91,94 @@ $("#delete").click(function () {
         $("#mainForm").submit();
 });
 
+//供应商处理事件
+$("#postBtn").click(function () {
+    var chkedValue = $(":checkbox:checked");
+    if (confirm("你确定要添加材料吗？") == true) {
+        chkedValue.each(function () {
+            var mid = this.value;
+            $.ajax({
+                type: "post",
+                datatype: "html",
+                url: "/Supplier/AddMaterial",
+                data: { "sId": $(this).attr('dataSupplierid'), "mid": mid, "price": $('#Price' + mid).val(), "remark": $('#Remark' + mid).val() },
+                success: function (msg) {
+                    if (msg == "true") {
+                        alert("添加成功");
+                    } else { }
+                }
+            });
 
+        })
+        window.location.href = '/BasisData/Supplier/Index'
+    }
+});
+
+$(".editSupplier").click(function () {
+    var mid = $(this).attr('mid');
+    document.getElementById('Price' + mid).readOnly = false;
+    document.getElementById('Remark' + mid).readOnly = false;
+    $(this).siblings('a')[0].style.visibility = 'visible';
+});
+$(".saveSupplier").click(function () {
+    var mid = $(this).attr('mid');
+
+    document.getElementById('Price' + mid).readOnly = true;
+    document.getElementById('Remark' + mid).readOnly = true;
+    this.style.visibility = 'hidden';
+    $.ajax({
+        type: "post",
+        datatype: "html",
+        url: "/Supplier/AddMaterial",
+        data: { "sId": $(this).attr('sid'), "mid": $(this).attr('mid'), "price": $('#Price' + mid).val(), "remark": $('#Remark' + mid).val() },
+        success: function (msg) {
+            if (msg == "true") {
+                alert("保存成功");
+            } else { }
+        }
+    });
+
+});
+
+$(".seachButton").click(function () {
+    $("#mainForm1").submit();
+    //window.location.href = 'Search?Material=' + $('#Material').val() + "&&Price=" + $('#Price').val();
+});
+$(".addMaterial").click(function () {
+    var that = this;
+    if (!this.checked) {
+        if (confirm("你确定要删除供应材料吗？") == true) {
+            var mid = this.value;
+            $.ajax({
+                type: "post",
+                datatype: "html",
+                url: "/Supplier/DelMaterial",
+                data: { "sId": $(this).attr('dataSupplierid'), "mid": mid },
+                success: function (msg) {
+                    if (msg == "true") {
+                        alert("删除成功");
+                    } else {
+                        that.checked = true;
+                    }
+                }
+            });
+        }
+    }
+});
+
+$(".IsAvailability").click(function () {
+    if (!this.checked) {
+        $(this).parent().removeClass("checked");
+        if ($(this).attr('id') == 'once') {
+            document.getElementById('many').checked = true;
+            $("#many").parent().addClass("checked")
+            //document.getElementById('once').checked = false;
+        } else {
+            document.getElementById('once').checked = true;
+            $("#once").parent().addClass("checked")
+            //document.getElementById('once').checked = false;
+        }
+    }
+    //window.location.href = 'Search?Material=' + $('#Material').val() + "&&Price=" + $('#Price').val();
+});
 

@@ -1,0 +1,133 @@
+﻿@using GMS.Framework.Contract
+@using GMS.Framework.Utility
+@using GMS.Framework.Web.Controls
+@using GMS.BasisData.Contract
+@using GMS.Account.Contract;
+@using GMS.Web.Admin.Common;
+@model int
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row-fluid">
+    <div class="span4" style="margin-bottom:20px;">
+        <div>
+            <a class="btn blue" id="postBtn" href="javascript:;"><i class=" icon-ok"></i> 提交</a>
+                   
+
+
+        </div>
+    </div>
+   <div class="span8">
+       @* @using (Html.BeginForm(null, null, null, FormMethod.Get, new { id = "search" }))
+    {
+        <div class="dataTables_filter">
+            <label>
+                <button type="submit" class="btn">搜索 <i class="icon-search"></i></button>
+            </label>
+            <label>
+                <span>分类：</span>
+                @Html.TextBox("Mobile", null, new { @class = "m-wrap small" })
+            </label>
+            <label>
+                <span>名称：</span>
+                @Html.TextBox("LoginName", null, new { @class = "m-wrap small" })
+            </label>
+        </div>
+    }*@
+    </div>
+</div>
+@using (Html.BeginForm(null, null, null, FormMethod.Get, new { id = "mainForm" }))
+{
+    <table class="table table-striped table-hover ">
+        <thead>
+            <tr>
+                <th style="width: 8px;">
+                    <input type="checkbox" id="checkall" class="group-checkable" />
+                </th>
+                <th>
+                    材料名
+                </th>
+                <th>
+                    分类
+                </th>
+                <th>
+                    一次性/可重复利用材料
+                </th>
+                <th>
+                    单价
+                </th>
+                <th>品质说明</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if ((ViewData["material"] as List<Material>)!= null)
+            {
+                List<MaterialSupplier> suplist = ViewData["materialSupplier"] as List<MaterialSupplier>;
+
+                foreach (var m in (ViewData["material"] as List<Material>))
+                {
+                    MaterialSupplier mse=suplist.Where(p=>p.MaterialID == m.ID).FirstOrDefault();
+                    <tr>
+                        <td>
+                            @if (mse!=null) {
+                            <input type="checkbox" dataSupplierid="@Model" checked class="checkboxes addMaterial" name='ids' value='@m.ID' />
+                            }
+                            else
+                            {
+                            <input type="checkbox" datasupplierid="@Model" class="checkboxes addMaterial" name='ids' value='@m.ID' />
+                            }
+
+                        </td>
+                        <td>
+                            @m.Name
+                        </td>
+                        <td>
+                            @{
+                    string ss = "";
+                    int classid = m.ClassificationID ?? -1;
+                    if (classid > 0)
+                    {
+                        ss = (ViewData["BasisDataService"] as IBasisDataService).GetClassification(classid).Name;
+                    }
+                            }
+                            @ss
+                        </td>
+                        <td>
+                            @{
+                    string s = "一次性材料";
+                    bool isava = m.IsAvailability ?? false;
+                    if (isava) { s = "可重复利用材料"; }
+
+                            }
+                            @s
+                       </td>
+@if (mse != null){
+                        <td>
+                        
+                            <input type="text" id='@("Price"+@m.ID)' value="@mse.Price" class="m-wrap small" />
+                            </td>
+    <td>
+        <input type="text" id='@("Remark"+@m.ID)' value="@mse.Remark" class="m-wrap small" /></td>
+}
+else
+{
+    <td>
+        <input type="text" id='@("Price"+@m.ID)' value="" class="m-wrap small" />
+    </td>
+    <td>
+        <input type="text" id='@("Remark"+@m.ID)' value="" class="m-wrap small" />
+    </td>
+}
+                        
+
+                       
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+}
+<div class="dataTables_paginate paging_bootstrap pagination">
+    @Html.Pager((ViewData["material"] as PagedList<Material>), new PagerOptions() { ShowTotalItemCount = true })
+</div>

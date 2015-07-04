@@ -8,13 +8,17 @@
         <AdminMenu name="用户管理" url="/Account/User/Index" info="添加修改删除用户" permission="AccountManage_User" />
         <AdminMenu name="角色管理" url="/Account/Role/Index" info="添加修改删除角色" permission="AccountManage_Role" />
       </AdminMenuArray>
-    </AdminMenuGroup>
+    </AdminMenuGroup> 
+
     <AdminMenuGroup name="基础数据管理" icon="icon-leaf">
       <AdminMenuArray>
-        <AdminMenu name="材料类别" url="/Basedata/Material/Index" info="添加修改删除材料" permission="BasedataManage_Material" />
-        <!--<AdminMenu name="材料明细" url="/Basedata/Channel/Index" info="添加修改删除文章频道" permission="CmsManage_Channel" />-->
+        <AdminMenu name="分类管理"  url="/BasisData/Classification/Index" info="添加修改删除分类"  permission="Basis_Classification" />
+        <AdminMenu name="材料管理"  url="/BasisData/Material/Index" info="添加修改删除材料"  permission="Basis_Material" />
+        <AdminMenu name="供应商管理"  url="/BasisData/Supplier/Index" info="添加修改删除供应商"  permission="Basis_Supplier" />
       </AdminMenuArray>
     </AdminMenuGroup>
+
+
     <AdminMenuGroup name="CMS管理" icon="icon-leaf">
       <AdminMenuArray>
         <AdminMenu name="文章管理" url="/Cms/Article/Index" info="添加修改删除文章" permission="CmsManage_Article" />
@@ -43,8 +47,47 @@
     <AdminMenuGroup name="项目管理" icon="icon-phone-sign">
       <AdminMenuArray>
         <AdminMenu name="项目基本信息" url="/Project/ProjectBasedata/Index" info="项目基本信息的管理" permission="ProjectManage_Basedata" />
-        <AdminMenu name="项目预算" url="/Project/Budget/Index" info="项目费用预算管理" permission="ProjectManage_Budget" />
-        <AdminMenu name="项目即时管理" url="" info="各项目每月的运营管理" permission="CrmManage_Project" />
+        <AdminMenu name="项目预算管理" url="/Project/Budget/Index" info="项目预算管理" permission="ProjectManage_Budget" />
+        <AdminMenu name="即时项目预算管理" url="/Project/IBudget/Index" info="项目预算即时管理" permission="ProjectManage_InsBudget" />
+      </AdminMenuArray>
+    </AdminMenuGroup>
+
+    <AdminMenuGroup name="项目预算管理" icon="icon-twitter">
+      <AdminMenuArray>
+        <AdminMenu name="人工预算" url="/Project/Labor/Index" info="人工预算管理" permission="ProjectManage_Labor" />
+        <AdminMenu name="材料预算" url="/Project/Material/Index" info="材料预算管理" permission="ProjectManage_Material" />
+        <AdminMenu name="机械使用预算" url="/Project/Machine/Index" info="机械使用预算管理" permission="ProjectManage_Machine" />
+        <AdminMenu name="措施预算" url="/Project/Measure/Index" info="措施费预算管理" permission="ProjectManage_Measure" />
+        <AdminMenu name="间接预算" url="/Project/Overhead/Index" info="间接费用预算管理" permission="ProjectManage_Overhead" />
+      </AdminMenuArray>
+    </AdminMenuGroup>
+    
+    <AdminMenuGroup name="项目即时管理" icon="icon-hdd">
+      <AdminMenuArray>      
+        <AdminMenu name="即时人工预算" url="/Project/ILabor/Index" info="人工预算即时管理" permission="ProjectManage_InsLabor" />
+        <AdminMenu name="即时材料预算" url="/Project/IMaterial/Index" info="材料预算即时管理" permission="ProjectManage_InsMaterial" />
+        <AdminMenu name="即时机械使用预算" url="/Project/IMachine/Index" info="机械使用预算即时管理" permission="ProjectManage_InsMachine" />
+        <AdminMenu name="即时措施预算" url="/Project/IMeasure/Index" info="措施费预算即时管理" permission="ProjectManage_InsMeasure" />
+        <AdminMenu name="即时间接预算" url="/Project/IOverhead/Index" info="间接费用预算即时管理" permission="ProjectManage_InsOverhead" />
+      </AdminMenuArray>
+    </AdminMenuGroup>
+
+        <AdminMenuGroup name="资产管理" icon="icon-phone-sign">
+      <AdminMenuArray>
+        <AdminMenu name="文档管理" url="/Project/Files/Index" info="文档资料管理" permission="ProjectManage_File" />
+        <AdminMenu name="余料管理" url="/Project/Oddments/Index" info="余料管理" permission="ProjectManage_Oddments" />
+        <AdminMenu name="项目采购" url="/Project/ProjectCtrl/Index" info="会计科目设置" permission="ProjectManage_Accountant" />
+        <AdminMenu name="公司采购" url="/Project/OfficeCtrl/Index" info="会计科目设置" permission="ProjectManage_Accountant" />
+
+      </AdminMenuArray>
+    </AdminMenuGroup>
+    
+    <AdminMenuGroup name="财务管理" icon="icon-phone-sign">
+      <AdminMenuArray>
+        <!--<AdminMenu name="会计科目大类" url="/Project/Accountant/Index" info="会计科目设置" permission="ProjectManage_Accountant" />-->
+        <AdminMenu name="会计科目管理" url="/Project/Accounting/Index" info="会计科目设置" permission="ProjectManage_Budget" />
+        <!--<AdminMenu name="项目即时管理" url="" info="各项目每月的运营管理" permission="CrmManage_Project" />-->
+
       </AdminMenuArray>
     </AdminMenuGroup>
 

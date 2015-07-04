@@ -23,11 +23,11 @@ namespace GMS.Web.Admin.Areas.Account.Controllers
         [AuthorizeIgnore]
         public ActionResult Login(string username, string password, string verifycode)
         {
-            if (!VerifyCodeHelper.CheckVerifyCode(verifycode, this.CookieContext.VerifyCodeGuid))
-            {
-                ModelState.AddModelError("error", "验证码错误");
-                return View();
-            }
+            //if (!VerifyCodeHelper.CheckVerifyCode(verifycode, this.CookieContext.VerifyCodeGuid))
+            //{
+            //    ModelState.AddModelError("error", "验证码错误");
+            //    return View();
+            //}
             
             var loginInfo = this.AccountService.Login(username, password);
 
@@ -84,18 +84,18 @@ namespace GMS.Web.Admin.Areas.Account.Controllers
             return View();
         }
 
-        [AuthorizeIgnore]
-        public ActionResult VerifyImage()
-        {
-            var s1 = new ValidateCode_Style4();
-            string code = "6666";
-            byte[] bytes = s1.CreateImage(out code);
+        //[AuthorizeIgnore]
+        //public ActionResult VerifyImage()
+        //{
+        //    var s1 = new ValidateCode_Style4();
+        //    string code = "6666";
+        //    byte[] bytes = s1.CreateImage(out code);
 
-            this.CookieContext.VerifyCode = code;
+        //    this.CookieContext.VerifyCode = code;
 
-            return File(bytes, @"image/jpeg");
+        //    return File(bytes, @"image/jpeg");
 
-        }
+        //}
 
     }
 }

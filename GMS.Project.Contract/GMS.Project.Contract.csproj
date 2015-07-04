@@ -47,9 +47,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IProjectService.cs" />
+    <Compile Include="Model\Accountant.cs" />
+    <Compile Include="Model\Accounting.cs" />
     <Compile Include="Model\Budget.cs" />
+    <Compile Include="Model\Files.cs" />
+    <Compile Include="Model\InsBudget.cs" />
+    <Compile Include="Model\InsLaborCost.cs" />
+    <Compile Include="Model\InsMachineryCost.cs" />
+    <Compile Include="Model\InsMaterialCost.cs" />
+    <Compile Include="Model\InsMeasure.cs" />
+    <Compile Include="Model\InsOverhead.cs" />
+    <Compile Include="Model\Oddments.cs" />
+    <Compile Include="Model\OfficeCtrl.cs" />
     <Compile Include="Model\ProjectBasedata.cs" />
+    <Compile Include="Model\ProjectCtrl.cs" />
     <Compile Include="Model\Request.cs" />
+    <Compile Include="Model\LaborCost.cs" />
+    <Compile Include="Model\MaterialCost.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -65,6 +79,15 @@
       <Project>{9f519ef8-800f-40cb-9545-9aeadf0f387d}</Project>
       <Name>GMS.Framework.Utility</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Model\MachineryCost.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Model\Measure.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Model\Overhead.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

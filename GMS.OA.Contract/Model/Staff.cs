@@ -26,6 +26,8 @@ namespace GMS.OA.Contract
 
         public int Gender { get; set; }
 
+        public DateTime? EntryDate { get; set; }
+
         public int Position { get; set; }
 
         public DateTime? BirthDate { get; set; }

@@ -1,0 +1,159 @@
+﻿@using GMS.Framework.Contract
+@using GMS.Framework.Utility
+@using GMS.Framework.Web.Controls
+@using GMS.Project.Contract
+
+@model PagedList<InsMeasure>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section PageSpecificStyleSheetIncludes{
+    <style type="text/css">
+       
+    </style>
+}
+
+
+
+<div class="row-fluid">
+    <div class="span4">
+        <div>
+          @*  <a class="btn red" id="delete" href="javascript:;"><i class="icon-trash icon-white"></i>删除</a>
+            <a class="btn blue thickbox" title='添加新人工预算' href="@Url.Action("Create")?TB_iframe=true&height=350&width=1000"><i class="icon-plus icon-white"></i>新增</a>*@
+
+        </div>
+    </div>
+
+    <div class="span8">
+        @using (Html.BeginForm(null, null, null, FormMethod.Get, new { id = "search" }))
+        { 
+            <div class="dataTables_filter">
+                <label>
+                    <button type="submit" class="btn">搜索 <i class="icon-search"></i></button>
+                </label>
+                <label>
+                    <span>项目名称：</span>
+                    @Html.TextBox("ProjectName", null, new { @class = "m-wrap small" })
+                </label>
+            </div>
+        }
+    </div>
+</div>
+
+
+@using (Html.BeginForm("Delete", "ProjectBasedata", FormMethod.Post, new { id = "mainForm" }))
+{
+    <table class="table table-striped table-hover ">
+        <thead>
+            <tr>
+                <th style="width: 8px;">
+                    <input type="checkbox" id="checkall" class="group-checkable" />
+                </th>
+                @*  <th>
+                    项目ID
+                </th>*@
+                <th>项目名称
+                </th>
+                <th>水费
+                </th>
+                <th>电费
+                </th>
+                <th>临时生产工具费用
+                </th>
+
+                <th>检测费
+                </th>
+                <th>质检费
+                </th>
+                <th>文明施工
+                </th>
+                <th>安全工程
+                </th>
+                <th>材料二次搬运
+                </th>
+                <th>临时设施摊销费
+                </th>
+                <th>其他费用
+                </th>
+                <th>总额
+                </th>
+                <th>备注
+                </th>
+                <th>操作
+                </th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var m in Model)
+            {
+                <tr>
+                    <td>
+                        <input type="checkbox" class="checkboxes" name='ids' value='@m.ID' />
+                    </td>
+                    <td>
+                        @m.ProjectName
+                    </td>
+                    <td>
+                        @m.Water
+                    </td>
+                    <td>
+                        @m.Electric
+                    </td>
+
+                    <td>
+                        @m.TempTool
+                    </td>
+
+                    <td>
+                        @m.Test
+
+                    </td>
+                    <td>
+                        @m.QualityCosts
+
+                    </td>
+                    <td>
+                        @m.Civilization
+
+                    </td>
+                    <td>
+                        @m.Secure
+
+                    </td>
+                    <td>
+                        @m.SecondHand
+
+                    </td>
+                    <td>
+                        @m.TempFacility
+
+                    </td>
+                    <td>
+                        @m.OtherFee
+
+                    </td>
+                     <td>
+                        @m.MeasureTotal
+
+                    </td>
+                     <td>
+                        @m.Remark
+
+                    </td>
+
+                    <td style="width: 70px">
+                        <a class="btn mini purple thickbox" title='编辑分类内容' href="@Url.Action("Edit", new { id = m.ID })?TB_iframe=true&height=530&width=1000">
+                            <i class="icon-edit"></i>
+                            编辑
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+<div class="dataTables_paginate paging_bootstrap pagination">
+    @Html.Pager(Model, new PagerOptions() { ShowTotalItemCount = true })
+</div>
+

@@ -9,8 +9,8 @@ using GMS.Core.Log;
 using GMS.Cms.Contract;
 using GMS.Crm.Contract;
 using GMS.OA.Contract;
-using GMS.Basedata.Contract;
 using GMS.Project.Contract;
+using GMS.BasisData.Contract;
 
 namespace GMS.Web
 {
@@ -47,11 +47,11 @@ namespace GMS.Web
                 return ServiceContext.Current.OAService;
             }
         }
-        public virtual IBasedataService BasedataService
+        public virtual IBasisDataService BasisDataService
         {
             get
             {
-                return ServiceContext.Current.BasedataService;
+                return ServiceContext.Current.BasisDataService;
             }
         }
         public virtual IProjectService ProjectService

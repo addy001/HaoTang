@@ -1,0 +1,103 @@
+﻿@using GMS.Framework.Contract
+@using GMS.Framework.Web.Controls
+@using GMS.Project.Contract
+@using GMS.Web
+@model InsBudgetInfo
+@{
+  
+    Layout = "~/Views/Shared/_Layout.Edit.cshtml";
+}
+@section PageSpecificStyleSheetIncludes{
+    <link rel="stylesheet" type="text/css" href="@Url.StaticFile("/assets/jquery-tags-input/jquery.tagsinput.css")" />
+    <style>
+        .hottag {
+            margin: 2px;
+            padding: 5px;
+            cursor: pointer;
+        }
+        input {
+            text-align:right;
+        }
+    </style>
+    @*<style type="css/text"> 
+          .control-group{
+              width:50%;
+              display:inline;
+              float:left;
+              background-color:#969393 
+          }
+   </style>*@
+}
+@section PageSpecificJavascriptIncludes{
+    <script type="text/javascript">
+      
+        $("input").blur = function () {
+            var v = this.value;
+            format(v);
+        }
+        //$(function(){      
+        //    $("#Warranty")
+
+        //})
+           
+            //千分位表示
+            function format(n) {
+                if (n != null) {
+                    var re = /\d{1,3}(?=(\d{3})+$)/g;
+                    var n1 = n.replace(/^(\d+)((\.\d+)?)$/, function (s, s1, s2) { return s1.replace(re, "$&,") + s2; });
+                    return n1;
+                }
+                else {
+                    n = '*';
+                }
+            }
+
+    </script>
+}
+@section MainContent{
+
+    <div class="portlet-body form-horizontal form-bordered form-row-stripped">
+        <div class="row-fluid">
+
+            <div class="control-group">
+                <label class="control-label">工程保修金：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.InsWarranty, new { @class = "m-wrap ",@onchange="format()" })
+                     <span class="help-inline">元</span>
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.Warranty)</span>
+                   
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label">分包工程：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.InsSubcontracting, new { @class = "m-wrap" })
+                   
+                     <span class="help-inline">元</span>
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.Subcontracting)</span>
+                   
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label">其他费用：</label>
+                <div class="controls">
+                
+                    @Html.TextBoxFor(m => m.InsOtherBudget, new { @class = "m-wrap " })
+                     <span class="help-inline">元</span>
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.OtherBudget)</span>
+                   
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">备注：</label>
+                <div class="controls">
+                    @Html.TextAreaFor(m => m.Remark, new { @class = "m-wrap " })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.OtherBudget)</span>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+}

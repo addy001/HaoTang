@@ -15,6 +15,30 @@ namespace GMS.Web.Admin.Areas.Project.Controllers
         public ActionResult Index(BudgetRequest request)
         {
             var result = this.ProjectService.GetBudgetList(request);
+            foreach (var rt in result)
+            {
+                if (rt.LaborCost != null)
+                {
+                    rt.BudgetTotal += rt.LaborCost.LaborTotal; 
+                }
+                if (rt.MaterialCost != null)
+                {
+                    rt.BudgetTotal += rt.MaterialCost.MaterialTotal;
+                }
+                if (rt.MachineryCost != null)
+                {
+                    rt.BudgetTotal += rt.MachineryCost.MachineryTotal;
+                }
+                if (rt.Measure != null)
+                {
+                    rt.BudgetTotal += rt.Measure.MeasureTotal;
+                }
+                if (rt.Overhead != null)
+                {
+                    rt.BudgetTotal += rt.Overhead.OverheadTotal;
+                }
+                rt.BudgetTotal +=rt.Warranty + rt.Subcontracting + rt.OtherBudget;
+            }
             return View(result);
         }
 
@@ -31,19 +55,18 @@ namespace GMS.Web.Admin.Areas.Project.Controllers
 
         public ActionResult Create()
         {
-            var model = new Budget();
+            var model = new BudgetInfo();
             return View("Edit", model);
-        }
-
-        //
+           
+        }         //
         // POST: /Project/budget/Create
 
         [HttpPost]
         public ActionResult Create(FormCollection collection)
         {
-            var model = new Budget();
+            var model = new BudgetInfo();
 
-            this.TryUpdateModel<Budget>(model);
+            this.TryUpdateModel<BudgetInfo>(model);
             this.ProjectService.SaveBudget(model);
 
             return this.RefreshParent();
@@ -66,7 +89,8 @@ namespace GMS.Web.Admin.Areas.Project.Controllers
         {
 
             var model = this.ProjectService.GetBudget(id);
-            this.TryUpdateModel<Budget>(model);
+            this.TryUpdateModel<BudgetInfo>(model);
+            //model.BudgetTotal = model.Labour + model.MachineryCost + model.Material + model.Overhead + model.Measure + model.Warranty + model.Subcontracting + model.OtherBudget;
 
             this.ProjectService.SaveBudget(model);
 

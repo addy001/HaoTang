@@ -28,6 +28,8 @@ namespace GMS.Account.DAL
                     m.MapLeftKey("UserID");
                     m.MapRightKey("RoleID");
                 });
+            
+             
 
             base.OnModelCreating(modelBuilder);
         }

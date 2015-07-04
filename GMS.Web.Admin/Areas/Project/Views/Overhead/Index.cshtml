@@ -1,0 +1,217 @@
+﻿@using GMS.Framework.Contract
+@using GMS.Framework.Utility
+@using GMS.Framework.Web.Controls
+@using GMS.Project.Contract
+
+@model PagedList<Overhead>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section PageSpecificStyleSheetIncludes{
+    <style type="text/css">
+       
+    </style>
+}
+
+
+
+<div class="row-fluid">
+    <div class="span4">
+       @* <div>
+            <a class="btn red" id="delete" href="javascript:;"><i class="icon-trash icon-white"></i>删除</a>
+            <a class="btn blue thickbox" title='添加新人工预算' href="@Url.Action("Create")?TB_iframe=true&height=350&width=1000"><i class="icon-plus icon-white"></i>新增</a>
+
+        </div>*@
+    </div>
+
+    <div class="span8">
+        @using (Html.BeginForm(null, null, null, FormMethod.Get, new { id = "search" }))
+        { 
+            <div class="dataTables_filter">
+                <label>
+                    <button type="submit" class="btn">搜索 <i class="icon-search"></i></button>
+                </label>
+                <label>
+                    <span>项目名称：</span>
+                    @Html.TextBox("ProjectName", null, new { @class = "m-wrap small" })
+                </label>
+            </div>
+        }
+    </div>
+</div>
+
+
+@using (Html.BeginForm("Delete", "ProjectBasedata", FormMethod.Post, new { id = "mainForm" }))
+{
+    <table class="table table-striped table-hover ">
+        <thead>
+            <tr>
+                <th style="width: 8px;">
+                    <input type="checkbox" id="checkall" class="group-checkable" />
+                </th>
+                <th>项目名称
+                </th>
+                <th>现场管理人员工资
+                </th>
+                <th>奖金
+                </th>
+                <th>业务招待费
+                </th>
+
+                <th>差旅交通费
+                </th>
+                <th>车辆费用
+                </th>
+                <th>办公费
+                </th>
+                <th>福利费
+                </th>
+                <th>社会保障费
+                </th>
+                <th>危险作业意外伤害保险费
+                </th>
+                <th>伙食费
+                </th>
+                <th>员工宿舍费用
+                </th>
+                <th>工会经费
+                </th>
+                <th>职工教育经费
+                </th>
+                <th>劳动保险费
+                </th>
+
+                <th>工程排污费
+                </th>
+                <th>工程定额测定费
+                </th>
+                <th>造价预算费
+                </th>
+                <th>财务费用
+                </th>
+
+                <th>其他费用
+                </th>
+                <th>税金
+                </th>
+                <th>总额
+                </th>
+                <th>备注
+                </th>
+                <th>操作
+                </th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var m in Model)
+            {
+                <tr>
+                    <td>
+                        <input type="checkbox" class="checkboxes" name='ids' value='@m.ID' />
+                    </td>
+                    <td>
+                        @m.ProjectName
+                    </td>
+                    <td>
+                        @m.OPay
+                    </td>
+                    <td>
+                        @m.OBonus
+                    </td>
+
+                    <td>
+                        @m.OEntertainment
+                    </td>
+
+                    <td>
+                        @m.OTraffic
+
+                    </td>
+                    <td>
+                        @m.OVehicle
+
+                    </td>
+                    <td>
+                        @m.OOffice
+
+                    </td>
+                    <td>
+                        @m.OWelfare
+
+                    </td>
+                    <td>
+                        @m.OSecurity
+
+                    </td>
+                    <td>
+                        @m.OAccidentInsurance
+
+                    </td>
+
+                    <td>
+                        @m.OMeals
+
+                    </td>
+                    <td>
+                        @m.OAccommodation
+
+                    </td>
+                    <td>
+                        @m.OUnion
+
+                    </td>
+                    <td>
+                        @m.OEducation
+
+                    </td>
+                    <td>
+                        @m.OlaborInsurance
+
+                    </td>
+
+                    <td>
+                        @m.OSewageCharges
+
+                    </td>
+                    <td>
+                        @m.OMeasuring
+
+                    </td>
+                    <td>
+                        @m.OCost
+
+                    </td>
+                    <td>
+                        @m.OFinance
+                    </td>
+                    <td>
+                        @m.OOther
+                    </td>
+                    <td>
+                        @m.OFare
+
+                    </td>
+                    <td>
+                        @m.OverheadTotal
+
+                    </td>
+                    <td>
+                        @m.Remark
+
+                    </td>
+                    <td style="width: 70px">
+                        <a class="btn mini purple thickbox" title='编辑分类内容' href="@Url.Action("Edit", new { id = m.ID })?TB_iframe=true&height=530&width=1000">
+                            <i class="icon-edit"></i>
+                            编辑
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+<div class="dataTables_paginate paging_bootstrap pagination">
+    @Html.Pager(Model, new PagerOptions() { ShowTotalItemCount = true })
+</div>
+

@@ -15,19 +15,18 @@ namespace GMS.Project.Contract
     {
         public ProjectBasedata()
         {
-
+            //PSDate = DateTime.Now;
         }
         /// <summary>
         /// 
         /// </summary>
         [StringLength(100)]
         [Required]
-        public string ProjectID { get; set; }
-
+        //public new Guid ID { get; set; }
+       
         /// <summary>
         /// 项目名称
-        /// </summary>
-        [Required]
+        /// </summary>       
         public string PName { get; set; }
         /// <summary>
         /// 项目位置
@@ -38,9 +37,9 @@ namespace GMS.Project.Contract
         /// </summary>
         public string PSDate { get; set; }
         /// <summary>
-        /// 项目工期
+        /// 项目结束工期
         /// </summary>
-        public string Pdate { get; set; }
+        public string PEdate { get; set; }
         /// <summary>
         /// 项目负责人
         /// </summary>
@@ -48,6 +47,7 @@ namespace GMS.Project.Contract
         /// <summary>
         /// 电话
         /// </summary>
+         [StringLength(50, ErrorMessage = "电话不能超过50个字")]
         public string PPhone { get; set; }
         /// <summary>
         /// 项目内容
@@ -68,16 +68,18 @@ namespace GMS.Project.Contract
         /// <summary>
         /// 项目报价
         /// </summary>
-        public string PPrice { get; set; }
+        public int PPrice { get; set; }
         /// <summary>
         /// 项目成本预算
         /// </summary>
-        public string PBuget { get; set; }
+        public int PBuget { get; set; }
 
         /// <summary>
         /// 备注
         /// </summary>
         public string PRemark { get; set; }
+
+        
 
     }
 }
