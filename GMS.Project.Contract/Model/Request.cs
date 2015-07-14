@@ -59,7 +59,8 @@ namespace GMS.Project.Contract
 
     public class InsLaborCostRequest : Request
     {
-        public string ProjectName { get; set; }
+        public int ProjectBasedataID { get; set; }
+      
     }
     public class InsMaterialCostRequest : Request
     {

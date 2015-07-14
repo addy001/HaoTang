@@ -9,10 +9,11 @@ namespace GMS.Framework.Contract
     {
         public ModelBase()
         {
-            CreateTime = DateTime.Now;
+            CreateTime = DateTime.Now; 
         }
         
         public virtual int ID { get; set; }
         public virtual DateTime CreateTime { get; set; }
+        
     }
 }

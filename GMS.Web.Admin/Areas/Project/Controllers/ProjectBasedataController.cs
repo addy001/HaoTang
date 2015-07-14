@@ -19,6 +19,7 @@ namespace GMS.Web.Admin.Areas.Project.Controllers
 
         public ActionResult Index(ProjectRequest request)
         {
+            //this.TryUpdateModel<InsLaborCost>(request.InsLaborCost);
             var result = this.ProjectService.GetProjectBasedataList(request);
             return View(result);
         }
@@ -91,41 +92,41 @@ namespace GMS.Web.Admin.Areas.Project.Controllers
        
             //-------------------------------即时管理------------------------------------------------
 
-            var inslabor = new InsLaborCost();
-            inslabor.ProjectID = model.ID;
-            inslabor.ProjectName = model.PName;
-            this.TryUpdateModel<InsLaborCost>(inslabor);
-            this.ProjectService.SaveInsLaborCost(inslabor);
+            //var inslabor = new InsLaborCost();
+            //inslabor.ProjectID = model.ID;
+            //inslabor.ProjectName = model.PName;
+            //this.TryUpdateModel<InsLaborCost>(inslabor);
+            //this.ProjectService.SaveInsLaborCost(inslabor);
 
-            var insmaterial = new InsMaterialCost();
-            insmaterial.ProjectID = model.ID;
-            insmaterial.ProjectName = model.PName;
-            this.TryUpdateModel<InsMaterialCost>(insmaterial);
-            this.ProjectService.SaveInsMaterialCost(insmaterial);
+            //var insmaterial = new InsMaterialCost();
+            //insmaterial.ProjectID = model.ID;
+            //insmaterial.ProjectName = model.PName;
+            //this.TryUpdateModel<InsMaterialCost>(insmaterial);
+            //this.ProjectService.SaveInsMaterialCost(insmaterial);
 
-            var insmachine = new InsMachineryCost();
-            insmachine.ProjectID = model.ID;
-            insmachine.ProjectName = model.PName;
-            this.TryUpdateModel<InsMachineryCost>(insmachine);
-            this.ProjectService.SaveInsMachineryCost(insmachine);
+            //var insmachine = new InsMachineryCost();
+            //insmachine.ProjectID = model.ID;
+            //insmachine.ProjectName = model.PName;
+            //this.TryUpdateModel<InsMachineryCost>(insmachine);
+            //this.ProjectService.SaveInsMachineryCost(insmachine);
 
-            var insmeasure = new InsMeasure();
-            insmeasure.ProjectID = model.ID;
-            insmeasure.ProjectName = model.PName;
-            this.TryUpdateModel<InsMeasure>(insmeasure);
-            this.ProjectService.SaveInsMeasure(insmeasure);
+            //var insmeasure = new InsMeasure();
+            //insmeasure.ProjectID = model.ID;
+            //insmeasure.ProjectName = model.PName;
+            //this.TryUpdateModel<InsMeasure>(insmeasure);
+            //this.ProjectService.SaveInsMeasure(insmeasure);
 
-            var insoverhead = new InsOverhead();
-            insoverhead.ProjectID = model.ID;
-            insoverhead.ProjectName = model.PName;
-            this.TryUpdateModel<InsOverhead>(insoverhead);
-            this.ProjectService.SaveInsOverhead(insoverhead);
+            //var insoverhead = new InsOverhead();
+            //insoverhead.ProjectID = model.ID;
+            //insoverhead.ProjectName = model.PName;
+            //this.TryUpdateModel<InsOverhead>(insoverhead);
+            //this.ProjectService.SaveInsOverhead(insoverhead);
 
-            var insbudgetinfo = new InsBudgetInfo();
-            insbudgetinfo.ProjectID = model.ID;
-            insbudgetinfo.ProjectName = model.PName;
-            this.TryUpdateModel<InsBudgetInfo>(insbudgetinfo);
-            this.ProjectService.SaveInsBudget(insbudgetinfo); 
+            //var insbudgetinfo = new InsBudgetInfo();
+            //insbudgetinfo.ProjectID = model.ID;
+            //insbudgetinfo.ProjectName = model.PName;
+            //this.TryUpdateModel<InsBudgetInfo>(insbudgetinfo);
+            //this.ProjectService.SaveInsBudget(insbudgetinfo); 
 
 
 

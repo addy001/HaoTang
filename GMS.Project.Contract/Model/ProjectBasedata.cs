@@ -17,9 +17,7 @@ namespace GMS.Project.Contract
         {
             //PSDate = DateTime.Now;
         }
-        /// <summary>
-        /// 
-        /// </summary>
+       
         [StringLength(100)]
         [Required]
         //public new Guid ID { get; set; }

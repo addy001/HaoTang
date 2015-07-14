@@ -97,8 +97,7 @@ namespace GMS.Project.Contract
         public virtual Overhead Overhead { get; set; }
         public virtual MachineryCost MachineryCost { get; set; }
         public virtual MaterialCost MaterialCost { get; set; }
-        public virtual Measure Measure { get; set; }
-     
+        public virtual Measure Measure { get; set; }    
 
         #endregion Model
     }

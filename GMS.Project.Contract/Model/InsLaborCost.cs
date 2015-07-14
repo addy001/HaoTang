@@ -22,61 +22,65 @@ namespace GMS.Project.Contract
         #region Model       
         /// <summary>
         /// 项目Id
-        /// </summary>
-        //[StringLength(100)]
-        //[Required]
-        public int ProjectID { get; set; }
+        /// </summary>       
+        public int ProjectBasedataID { get; set; }
         /// <summary>
-        /// 项目名称
-        /// </summary>
-        public string ProjectName { get; set; }
+        /// 预算日期
+
+        [Required(ErrorMessage = "预算日期不能为空")]
+        public string Date { get; set; }
+       
         /// <summary>
         /// 泥瓦工费用
         /// </summary>
-        public int Masons { get; set; }
+        public int? Masons { get; set; }
         /// <summary>
         /// 拆除人工费用
         /// </summary>
-        public int TearDown { get; set; }
+        public int? TearDown { get; set; }
         /// <summary>
         /// 木工费用
         /// </summary>
-        public int Carpenter { get; set; }
+        public int? Carpenter { get; set; }
         /// <summary>
         /// 水电工费用
         /// </summary>
-        public int Plumbers { get; set; }
+        public int? Plumbers { get; set; }
         /// <summary>
         /// 油漆工费用
         /// </summary>
-        public int Painter { get; set; }
+        public int? Painter { get; set; }
         /// <summary>
         /// 电焊工费用
         /// </summary>
-        public int ELectricWelder { get; set; }
+        public int? ELectricWelder { get; set; }
         /// <summary>
         /// 钢筋工费用
         /// </summary>
-        public int Steel { get; set; }
+        public int? Steel { get; set; }
         /// <summary>
         /// 搬运工费用
         /// </summary>
-        public int Transportor { get; set; }
+        public int? Transportor { get; set; }
         /// <summary>
         /// 垃圾清理工费
         /// </summary>
-        public int Cleaner { get; set; }
+        public int? Cleaner { get; set; }
         /// <summary>
         /// 其他费用
         /// </summary>
-        public int OtherLabor { get; set; }
+        public int? OtherLabor { get; set; }
         /// <summary>
         /// 其他费用说明
         /// </summary>
-        public string OtherDetail { get; set; }
+        public string Remark { get; set; }
 
-        public int LaborTotal { get; set; }     
-      
+        public int LaborTotal { get; set; }
+
+
+
+        public virtual ProjectBasedata ProjectBasedata { get; set; }
+
         #endregion Model
 
     }

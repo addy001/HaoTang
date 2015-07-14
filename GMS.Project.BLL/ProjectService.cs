@@ -580,11 +580,12 @@ namespace GMS.Project.BLL
             request = request ?? new InsLaborCostRequest();
             using (var dbContext = new ProjectDbContext())
             {
-                IQueryable<InsLaborCost> InsLaborCost = dbContext.InsLaborCosts;
-
-                if (!string.IsNullOrEmpty(request.ProjectName))
-                    InsLaborCost = InsLaborCost.Where(u => u.ProjectName.Contains(request.ProjectName));
-
+                IQueryable<InsLaborCost> InsLaborCost = dbContext.InsLaborCosts.Include("ProjectBasedata") ;
+               
+                //if (!string.IsNullOrEmpty(request.ProjectBasedataID))
+                    if (request.ProjectBasedataID>0)
+                    InsLaborCost = InsLaborCost.Where(d => d.ProjectBasedataID == request.ProjectBasedataID);
+                
                 return InsLaborCost.OrderByDescending(u => u.ID).ToPagedList(request.PageIndex, request.PageSize);
             }
         }

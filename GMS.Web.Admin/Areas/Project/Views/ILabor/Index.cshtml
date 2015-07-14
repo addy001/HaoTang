@@ -12,16 +12,38 @@
        
     </style>
 }
+@section PageSpecificJavascriptIncludes{
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            var dates = $("#startDate, #endDate").datepicker({
+                dateFormat: "yy-mm-dd",
+                defaultDate: "+1w",
+                changeMonth: true,
+                numberOfMonths: 2,
+                onSelect: function (selectedDate) {
+                    var option = this.id == "startDate" ? "minDate" : "maxDate",
+					instance = $(this).data("datepicker"),
+					date = $.datepicker.parseDate(
+						instance.settings.dateFormat ||
+						$.datepicker._defaults.dateFormat,
+						selectedDate, instance.settings);
+                    dates.not(this).datepicker("option", option, date);
+                }
+            });})
+
+    </script>
+
+}
 
 
-
-<div class="row-fluid" >
+<div class="row-fluid">
     <div class="span4">
-     @* <div>
+        <div>
             <a class="btn red" id="delete" href="javascript:;"><i class="icon-trash icon-white"></i>删除</a>
-            <a class="btn blue thickbox" title='添加新人工预算' href="@Url.Action("Create")?TB_iframe=true&height=350&width=450"><i class="icon-plus icon-white"></i>新增</a>
+            <a class="btn blue thickbox" title='添加人工预算' href="@Url.Action("Create")?TB_iframe=true&height=450&width=900"><i class="icon-plus icon-white"></i>新增</a>
 
-        </div>*@
+        </div>
     </div>
 
     <div class="span8">
@@ -32,9 +54,19 @@
                     <button type="submit" class="btn">搜索 <i class="icon-search"></i></button>
                 </label>
                 <label>
-                    <span>项目名称：</span>
-                    @Html.TextBox("ProjectName", null, new { @class = "m-wrap small" })
+                    <span>项目：</span>
+                    @Html.DropDownList("ProjectBasedataID", "所有项目")
                 </label>
+
+         @*      
+                <label>
+                    <span>结束时间：</span>
+                    @Html.TextBox("endDate", null, new { @class = "m-wrap small" })
+                </label>
+                 <label>
+                    <span>开始时间：</span>
+                    @Html.TextBox("startDate", null, new { @class = "m-wrap small" })
+                </label>*@
             </div>
         }
     </div>
@@ -48,8 +80,10 @@
             <tr>
                 <th style="width: 8px;">
                     <input type="checkbox" id="checkall" class="group-checkable" />
-                </th>             
+                </th>
                 <th>项目名称
+                </th>
+                <th>年月
                 </th>
                 <th>泥瓦工费用
                 </th>
@@ -66,20 +100,16 @@
                 </th>
                 <th>钢筋工费用
                 </th>
-                 <th>搬运工费用
+                <th>搬运工费用
                 </th>
-                <th>
-                    垃圾清理工费
+                <th>垃圾清理工费
                 </th>
-                <th>
-                    其他费用
+                <th>其他费用
                 </th>
-               
-                <th>
-                    总额
+
+                <th>总额
                 </th>
-                 <th>
-                    备注
+                <th>备注
                 </th>
                 <th>操作
                 </th>
@@ -92,60 +122,70 @@
                 <tr>
                     <td>
                         <input type="checkbox" class="checkboxes" name='ids' value='@m.ID' />
-                    </td>                  
-                    <td>
-                        @m.ProjectName
                     </td>
                     <td>
-                        @m.Masons
+                        @m.ProjectBasedata.PName
                     </td>
                     <td>
-                        @m.TearDown
+                        @m.Date
+                    </td>
+                    <td>
+                        @(m.Masons == null ? "未预算" : ((int)m.Masons).ToString("N0"))
+
+
+                    </td>
+                    <td>
+                        @(m.TearDown == null ? "未预算" : ((int)m.TearDown).ToString("N0"))
+
                     </td>
 
                     <td>
-                        @m.Carpenter
+                        @(m.Carpenter == null ? "未预算" : ((int)m.Carpenter).ToString("N0"))
+
                     </td>
 
                     <td>
-                        @m.Plumbers
+
+                        @(m.Plumbers == null ? "未预算" : ((int)m.Plumbers).ToString("N0"))
 
                     </td>
-                     <td>
-                        @m.Painter
+                    <td>
+
+                        @(m.Painter == null ? "未预算" : ((int)m.Painter).ToString("N0"))
 
                     </td>
-                     <td>
-                        @m.ELectricWelder
+                    <td>
+
+                        @(m.ELectricWelder == null ? "未预算" : ((int)m.ELectricWelder).ToString("N0"))
 
                     </td>
-                     <td>
-                        @m.Steel
+                    <td>
 
+                        @(m.Steel == null ? "未预算" : ((int)m.Steel).ToString("N0"))
                     </td>
-                     <td>
-                        @m.Transportor
+                    <td>
 
+                        @(m.Transportor == null ? "未预算" : ((int)m.Transportor).ToString("N0"))
                     </td>
-                     <td>
-                        @m.Cleaner
+                    <td>
 
+                        @(m.Cleaner == null ? "未预算" : ((int)m.Cleaner).ToString("N0"))
                     </td>
-                     <td>
-                        @m.OtherLabor
+                    <td>
 
+                        @(m.OtherLabor == null ? "未预算" : ((int)m.OtherLabor).ToString("N0"))
                     </td>
-                   
+
                     <td>
                         @m.LaborTotal
                     </td>
-                     <td>
-                        @m.OtherDetail
+                    <td>
+                        @m.Remark
                     </td>
 
 
                     <td style="width: 70px">
-                        <a class="btn mini purple thickbox" title='编辑分类内容' href="@Url.Action("Edit", new { id = m.ID })?TB_iframe=true&height=530&width=1000">
+                        <a class="btn mini purple thickbox" title='编辑分类内容' href="@Url.Action("Edit", new { id = m.ID })?TB_iframe=true&height=450&width=900">
                             <i class="icon-edit"></i>
                             编辑
                         </a>
