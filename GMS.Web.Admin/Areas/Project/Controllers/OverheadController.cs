@@ -59,7 +59,61 @@ namespace GMS.Web.Admin.Areas.Project.Controllers
         {
             var model = this.ProjectService.GetOverhead(id);
             this.TryUpdateModel<Overhead>(model);
-            model.OverheadTotal = model.OPay + model.OBonus + model.OEntertainment + model.OTraffic + model.OVehicle + model.OOffice + model.OWelfare + model.OSecurity + model.OAccidentInsurance + model.OHousingFund + model.OMeals + model.OAccommodation + model.OUnion + model.OEducation + model.OlaborInsurance + model.OFare + model.OSewageCharges + model.OMeasuring + model.OCost + model.OFinance + model.OInvisible + model.OOther;
+            model.OverheadTotal = 0;
+            if (model.OPay != null)
+                model.OverheadTotal += (int)model.OPay;
+            if (model.OBonus != null)
+                model.OverheadTotal += (int)model.OBonus;
+            if (model.OEntertainment != null)
+                model.OverheadTotal += (int)model.OEntertainment;
+            if (model.OTraffic != null)
+                model.OverheadTotal += (int)model.OTraffic;
+            if (model.OVehicle != null)
+                model.OverheadTotal += (int)model.OVehicle;
+            if (model.OOffice != null)
+                model.OverheadTotal += (int)model.OOffice;
+            if (model.OWelfare != null)
+                model.OverheadTotal += (int)model.OWelfare;
+
+            if (model.OSecurity != null)
+                model.OverheadTotal += (int)model.OSecurity;
+            if (model.OAccidentInsurance != null)
+                model.OverheadTotal += (int)model.OAccidentInsurance;
+            if (model.OHousingFund != null)
+                model.OverheadTotal += (int)model.OHousingFund;
+            if (model.OMeals != null)
+                model.OverheadTotal += (int)model.OMeals;
+            if (model.OAccommodation != null)
+                model.OverheadTotal += (int)model.OAccommodation;
+            if (model.OUnion != null)
+                model.OverheadTotal += (int)model.OUnion;
+            if (model.OEducation != null)
+                model.OverheadTotal += (int)model.OEducation;
+
+
+            if (model.OlaborInsurance != null)
+                model.OverheadTotal += (int)model.OlaborInsurance;
+
+            if (model.OFare != null)
+                model.OverheadTotal += (int)model.OFare;
+
+            if (model.OSewageCharges != null)
+                model.OverheadTotal += (int)model.OSewageCharges;
+
+            if (model.OMeasuring != null)
+                model.OverheadTotal += (int)model.OMeasuring;
+
+            if (model.OCost != null)
+                model.OverheadTotal += (int)model.OCost;
+
+            if (model.OFinance != null)
+                model.OverheadTotal += (int)model.OFinance;
+
+            if (model.OInvisible != null)
+                model.OverheadTotal += (int)model.OInvisible;
+
+            if (model.OOther != null)
+                model.OverheadTotal += (int)model.OOther; 
             this.ProjectService.SaveOverhead(model);
 
             return this.RefreshParent();

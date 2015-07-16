@@ -59,8 +59,29 @@ namespace GMS.Web.Admin.Areas.Project.Controllers
         {
             var model = this.ProjectService.GetMeasure(id);
             this.TryUpdateModel<Measure>(model);
-            model.MeasureTotal = model.Water + model.Electric + model.TempTool + model.TempFacility + model.Secure + model.Test + model.QualityCosts + model.Civilization + model.SecondHand + model.OtherFee;
+            model.MeasureTotal = 0;
+            if (model.Water != null)
+                model.MeasureTotal += (int)model.Water;
+            if (model.Electric != null)
+                model.MeasureTotal += (int)model.Electric;
+            if (model.TempTool != null)
+                model.MeasureTotal += (int)model.TempTool;
 
+            if (model.Test != null)
+                model.MeasureTotal += (int)model.Test;
+            if (model.QualityCosts != null)
+                model.MeasureTotal += (int)model.QualityCosts;
+            if (model.Civilization != null)
+                model.MeasureTotal += (int)model.Civilization;
+
+            if (model.Secure != null)
+                model.MeasureTotal += (int)model.Secure;
+            if (model.SecondHand != null)
+                model.MeasureTotal += (int)model.SecondHand;
+            if (model.TempFacility != null)
+                model.MeasureTotal += (int)model.TempFacility;
+            if (model.OtherFee != null)
+                model.MeasureTotal += (int)model.OtherFee; 
             this.ProjectService.SaveMeasure(model);
 
             return this.RefreshParent();

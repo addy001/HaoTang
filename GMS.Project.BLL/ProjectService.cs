@@ -30,7 +30,10 @@ namespace GMS.Project.BLL
 
                 if (!string.IsNullOrEmpty(request.PName))
                     ProjectBasedatas = ProjectBasedatas.Where(u => u.PName.Contains(request.PName));
-
+                if (!string.IsNullOrEmpty(request.Status))
+                    ProjectBasedatas = ProjectBasedatas.Where(u => u.Status.Contains(request.Status));
+                if (!string.IsNullOrEmpty(request.Fund))
+                    ProjectBasedatas = ProjectBasedatas.Where(u => u.Fund.Contains(request.Fund));
                 return ProjectBasedatas.OrderByDescending(u => u.ID).ToPagedList(request.PageIndex, request.PageSize);
 
 
@@ -524,7 +527,10 @@ namespace GMS.Project.BLL
         {
             using (var dbContext = new ProjectDbContext())
             {
-                return dbContext.Find<InsBudgetInfo>(id);
+                var model = dbContext.Find<InsBudgetInfo>(id);
+                model.ProjectBasedata = GetProjectBasedata(model.ProjectBasedataID);
+                return model;
+                //return dbContext.Find<InsBudgetInfo>(id);
             }
         }
 
@@ -533,9 +539,9 @@ namespace GMS.Project.BLL
             request = request ?? new InsBudgetRequest();
             using (var dbContext = new ProjectDbContext())
             {
-                IQueryable<InsBudgetInfo> InsBudgetInfos = dbContext.InsBudgetInfos.Include("InsLaborCost").Include("InsOverhead").Include("InsMachineryCost").Include("InsMaterialCost").Include("InsMeasure");
-                if (!string.IsNullOrEmpty(request.ProjectName))
-                    InsBudgetInfos = InsBudgetInfos.Where(u => u.ProjectName.Contains(request.ProjectName));
+                IQueryable<InsBudgetInfo> InsBudgetInfos = dbContext.InsBudgetInfos.Include("ProjectBasedata");
+                if (request.ProjectBasedataID > 0)
+                    InsBudgetInfos = InsBudgetInfos.Where(d => d.ProjectBasedataID == request.ProjectBasedataID);
                 return InsBudgetInfos.OrderByDescending(u => u.ID).ToPagedList(request.PageIndex, request.PageSize);
             }
         }
@@ -571,7 +577,19 @@ namespace GMS.Project.BLL
         {
             using (var dbContext = new ProjectDbContext())
             {
-                return dbContext.Find<InsLaborCost>(id);
+                  //dbContext.Find.InsLaborCosts.Where((d => d.ID == id);
+                //var q = from L in dbContext.InsLaborCosts
+                //        join P in dbContext.ProjectBasedatas on L.ProjectBasedataID equals P.ID
+                //        //orderby n.AddTime descending
+                //        select L;
+                       
+                //return q.ToList();
+                var model = dbContext.Find<InsLaborCost>(id);
+                model.ProjectBasedata = GetProjectBasedata(model.ProjectBasedataID);
+                return model;
+
+               
+              
             }
         }
 
@@ -632,7 +650,10 @@ namespace GMS.Project.BLL
         {
             using (var dbContext = new ProjectDbContext())
             {
-                return dbContext.Find<InsMaterialCost>(id);
+                var model = dbContext.Find<InsMaterialCost>(id);
+                model.ProjectBasedata = GetProjectBasedata(model.ProjectBasedataID);
+                return model;
+                //return dbContext.Find<InsMaterialCost>(id);
             }
         }
 
@@ -641,10 +662,10 @@ namespace GMS.Project.BLL
             request = request ?? new InsMaterialCostRequest();
             using (var dbContext = new ProjectDbContext())
             {
-                IQueryable<InsMaterialCost> InsMaterialCost = dbContext.InsMaterialCosts;
+                IQueryable<InsMaterialCost> InsMaterialCost = dbContext.InsMaterialCosts.Include("ProjectBasedata");
 
-                if (!string.IsNullOrEmpty(request.ProjectName))
-                    InsMaterialCost = InsMaterialCost.Where(u => u.ProjectName.Contains(request.ProjectName));
+                if (request.ProjectBasedataID > 0)
+                    InsMaterialCost = InsMaterialCost.Where(d => d.ProjectBasedataID == request.ProjectBasedataID);
 
                 return InsMaterialCost.OrderByDescending(u => u.ID).ToPagedList(request.PageIndex, request.PageSize);
             }
@@ -694,7 +715,10 @@ namespace GMS.Project.BLL
         {
             using (var dbContext = new ProjectDbContext())
             {
-                return dbContext.Find<InsMachineryCost>(id);
+                var model = dbContext.Find<InsMachineryCost>(id);
+                model.ProjectBasedata = GetProjectBasedata(model.ProjectBasedataID);
+                return model;
+                //return dbContext.Find<InsMachineryCost>(id);
             }
         }
 
@@ -703,10 +727,10 @@ namespace GMS.Project.BLL
             request = request ?? new InsMachineryCostRequest();
             using (var dbContext = new ProjectDbContext())
             {
-                IQueryable<InsMachineryCost> InsMachineryCost = dbContext.InsMachineryCosts;
+                IQueryable<InsMachineryCost> InsMachineryCost = dbContext.InsMachineryCosts.Include("ProjectBasedata");
 
-                if (!string.IsNullOrEmpty(request.ProjectName))
-                    InsMachineryCost = InsMachineryCost.Where(u => u.ProjectName.Contains(request.ProjectName));
+                if (request.ProjectBasedataID > 0)
+                    InsMachineryCost = InsMachineryCost.Where(d => d.ProjectBasedataID == request.ProjectBasedataID);
 
                 return InsMachineryCost.OrderByDescending(u => u.ID).ToPagedList(request.PageIndex, request.PageSize);
             }
@@ -755,7 +779,10 @@ namespace GMS.Project.BLL
         {
             using (var dbContext = new ProjectDbContext())
             {
-                return dbContext.Find<InsMeasure>(id);
+                var model = dbContext.Find<InsMeasure>(id);
+                model.ProjectBasedata = GetProjectBasedata(model.ProjectBasedataID);
+                return model;
+                //return dbContext.Find<InsMeasure>(id);
             }
         }
 
@@ -764,10 +791,10 @@ namespace GMS.Project.BLL
             request = request ?? new InsMeasureRequest();
             using (var dbContext = new ProjectDbContext())
             {
-                IQueryable<InsMeasure> InsMeasure = dbContext.InsMeasures;
+                IQueryable<InsMeasure> InsMeasure = dbContext.InsMeasures.Include("ProjectBasedata");
 
-                if (!string.IsNullOrEmpty(request.ProjectName))
-                    InsMeasure = InsMeasure.Where(u => u.ProjectName.Contains(request.ProjectName));
+                if (request.ProjectBasedataID > 0)
+                    InsMeasure = InsMeasure.Where(d => d.ProjectBasedataID == request.ProjectBasedataID);
 
                 return InsMeasure.OrderByDescending(u => u.ID).ToPagedList(request.PageIndex, request.PageSize);
             }
@@ -805,7 +832,7 @@ namespace GMS.Project.BLL
         {
             using (var dbContext = new ProjectDbContext())
             {
-                dbContext.InsMachineryCosts.Where(u => ids.Contains(u.ID)).Delete();
+                dbContext.InsMeasures.Where(u => ids.Contains(u.ID)).Delete();
             }
         }
         #endregion
@@ -816,7 +843,10 @@ namespace GMS.Project.BLL
         {
             using (var dbContext = new ProjectDbContext())
             {
-                return dbContext.Find<InsOverhead>(id);
+                var model = dbContext.Find<InsOverhead>(id);
+                model.ProjectBasedata = GetProjectBasedata(model.ProjectBasedataID);
+                return model;
+                //return dbContext.Find<InsOverhead>(id);
             }
         }
 
@@ -825,10 +855,10 @@ namespace GMS.Project.BLL
             request = request ?? new InsOverheadRequest();
             using (var dbContext = new ProjectDbContext())
             {
-                IQueryable<InsOverhead> InsOverhead = dbContext.InsOverheads;
+                IQueryable<InsOverhead> InsOverhead = dbContext.InsOverheads.Include("ProjectBasedata");
 
-                if (!string.IsNullOrEmpty(request.ProjectName))
-                    InsOverhead = InsOverhead.Where(u => u.ProjectName.Contains(request.ProjectName));
+                if (request.ProjectBasedataID > 0)
+                    InsOverhead = InsOverhead.Where(d => d.ProjectBasedataID == request.ProjectBasedataID);
 
                 return InsOverhead.OrderByDescending(u => u.ID).ToPagedList(request.PageIndex, request.PageSize);
             }

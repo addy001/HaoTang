@@ -60,15 +60,15 @@ namespace GMS.Project.Contract
         /// <summary>
         /// 工程保修金
         /// </summary>
-        public int Warranty { get; set; }
+        public int? Warranty { get; set; }
         /// <summary>
         /// 分包工程
         /// </summary>
-        public int Subcontracting { get; set; }
+        public int? Subcontracting { get; set; }
         /// <summary>
         /// 其他费用
         /// </summary>
-        public int OtherBudget { get; set; }
+        public int? OtherBudget { get; set; }
         /// <summary>
         /// 备注
         /// </summary>

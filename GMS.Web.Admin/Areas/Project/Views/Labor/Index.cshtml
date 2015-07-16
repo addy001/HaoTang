@@ -15,9 +15,9 @@
 
 
 
-<div class="row-fluid" >
+<div class="row-fluid">
     <div class="span4">
-     @* <div>
+        @* <div>
             <a class="btn red" id="delete" href="javascript:;"><i class="icon-trash icon-white"></i>删除</a>
             <a class="btn blue thickbox" title='添加新人工预算' href="@Url.Action("Create")?TB_iframe=true&height=350&width=450"><i class="icon-plus icon-white"></i>新增</a>
 
@@ -48,7 +48,7 @@
             <tr>
                 <th style="width: 8px;">
                     <input type="checkbox" id="checkall" class="group-checkable" />
-                </th>             
+                </th>
                 <th>项目名称
                 </th>
                 <th>泥瓦工费用
@@ -66,20 +66,16 @@
                 </th>
                 <th>钢筋工费用
                 </th>
-                 <th>搬运工费用
+                <th>搬运工费用
                 </th>
-                <th>
-                    垃圾清理工费
+                <th>垃圾清理工费
                 </th>
-                <th>
-                    其他费用
+                <th>其他费用
                 </th>
-               
-                <th>
-                    总额
+
+                <th>总额
                 </th>
-                 <th>
-                    备注
+                <th>备注
                 </th>
                 <th>操作
                 </th>
@@ -92,60 +88,55 @@
                 <tr>
                     <td>
                         <input type="checkbox" class="checkboxes" name='ids' value='@m.ID' />
-                    </td>                  
+                    </td>
                     <td>
                         @m.ProjectName
                     </td>
                     <td>
-                        @m.Masons
+                        @(m.Masons == null ? "未预算" : ((int)m.Masons).ToString("N0"))
                     </td>
                     <td>
-                        @m.TearDown
+                        @(m.TearDown == null ? "未预算" : ((int)m.TearDown).ToString("N0"))
+                    </td>
+                    <td>
+                        @(m.Carpenter == null ? "未预算" : ((int)m.Carpenter).ToString("N0"))
+                    </td>
+                    <td>
+                        @(m.Plumbers == null ? "未预算" : ((int)m.Plumbers).ToString("N0"))
+                    </td>
+                    <td>
+                        @(m.Painter == null ? "未预算" : ((int)m.Painter).ToString("N0"))
+                    </td>
+                    <td>
+                        @(m.ELectricWelder == null ? "未预算" : ((int)m.ELectricWelder).ToString("N0"))
+                    </td>
+                    <td>
+
+                        @(m.Steel == null ? "未预算" : ((int)m.Steel).ToString("N0"))
+                    </td>
+                    <td>
+
+                        @(m.Transportor == null ? "未预算" : ((int)m.Transportor).ToString("N0"))
+                    </td>
+                    <td>
+
+                        @(m.Cleaner == null ? "未预算" : ((int)m.Cleaner).ToString("N0"))
+                    </td>
+                    <td>
+
+                        @(m.OtherLabor == null ? "未预算" : ((int)m.OtherLabor).ToString("N0"))
                     </td>
 
                     <td>
-                        @m.Carpenter
+                        @((m.LaborTotal).ToString("N0"))
                     </td>
-
                     <td>
-                        @m.Plumbers
-
-                    </td>
-                     <td>
-                        @m.Painter
-
-                    </td>
-                     <td>
-                        @m.ELectricWelder
-
-                    </td>
-                     <td>
-                        @m.Steel
-
-                    </td>
-                     <td>
-                        @m.Transportor
-
-                    </td>
-                     <td>
-                        @m.Cleaner
-
-                    </td>
-                     <td>
-                        @m.OtherLabor
-
-                    </td>
-                   
-                    <td>
-                        @m.LaborTotal
-                    </td>
-                     <td>
                         @m.OtherDetail
                     </td>
 
 
                     <td style="width: 70px">
-                        <a class="btn mini purple thickbox" title='编辑分类内容' href="@Url.Action("Edit", new { id = m.ID })?TB_iframe=true&height=530&width=1000">
+                        <a class="btn mini purple thickbox" title='编辑人工费预算' href="@Url.Action("Edit", new { id = m.ID })?TB_iframe=true&height=400&width=900">
                             <i class="icon-edit"></i>
                             编辑
                         </a>

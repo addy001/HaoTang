@@ -123,96 +123,96 @@
                     <td>
                         @m.ProjectName
                     </td>
-                    <td>
-                        @m.MSteel
+                   <td>
+                             @(m.MSteel == null ? "未预算" : ((int)m.MSteel).ToString("N0"))
                     </td>
                     <td>
-                        @m.MHose
-                    </td>
-
-                    <td>
-                        @m.MCement
+                           @(m.MHose == null ? "未预算" : ((int)m.MHose).ToString("N0"))
                     </td>
 
                     <td>
-                        @m.MGrayOil
-
-                    </td>
-                    <td>
-                        @m.MWire
-
-                    </td>
-                    <td>
-                        @m.MWood
-
-                    </td>
-                    <td>
-                        @m.MCeramicTile
-
-                    </td>
-                    <td>
-                        @m.MWindowsDoors
-
-                    </td>
-                    <td>
-                        @m.MGalss
-
+                         @(m.MCement == null ? "未预算" : ((int)m.MCement).ToString("N0"))
                     </td>
 
                     <td>
-                        @m.MHardware
+                          @(m.MGrayOil == null ? "未预算" : ((int)m.MGrayOil).ToString("N0"))
 
                     </td>
                     <td>
-                        @m.MElectric
+                       @(m.MWire == null ? "未预算" : ((int)m.MWire).ToString("N0"))
 
                     </td>
                     <td>
-                        @m.MConcrete
+                     
+                              @(m.MWood == null ? "未预算" : ((int)m.MWood).ToString("N0"))
+                    </td>
+                    <td>
+                         @(m.MCeramicTile == null ? "未预算" : ((int)m.MCeramicTile).ToString("N0"))
 
                     </td>
                     <td>
-                        @m.MBrick
+                         @(m.MWindowsDoors == null ? "未预算" : ((int)m.MWindowsDoors).ToString("N0"))
 
                     </td>
                     <td>
-                        @m.MTemplate
+                            @(m.MGalss == null ? "未预算" : ((int)m.MGalss).ToString("N0"))
+
+                    </td>
+
+                    <td>
+                        @(m.MHardware == null ? "未预算" : ((int)m.MHardware).ToString("N0"))
 
                     </td>
                     <td>
-                        @m.MAluminum
+                          @(m.MElectric == null ? "未预算" : ((int)m.MElectric).ToString("N0"))
 
                     </td>
                     <td>
-                        @m.MTest
+                            @(m.MConcrete == null ? "未预算" : ((int)m.MConcrete).ToString("N0"))
 
                     </td>
                     <td>
-                        @m.MMortar
+                           @(m.MBrick == null ? "未预算" : ((int)m.MBrick).ToString("N0"))
 
                     </td>
                     <td>
-                        @m.MFireAirSmoke
+                           @(m.MTemplate == null ? "未预算" : ((int)m.MTemplate).ToString("N0"))
 
                     </td>
                     <td>
-                        @m.MTurnoverRent
+                          @(m.MAluminum == null ? "未预算" : ((int)m.MAluminum).ToString("N0"))
+
                     </td>
                     <td>
-                        @m.MTurnovers
+                          @(m.MTest == null ? "未预算" : ((int)m.MTest).ToString("N0"))
+
                     </td>
                     <td>
-                        @m.MOther
+                        @(m.MMortar == null ? "未预算" : ((int)m.MMortar).ToString("N0"))
+
                     </td>
                     <td>
-                        @m.MaterialTotal
+                         @(m.MFireAirSmoke == null ? "未预算" : ((int)m.MFireAirSmoke).ToString("N0"))
+
+                    </td>
+                    <td>
+                          @(m.MOther == null ? "未预算" : ((int)m.MTurnoverRent).ToString("N0"))
+                    </td>
+                    <td>
+                          @(m.MOther == null ? "未预算" : ((int)m.MTurnovers).ToString("N0"))
+                    </td>
+                    <td>
+                       @(m.MOther == null ? "未预算" : ((int)m.MOther).ToString("N0"))
+                    </td>
+                    <td>
+                         @((m.MaterialTotal).ToString("N0"))
                     </td>
                     <td>
                         @m.Remark
                     </td>
 
                     <td style="width: 70px">
-                        <a class="btn mini purple thickbox" title='编辑分类内容' href="@Url.Action("Edit", new { id = m.ID })?TB_iframe=true&height=530&width=1000">
+                        <a class="btn mini purple thickbox" title='编辑材料预算' href="@Url.Action("Edit", new { id = m.ID })?TB_iframe=true&height=650&width=900">
                             <i class="icon-edit"></i>
                             编辑
                         </a>

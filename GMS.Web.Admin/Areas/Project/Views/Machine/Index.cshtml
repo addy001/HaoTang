@@ -93,35 +93,37 @@
                     <td>
                         @m.ProjectName
                     </td>
-                    <td>
-                        @m.Transport
+                     <td>
+                         @(m.Transport == null ? "未预算" : ((int)m.Transport).ToString("N0"))
                     </td>
                     <td>
-                        @m.Operating
-                    </td>
-
-                    <td>
-                        @m.Repair
+                          @(m.Operating == null ? "未预算" : ((int)m.Operating).ToString("N0"))
+                       
                     </td>
 
                     <td>
-                        @m.Fuel
+                            @(m.Repair == null ? "未预算" : ((int)m.Repair).ToString("N0"))
+                      
+                    </td>
+
+                    <td>
+                         @(m.Fuel == null ? "未预算" : ((int)m.Fuel).ToString("N0"))
 
                     </td>
                      <td>
-                        @m.Depreciation
+                      @(m.Depreciation == null ? "未预算" : ((int)m.Depreciation).ToString("N0"))
 
                     </td>                     
                      <td>
-                        @m.TravelTax
+                       @(m.TravelTax == null ? "未预算" : ((int)m.TravelTax).ToString("N0"))
 
                     </td>
                      <td>
-                        @m.OtherFee
+                          @(m.OtherFee == null ? "未预算" : ((int)m.OtherFee).ToString("N0"))
 
                     </td>
                     <td>
-                        @m.MachineryTotal
+                          @((m.MachineryTotal).ToString("N0"))
                     </td>
                      <td>
                         @m.Remark
@@ -131,7 +133,7 @@
 
 
                     <td style="width: 70px">
-                        <a class="btn mini purple thickbox" title='编辑分类内容' href="@Url.Action("Edit", new { id = m.ID })?TB_iframe=true&height=530&width=1000">
+                        <a class="btn mini purple thickbox" title='编辑机械预算' href="@Url.Action("Edit", new { id = m.ID })?TB_iframe=true&height=350&width=900">
                             <i class="icon-edit"></i>
                             编辑
                         </a>

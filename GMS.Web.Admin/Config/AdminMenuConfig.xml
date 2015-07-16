@@ -48,7 +48,7 @@
       <AdminMenuArray>
         <AdminMenu name="项目基本信息" url="/Project/ProjectBasedata/Index" info="项目基本信息的管理" permission="ProjectManage_Basedata" />
         <AdminMenu name="项目预算管理" url="/Project/Budget/Index" info="项目预算管理" permission="ProjectManage_Budget" />
-        <AdminMenu name="即时项目预算管理" url="/Project/IBudget/Index" info="项目预算即时管理" permission="ProjectManage_InsBudget" />
+      
       </AdminMenuArray>
     </AdminMenuGroup>
 
@@ -63,7 +63,8 @@
     </AdminMenuGroup>
     
     <AdminMenuGroup name="项目即时管理" icon="icon-hdd">
-      <AdminMenuArray>      
+      <AdminMenuArray>
+          <AdminMenu name="即时项目预算管理" url="/Project/IBudget/Index" info="项目预算即时管理" permission="ProjectManage_InsBudget" />
         <AdminMenu name="即时人工预算" url="/Project/ILabor/Index" info="人工预算即时管理" permission="ProjectManage_InsLabor" />
         <AdminMenu name="即时材料预算" url="/Project/IMaterial/Index" info="材料预算即时管理" permission="ProjectManage_InsMaterial" />
         <AdminMenu name="即时机械使用预算" url="/Project/IMachine/Index" info="机械使用预算即时管理" permission="ProjectManage_InsMachine" />

@@ -34,7 +34,7 @@ namespace GMS.Project.Contract
         /// <summary>
         /// 水费
         /// </summary>
-        public int Water
+        public int? Water
         {
             get;
             set;
@@ -42,7 +42,7 @@ namespace GMS.Project.Contract
         /// <summary>
         /// 电费
         /// </summary>
-        public int Electric
+        public int? Electric
         {
             get;
             set;
@@ -50,7 +50,7 @@ namespace GMS.Project.Contract
         /// <summary>
         /// 临时生产工具费用
         /// </summary>
-        public int TempTool
+        public int? TempTool
         {
             get;
             set;
@@ -58,7 +58,7 @@ namespace GMS.Project.Contract
         /// <summary>
         /// 检测费
         /// </summary>
-        public int Test
+        public int? Test
         {
             get;
             set;
@@ -66,7 +66,7 @@ namespace GMS.Project.Contract
         /// <summary>
         /// 质检费
         /// </summary>
-        public int QualityCosts
+        public int? QualityCosts
         {
             get;
             set;
@@ -74,7 +74,7 @@ namespace GMS.Project.Contract
         /// <summary>
         /// 文明施工
         /// </summary>
-        public int Civilization
+        public int? Civilization
         {
             get;
             set;
@@ -82,7 +82,7 @@ namespace GMS.Project.Contract
         /// <summary>
         /// 安全工程
         /// </summary>
-        public int Secure
+        public int? Secure
         {
             get;
             set;
@@ -90,7 +90,7 @@ namespace GMS.Project.Contract
         /// <summary>
         /// 材料二次搬运
         /// </summary>
-        public int SecondHand
+        public int? SecondHand
         {
             get;
             set;
@@ -98,7 +98,7 @@ namespace GMS.Project.Contract
         /// <summary>
         /// 临时设施摊销费
         /// </summary>
-        public int TempFacility
+        public int? TempFacility
         {
             get;
             set;
@@ -106,7 +106,7 @@ namespace GMS.Project.Contract
         /// <summary>
         /// 其他费用
         /// </summary>
-        public int OtherFee
+        public int? OtherFee
         {
             get;
             set;

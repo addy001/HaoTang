@@ -94,47 +94,47 @@
                     <td>
                         @m.ProjectName
                     </td>
-                    <td>
-                        @m.Water
+                     <td>
+                      @(m.Water == null ? "未预算" : ((int)m.Water).ToString("N0"))
                     </td>
                     <td>
-                        @m.Electric
-                    </td>
-
-                    <td>
-                        @m.TempTool
+                      @(m.Electric == null ? "未预算" : ((int)m.Electric).ToString("N0"))
                     </td>
 
                     <td>
-                        @m.Test
+                      @(m.TempTool == null ? "未预算" : ((int)m.TempTool).ToString("N0"))
+                    </td>
+
+                    <td>
+                         @(m.Test == null ? "未预算" : ((int)m.Test).ToString("N0"))
 
                     </td>
                     <td>
-                        @m.QualityCosts
+                       @(m.QualityCosts == null ? "未预算" : ((int)m.QualityCosts).ToString("N0"))
 
                     </td>
                     <td>
-                        @m.Civilization
+                         @(m.Civilization == null ? "未预算" : ((int)m.Civilization).ToString("N0"))
 
                     </td>
                     <td>
-                        @m.Secure
+                        @(m.Secure == null ? "未预算" : ((int)m.Secure).ToString("N0"))
 
                     </td>
                     <td>
-                        @m.SecondHand
+                          @(m.SecondHand == null ? "未预算" : ((int)m.SecondHand).ToString("N0"))
 
                     </td>
                     <td>
-                        @m.TempFacility
+                       @(m.TempFacility == null ? "未预算" : ((int)m.TempFacility).ToString("N0"))
 
                     </td>
                     <td>
-                        @m.OtherFee
+                         @(m.OtherFee == null ? "未预算" : ((int)m.OtherFee).ToString("N0"))
 
                     </td>
                      <td>
-                        @m.MeasureTotal
+                       @((m.MeasureTotal).ToString("N0"))
 
                     </td>
                      <td>
@@ -143,7 +143,7 @@
                     </td>
 
                     <td style="width: 70px">
-                        <a class="btn mini purple thickbox" title='编辑分类内容' href="@Url.Action("Edit", new { id = m.ID })?TB_iframe=true&height=530&width=1000">
+                        <a class="btn mini purple thickbox" title='编辑措施预算' href="@Url.Action("Edit", new { id = m.ID })?TB_iframe=true&height=420&width=900">
                             <i class="icon-edit"></i>
                             编辑
                         </a>

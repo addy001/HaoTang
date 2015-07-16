@@ -21,7 +21,7 @@ namespace GMS.Web.Admin.Areas.Project
             context.MapRoute(
                 "Project_default",
                 "Project/{controller}/{action}/{id}",
-                new { action = "Index", id = UrlParameter.Optional }
+                new { action = "Default", id = UrlParameter.Optional }
             );
         }
     }

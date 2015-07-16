@@ -17,7 +17,7 @@ namespace GMS.Web.Admin.Areas.BasisData
             context.MapRoute(
                 "BasisData_default",
                 "BasisData/{controller}/{action}/{id}",
-                new { action = "Index", id = UrlParameter.Optional }
+                new { action = "Default", id = UrlParameter.Optional }
             );
         }
     }

@@ -20,8 +20,8 @@
 
 <div class="row-fluid">
     <div class="span4">
-      @*  <span style="margin-bottom:0" >单位：元</span>*@
-       @* <div>
+        @*  <span style="margin-bottom:0" >单位：元</span>*@
+        @* <div>
           <a class="btn red" id="delete" href="javascript:;"><i class="icon-trash icon-white"></i>删除</a>
             <a class="btn blue thickbox" title='添加新项目' href="@Url.Action("Create")?TB_iframe=true&height=350&width=350"><i class="icon-plus icon-white"></i>新增</a>
             
@@ -50,7 +50,7 @@
     <table class="table table-striped table-hover ">
         <thead>
             <tr>
-             @*   <th style="width: 8px;">
+                @*   <th style="width: 8px;">
                     <input type="checkbox" id="checkall" class="group-checkable" />
                 </th>*@
 
@@ -87,48 +87,47 @@
             @foreach (var m in Model)
             {
                 <tr>
-                  @*  <td>
+                    @*  <td>
                         <input type="checkbox" class="checkboxes" name='ids' value='@m.ID' />
-                    </td>    *@               
+                    </td>    *@
                     <td>
                         @m.ProjectName
                     </td>
                     <td>
-                        @(m.LaborCost == null ? "未预算" : (m.LaborCost.LaborTotal).ToString("###,###")  )
+                        @(m.LaborCost == null ? "未预算" : (m.LaborCost.LaborTotal).ToString("###,###"))
                     </td>
                     <td>
-                        @(m.MaterialCost == null ? "未预算" : (m.MaterialCost.MaterialTotal).ToString("###,###")  )
-
-                    </td>
-
-                    <td>
-                        @(m.MachineryCost == null ? "未预算" : (m.MachineryCost.MachineryTotal).ToString("###,###")  )
+                        @(m.MaterialCost == null ? "未预算" : (m.MaterialCost.MaterialTotal).ToString("###,###"))
 
                     </td>
 
                     <td>
-                        @(m.Measure == null ? "未预算" : (m.Measure.MeasureTotal).ToString("###,###")  )
+                        @(m.MachineryCost == null ? "未预算" : (m.MachineryCost.MachineryTotal).ToString("###,###"))
+
+                    </td>
+
+                    <td>
+                        @(m.Measure == null ? "未预算" : (m.Measure.MeasureTotal).ToString("###,###"))
 
 
                     </td>
                     <td>
 
-                        @(m.Overhead == null ? "未预算" : (m.Overhead.OverheadTotal).ToString("###,###")  )
+                        @(m.Overhead == null ? "未预算" : (m.Overhead.OverheadTotal).ToString("###,###"))
                     </td>
                     <td>
-                        @m.Warranty.ToString("###,###")  
 
+                        @(m.Warranty == null ? "未预算" : ((int)m.Warranty).ToString("N0"))
                     </td>
                     <td>
-                        @m.Subcontracting.ToString("###,###")  
 
+                        @(m.Subcontracting == null ? "未预算" : ((int)m.Subcontracting).ToString("N0"))
                     </td>
                     <td>
-                        @m.OtherBudget.ToString("###,###")  
-
+                        @(m.OtherBudget == null ? "未预算" : ((int)m.OtherBudget).ToString("N0"))
                     </td>
                     <td>
-                        @m.BudgetTotal.ToString("###,###")  
+                        @m.BudgetTotal.ToString("###,###")
                     </td>
                     <td>
                         @m.Remark

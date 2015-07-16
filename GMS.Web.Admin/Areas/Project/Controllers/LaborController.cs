@@ -58,11 +58,28 @@ namespace GMS.Web.Admin.Areas.Project.Controllers
         {
             var model = this.ProjectService.GetLaborCost(id); 
             this.TryUpdateModel<LaborCost>(model);
-            model.LaborTotal = model.Masons + model.Painter + model.Steel + model.OtherLabor + model.Plumbers + model.TearDown + model.Transportor + model.Carpenter + model.Cleaner + model.ELectricWelder;
+            model.LaborTotal = 0;
+            if (model.Masons != null)
+                model.LaborTotal += (int)model.Masons;
+            if (model.Painter != null)
+                model.LaborTotal += (int)model.Painter;
+            if (model.Steel != null)
+                model.LaborTotal += (int)model.Steel;
+            if (model.Plumbers != null)
+                model.LaborTotal += (int)model.Plumbers;
+            if (model.TearDown != null)
+                model.LaborTotal += (int)model.TearDown;
+            if (model.Transportor != null)
+                model.LaborTotal += (int)model.Transportor;
+            if (model.Carpenter != null)
+                model.LaborTotal += (int)model.Carpenter;
+            if (model.Cleaner != null)
+                model.LaborTotal += (int)model.Cleaner;
+            if (model.ELectricWelder != null)
+                model.LaborTotal += (int)model.ELectricWelder;
+            if (model.OtherLabor != null)
+                model.LaborTotal += (int)model.OtherLabor;
             this.ProjectService.SaveLaborCost(model);
-
-           
-
 
             return this.RefreshParent();
         }

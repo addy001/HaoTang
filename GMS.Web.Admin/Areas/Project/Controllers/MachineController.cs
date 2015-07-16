@@ -59,8 +59,21 @@ namespace GMS.Web.Admin.Areas.Project.Controllers
         { 
             var model = this.ProjectService.GetMachineryCost(id);
             this.TryUpdateModel<MachineryCost>(model);
-            model.MachineryTotal = model.Transport + model.Operating + model.Repair + model.Fuel + model.Depreciation + model.TravelTax + model.OtherFee;
-            this.ProjectService.SaveMachineryCost(model);
+            model.MachineryTotal = 0;
+            if (model.Transport != null)
+                model.MachineryTotal += (int)model.Transport;
+            if (model.Operating != null)
+                model.MachineryTotal += (int)model.Operating;
+            if (model.Repair != null)
+                model.MachineryTotal += (int)model.Repair;
+            if (model.Fuel != null)
+                model.MachineryTotal += (int)model.Fuel;
+            if (model.Depreciation != null)
+                model.MachineryTotal += (int)model.Depreciation;
+            if (model.TravelTax != null)
+                model.MachineryTotal += (int)model.TravelTax;
+            if (model.OtherFee != null)
+                model.MachineryTotal += (int)model.OtherFee; this.ProjectService.SaveMachineryCost(model);
 
             return this.RefreshParent();
         }

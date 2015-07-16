@@ -20,13 +20,12 @@ namespace GMS.Project.Contract
         /// <summary>
         /// 项目Id
         /// </summary>
-        public int ProjectID { get; set; }
+        public int ProjectBasedataID { get; set; }
         /// <summary>
-        /// 项目名称
+        /// 
         /// </summary>
-        [StringLength(100)]
-        [Required]
-        public string ProjectName { get; set; }
+        [Required(ErrorMessage = "日期不能为空")]
+        public string Date { get; set; }
         /// <summary>
         /// 人工费
         /// </summary>
@@ -50,15 +49,15 @@ namespace GMS.Project.Contract
         /// <summary>
         /// 工程保修金
         /// </summary>
-        public int InsWarranty { get; set; }
+        public int? InsWarranty { get; set; }
         /// <summary>
         /// 分包工程
         /// </summary>
-        public int InsSubcontracting { get; set; }
+        public int? InsSubcontracting { get; set; }
         /// <summary>
         /// 其他费用
         /// </summary>
-        public int InsOtherBudget { get; set; }
+        public int? InsOtherBudget { get; set; }
         /// <summary>
         /// 备注
         /// </summary>
@@ -73,6 +72,7 @@ namespace GMS.Project.Contract
         public virtual InsMachineryCost InsMachineryCost { get; set; }
         public virtual InsMaterialCost InsMaterialCost { get; set; }
         public virtual InsMeasure InsMeasure { get; set; }
+        public virtual ProjectBasedata ProjectBasedata { get; set; }
         #endregion Model
     }
 }

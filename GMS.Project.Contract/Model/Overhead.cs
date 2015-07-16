@@ -35,154 +35,154 @@ namespace GMS.Project.Contract
 		/// <summary>
 		/// 现场管理人员工资
 		/// </summary>
-        public int OPay
+        public int? OPay
 		{
 			 get; set;
 		}
 		/// <summary>
 		/// 奖金
 		/// </summary>
-        public int OBonus
+        public int? OBonus
 		{
 			 get; set;
 		}
 		/// <summary>
 		/// 业务招待费
 		/// </summary>
-        public int OEntertainment
+        public int? OEntertainment
 		{
 			 get; set;
 		}
 		/// <summary>
 		/// 差旅交通费
 		/// </summary>
-        public int OTraffic
+        public int? OTraffic
 		{
 			 get; set;
 		}
 		/// <summary>
 		/// 车辆费用
 		/// </summary>
-        public int OVehicle
+        public int? OVehicle
 		{
 			 get; set;
 		}
 		/// <summary>
 		/// 办公费
 		/// </summary>
-        public int OOffice
+        public int? OOffice
 		{
 		 get; set;
 		}
 		/// <summary>
 		/// 福利费
 		/// </summary>
-        public int OWelfare
+        public int? OWelfare
 		{
 			 get; set;
 		}
 		/// <summary>
 		/// 社会保障费
 		/// </summary>
-        public int OSecurity
+        public int? OSecurity
 		{
 			 get; set;
 		}
 		/// <summary>
 		/// 危险作业意外伤害保险费
 		/// </summary>
-        public int OAccidentInsurance
+        public int? OAccidentInsurance
 		{
 			 get; set;
 		}
 		/// <summary>
 		/// 住房公积金
 		/// </summary>
-        public int OHousingFund
+        public int? OHousingFund
 		{
 			 get; set;
 		}
 		/// <summary>
 		/// 伙食费
 		/// </summary>
-        public int OMeals
+        public int? OMeals
 		{
 			 get; set;
 		}
 		/// <summary>
 		/// 员工宿舍费用
 		/// </summary>
-        public int OAccommodation
+        public int? OAccommodation
 		{
 			 get; set;
 		}
 		/// <summary>
 		/// 工会经费
 		/// </summary>
-        public int OUnion
+        public int? OUnion
 		{
 			 get; set;
 		}
 		/// <summary>
 		/// 职工教育经费
 		/// </summary>
-        public int OEducation
+        public int? OEducation
 		{
 			 get; set;
 		}
 		/// <summary>
 		/// 劳动保险费
 		/// </summary>
-        public int OlaborInsurance
+        public int? OlaborInsurance
 		{
 			 get; set;
 		}
 		/// <summary>
 		/// 税金
 		/// </summary>
-        public int OFare
+        public int? OFare
 		{
 		 get; set;
 		}
 		/// <summary>
 		/// 工程排污费
 		/// </summary>
-        public int OSewageCharges
+        public int? OSewageCharges
 		{
 			 get; set;
 		}
 		/// <summary>
 		/// 工程定额测定费
 		/// </summary>
-        public int OMeasuring
+        public int? OMeasuring
 		{
 		 get; set;
 		}
 		/// <summary>
 		/// 造价预算费
 		/// </summary>
-        public int OCost
+        public int? OCost
 		{
 			 get; set;
 		}
 		/// <summary>
 		/// 财务费用
 		/// </summary>
-        public int OFinance
+        public int? OFinance
 		{
 			 get; set;
 		}
 		/// <summary>
 		/// 无形资产摊销
 		/// </summary>
-        public int OInvisible
+        public int? OInvisible
 		{
 			 get; set;
 		}
 		/// <summary>
 		/// 其他费用
 		/// </summary>
-        public int OOther
+        public int? OOther
 		{
 			 get; set;
 		}

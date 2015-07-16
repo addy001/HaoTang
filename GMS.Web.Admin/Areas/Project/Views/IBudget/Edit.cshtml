@@ -15,9 +15,9 @@
             padding: 5px;
             cursor: pointer;
         }
-        input {
+        /*input {
             text-align:right;
-        }
+        }*/
     </style>
     @*<style type="css/text"> 
           .control-group{
@@ -31,26 +31,36 @@
 @section PageSpecificJavascriptIncludes{
     <script type="text/javascript">
       
-        $("input").blur = function () {
-            var v = this.value;
-            format(v);
-        }
+        //$("input").blur = function () {
+        //    var v = this.value;
+        //    format(v);
+        //}
+
+        $("#Date").datepicker();
         //$(function(){      
         //    $("#Warranty")
 
         //})
            
             //千分位表示
-            function format(n) {
-                if (n != null) {
-                    var re = /\d{1,3}(?=(\d{3})+$)/g;
-                    var n1 = n.replace(/^(\d+)((\.\d+)?)$/, function (s, s1, s2) { return s1.replace(re, "$&,") + s2; });
-                    return n1;
-                }
-                else {
-                    n = '*';
-                }
-            }
+            //function format(n) {
+            //    if (n != null) {
+            //        var re = /\d{1,3}(?=(\d{3})+$)/g;
+            //        var n1 = n.replace(/^(\d+)((\.\d+)?)$/, function (s, s1, s2) { return s1.replace(re, "$&,") + s2; });
+            //        return n1;
+            //    }
+            //    else {
+            //        n = '*';
+            //    }
+            //}
+
+     
+
+            
+
+  
+
+
 
     </script>
 }
@@ -59,12 +69,36 @@
     <div class="portlet-body form-horizontal form-bordered form-row-stripped">
         <div class="row-fluid">
 
+              @if (Model.ID == 0)
+                {
+                    <div class=" control-group">
+                        <label class="control-label"><span class="required">*</span>项目：</label>
+                        <div class="controls">
+
+                            @Html.DropDownList("ProjectBasedataID")
+
+                        </div>
+                    </div>
+                }
+                else
+                {
+                    <div class=" control-group">
+                        <label class="control-label"><span class="required">*</span>项目：</label>
+                        <div class="controls">
+
+                            @Model.ProjectBasedata.PName
+
+                        </div>
+                    </div>
+                }
+           
+
             <div class="control-group">
                 <label class="control-label">工程保修金：</label>
                 <div class="controls">
                     @Html.TextBoxFor(m => m.InsWarranty, new { @class = "m-wrap ",@onchange="format()" })
-                     <span class="help-inline">元</span>
-                    <span class="help-inline">@Html.ValidationMessageFor(m => m.Warranty)</span>
+                    @* <span class="help-inline">元</span>*@
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.InsWarranty)</span>
                    
                 </div>
             </div>
@@ -74,8 +108,8 @@
                 <div class="controls">
                     @Html.TextBoxFor(m => m.InsSubcontracting, new { @class = "m-wrap" })
                    
-                     <span class="help-inline">元</span>
-                    <span class="help-inline">@Html.ValidationMessageFor(m => m.Subcontracting)</span>
+                    @* <span class="help-inline">元</span>*@
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.InsSubcontracting)</span>
                    
                 </div>
             </div>
@@ -85,16 +119,23 @@
                 <div class="controls">
                 
                     @Html.TextBoxFor(m => m.InsOtherBudget, new { @class = "m-wrap " })
-                     <span class="help-inline">元</span>
-                    <span class="help-inline">@Html.ValidationMessageFor(m => m.OtherBudget)</span>
+                     @*<span class="help-inline">元</span>*@
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.InsOtherBudget)</span>
                    
                 </div>
             </div>
+              <div class=" control-group">
+                    <label class="control-label"><span class="required">*</span>日期：</label>
+                    <div class="controls">
+                        @Html.TextBoxFor(m => m.Date, new { @class = "m-wrap " })
+                        <span class="help-inline">@Html.ValidationMessageFor(m => m.Date)</span>
+                    </div>
+                </div>
             <div class="control-group">
                 <label class="control-label">备注：</label>
                 <div class="controls">
                     @Html.TextAreaFor(m => m.Remark, new { @class = "m-wrap " })
-                    <span class="help-inline">@Html.ValidationMessageFor(m => m.OtherBudget)</span>
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.Remark)</span>
                    
                 </div>
             </div>

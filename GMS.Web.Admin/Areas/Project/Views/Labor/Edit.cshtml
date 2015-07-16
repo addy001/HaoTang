@@ -15,88 +15,132 @@
 }
 @section MainContent{
     <div class="portlet-body form-horizontal form-bordered form-row-stripped">
-        <div class="row-fluid">
-            <div class="control-group">
-                <label class="control-label"><span class="required">*</span>项目名称：</label>
-                <div class="controls">
-                    @Html.TextBoxFor(m => m.ProjectName, new { @class = "m-wrap" })
-                    <span class="help-inline">@Html.ValidationMessageFor(m => m.ProjectName)</span>
-                </div>
+        <div class="container-fluid">
+            <div class="row-fluid">
+                @if (Model.ID == 0)
+                {
+                    <div class="span8 control-group">
+                        <label class="control-label"><span class="required">*</span>项目：</label>
+                        <div class="controls">
+                            @Html.TextBoxFor(m => m.ProjectName, new { @class = "m-wrap large" })
+                            <span class="help-inline">@Html.ValidationMessageFor(m => m.ProjectName)</span>
+                        </div>
+                    </div>
+                }
+                else
+                {
+                    <div class="span8 control-group">
+                        <label class="control-label"><span class="required">*</span>项目：</label>
+                        <div class="controls">
+                            @Model.ProjectName
+                            @*@Html.TextBoxFor(m => m.ProjectName, new { @class = "m-wrap large ", @readonly = "" })*@
+                        </div>
+                    </div>
+                }
+
+
+
             </div>
 
-            <div class="control-group">
-                <label class="control-label">泥瓦工费用：</label>
-                <div class="controls">
-                    @Html.TextBoxFor(m => m.Masons, new { @class = "m-wrap small" })
-                    <span class="help-inline">@Html.ValidationMessageFor(m => m.Masons)</span>
+            <div class="row-fluid">
+                <div class="span4 control-group">
+                    <label class="control-label">泥瓦工：</label>
+                    <div class="controls">
+                        @Html.TextBoxFor(m => m.Masons, new { @class = "m-wrap small" })
+                        <span class="help-inline">@Html.ValidationMessageFor(m => m.Masons)</span>
+                    </div>
                 </div>
-            </div>
 
-            <div class="control-group">
-                <label class="control-label">拆除人工费用：</label>
-                <div class="controls">
-                    @Html.TextBoxFor(m => m.TearDown, new { @class = "m-wrap small" })
-                    <span class="help-inline">@Html.ValidationMessageFor(m => m.TearDown)</span>
+                <div class="span4 control-group">
+                    <label class="control-label">拆除人工：</label>
+                    <div class="controls">
+                        @Html.TextBoxFor(m => m.TearDown, new { @class = "m-wrap small" })
+                        <span class="help-inline">@Html.ValidationMessageFor(m => m.TearDown)</span>
+                    </div>
                 </div>
-            </div>
-            <div class="control-group">
-                <label class="control-label">木工费用：</label>
-                <div class="controls">
-                    @Html.TextBoxFor(m => m.Carpenter, new { @class = "m-wrap large" })
-                    <span class="help-inline">@Html.ValidationMessageFor(m => m.Carpenter)</span>
+
+
+
+                <div class="span4 control-group">
+                    <label class="control-label">木工：</label>
+                    <div class="controls">
+                        @Html.TextBoxFor(m => m.Carpenter, new { @class = "m-wrap small " })
+                        <span class="help-inline">@Html.ValidationMessageFor(m => m.Carpenter)</span>
+                    </div>
                 </div>
+
             </div>
-            <div class="control-group">
-                <label class="control-label">水电工费用：</label>
-                <div class="controls">
-                    @Html.TextBoxFor(m => m.Plumbers, new { @class = "m-wrap large" })
-                    <span class="help-inline">@Html.ValidationMessageFor(m => m.Plumbers)</span>
+            <div class="row-fluid">
+                <div class="span4 control-group">
+                    <label class="control-label">水电工：</label>
+                    <div class="controls">
+                        @Html.TextBoxFor(m => m.Plumbers, new { @class = "m-wrap small" })
+                        <span class="help-inline">@Html.ValidationMessageFor(m => m.Plumbers)</span>
+                    </div>
                 </div>
-            </div>
-           
-            <div class="control-group">
-                <label class="control-label">油漆工费用：</label>
-                <div class="controls">
-                    @Html.TextBoxFor(m => m.Painter, new { @class = "m-wrap large" })
-                    <span class="help-inline">@Html.ValidationMessageFor(m => m.Painter)</span>
+                <div class="span4 control-group">
+                    <label class="control-label">油漆工：</label>
+                    <div class="controls">
+                        @Html.TextBoxFor(m => m.Painter, new { @class = "m-wrap  small" })
+                        <span class="help-inline">@Html.ValidationMessageFor(m => m.Painter)</span>
+                    </div>
                 </div>
-            </div>
-            <div class="control-group">
-                <label class="control-label">电焊工费用：</label>
-                <div class="controls">
-                    @Html.TextBoxFor(m => m.ELectricWelder, new { @class = "m-wrap large" })
-                    <span class="help-inline">@Html.ValidationMessageFor(m => m.ELectricWelder)</span>
+                <div class="span4 control-group">
+                    <label class="control-label">电焊工：</label>
+                    <div class="controls">
+                        @Html.TextBoxFor(m => m.ELectricWelder, new { @class = "m-wrap  small" })
+                        <span class="help-inline">@Html.ValidationMessageFor(m => m.ELectricWelder)</span>
+                    </div>
                 </div>
+
+
             </div>
-            <div class="control-group">
-                <label class="control-label">钢筋工费用：</label>
-                <div class="controls">
-                    @Html.TextBoxFor(m => m.Steel, new { @class = "m-wrap large" })
-                    <span class="help-inline">@Html.ValidationMessageFor(m => m.Steel)</span>
+            <div class="row-fluid">
+
+                <div class="span4 control-group">
+                    <label class="control-label">搬运工：</label>
+                    <div class="controls">
+                        @Html.TextBoxFor(m => m.Transportor, new { @class = "m-wrap small" })
+                        <span class="help-inline">@Html.ValidationMessageFor(m => m.Transportor)</span>
+                    </div>
                 </div>
-            </div>
-            <div class="control-group">
-                <label class="control-label">搬运工费用：</label>
-                <div class="controls">
-                    @Html.TextBoxFor(m => m.Transportor, new { @class = "m-wrap large" })
-                    <span class="help-inline">@Html.ValidationMessageFor(m => m.Transportor)</span>
+
+                <div class="span4 control-group">
+                    <label class="control-label">垃圾清理工：</label>
+                    <div class="controls">
+                        @Html.TextBoxFor(m => m.Cleaner, new { @class = "m-wrap small" })
+                        <span class="help-inline">@Html.ValidationMessageFor(m => m.Cleaner)</span>
+                    </div>
                 </div>
-            </div>
-            <div class="control-group">
-                <label class="control-label">垃圾清理工费：</label>
-                <div class="controls">
-                    @Html.TextBoxFor(m => m.Cleaner, new { @class = "m-wrap large" })
-                    <span class="help-inline">@Html.ValidationMessageFor(m => m.Cleaner)</span>
+                <div class="span4 control-group">
+                    <label class="control-label">其他费用：</label>
+                    <div class="controls">
+                        @Html.TextBoxFor(m => m.OtherLabor, new { @class = "m-wrap small" })
+                        <span class="help-inline">@Html.ValidationMessageFor(m => m.OtherLabor)</span>
+                    </div>
                 </div>
+
             </div>
-            <div class="control-group">
-                <label class="control-label">其他费用：</label>
-                <div class="controls">
-                    @Html.TextBoxFor(m => m.OtherLabor, new { @class = "m-wrap large" })
-                    <span class="help-inline">@Html.ValidationMessageFor(m => m.OtherLabor)</span>
+            <div class="row-fluid">
+
+                 <div class="span4 control-group">
+                    <label class="control-label">钢筋工：</label>
+                    <div class="controls">
+                        @Html.TextBoxFor(m => m.Steel, new { @class = "m-wrap small" })
+                        <span class="help-inline">@Html.ValidationMessageFor(m => m.Steel)</span>
+                    </div>
                 </div>
+
+                <div class="span8 control-group">
+                    <label class="control-label">备注：</label>
+                    <div class="controls">
+                        @Html.TextAreaFor(m => m.OtherDetail, new { @class = "m-wrap large ", })
+                        <span class="help-inline">@Html.ValidationMessageFor(m => m.OtherDetail)</span>
+
+                    </div>
+                </div>
+               
             </div>
-           
         </div>
     </div>
 }

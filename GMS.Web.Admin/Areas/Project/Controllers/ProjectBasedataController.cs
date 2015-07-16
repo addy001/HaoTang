@@ -19,8 +19,10 @@ namespace GMS.Web.Admin.Areas.Project.Controllers
 
         public ActionResult Index(ProjectRequest request)
         {
-            //this.TryUpdateModel<InsLaborCost>(request.InsLaborCost);
+            var model = new ProjectBasedata();
+            this.RenderMyViewData(model);
             var result = this.ProjectService.GetProjectBasedataList(request);
+
             return View(result);
         }
 
@@ -38,6 +40,10 @@ namespace GMS.Web.Admin.Areas.Project.Controllers
         public ActionResult Create()
         {
             var model = new ProjectBasedata();
+
+            this.RenderMyViewData(model);
+        
+
             return View("Edit",model);
         }
 
@@ -89,47 +95,6 @@ namespace GMS.Web.Admin.Areas.Project.Controllers
             budgetinfo.ProjectName = model.PName;
             this.TryUpdateModel<BudgetInfo>(budgetinfo);
             this.ProjectService.SaveBudget(budgetinfo); 
-       
-            //-------------------------------即时管理------------------------------------------------
-
-            //var inslabor = new InsLaborCost();
-            //inslabor.ProjectID = model.ID;
-            //inslabor.ProjectName = model.PName;
-            //this.TryUpdateModel<InsLaborCost>(inslabor);
-            //this.ProjectService.SaveInsLaborCost(inslabor);
-
-            //var insmaterial = new InsMaterialCost();
-            //insmaterial.ProjectID = model.ID;
-            //insmaterial.ProjectName = model.PName;
-            //this.TryUpdateModel<InsMaterialCost>(insmaterial);
-            //this.ProjectService.SaveInsMaterialCost(insmaterial);
-
-            //var insmachine = new InsMachineryCost();
-            //insmachine.ProjectID = model.ID;
-            //insmachine.ProjectName = model.PName;
-            //this.TryUpdateModel<InsMachineryCost>(insmachine);
-            //this.ProjectService.SaveInsMachineryCost(insmachine);
-
-            //var insmeasure = new InsMeasure();
-            //insmeasure.ProjectID = model.ID;
-            //insmeasure.ProjectName = model.PName;
-            //this.TryUpdateModel<InsMeasure>(insmeasure);
-            //this.ProjectService.SaveInsMeasure(insmeasure);
-
-            //var insoverhead = new InsOverhead();
-            //insoverhead.ProjectID = model.ID;
-            //insoverhead.ProjectName = model.PName;
-            //this.TryUpdateModel<InsOverhead>(insoverhead);
-            //this.ProjectService.SaveInsOverhead(insoverhead);
-
-            //var insbudgetinfo = new InsBudgetInfo();
-            //insbudgetinfo.ProjectID = model.ID;
-            //insbudgetinfo.ProjectName = model.PName;
-            //this.TryUpdateModel<InsBudgetInfo>(insbudgetinfo);
-            //this.ProjectService.SaveInsBudget(insbudgetinfo); 
-
-
-
             return this.RefreshParent();
         }
 
@@ -139,6 +104,7 @@ namespace GMS.Web.Admin.Areas.Project.Controllers
         public ActionResult Edit(int id)
         {
             var model = this.ProjectService.GetProjectBasedata(id);
+            this.RenderMyViewData(model);
             return View(model);
         }
 
@@ -157,13 +123,7 @@ namespace GMS.Web.Admin.Areas.Project.Controllers
             return this.RefreshParent();
         }
 
-        //
-        // GET: /Project/ProjectBasedata/Delete/5
-
-        //public ActionResult Delete(int id)
-        //{
-        //    return View();
-        //}
+       
 
         //
         // POST: /Project/ProjectBasedata/Delete/5
@@ -173,6 +133,13 @@ namespace GMS.Web.Admin.Areas.Project.Controllers
         {
             this.ProjectService.DeleteProjectBasedata(ids);
             return RedirectToAction("Index");
+        }
+
+
+        private void RenderMyViewData(ProjectBasedata model)
+        {
+            ViewData.Add("Status", new SelectList(EnumHelper.GetItemValueList<EnumStatus>(), "Key", "Value", model.Status));
+            ViewData.Add("Fund", new SelectList(EnumHelper.GetItemValueList<EnumFund>(), "Key", "Value", model.Fund));
         }
     }
 }

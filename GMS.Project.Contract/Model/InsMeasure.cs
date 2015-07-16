@@ -22,19 +22,16 @@ namespace GMS.Project.Contract
         /// <summary>
         /// 项目Id
         /// </summary>
-     
-        public int ProjectID { get; set; }
-        /// <summary>
-        /// 项目名称
-        /// </summary>
-        [StringLength(100)]
-        [Required]
-        public string ProjectName { get; set; }
+
+        public int ProjectBasedataID { get; set; }
+
+        [Required(ErrorMessage = "日期不能为空")]
+        public string Date { get; set; }
       
         /// <summary>
         /// 水费
         /// </summary>
-        public int Water
+        public int? Water
         {
             get;
             set;
@@ -42,7 +39,7 @@ namespace GMS.Project.Contract
         /// <summary>
         /// 电费
         /// </summary>
-        public int Electric
+        public int? Electric
         {
             get;
             set;
@@ -50,7 +47,7 @@ namespace GMS.Project.Contract
         /// <summary>
         /// 临时生产工具费用
         /// </summary>
-        public int TempTool
+        public int? TempTool
         {
             get;
             set;
@@ -58,7 +55,7 @@ namespace GMS.Project.Contract
         /// <summary>
         /// 检测费
         /// </summary>
-        public int Test
+        public int? Test
         {
             get;
             set;
@@ -66,7 +63,7 @@ namespace GMS.Project.Contract
         /// <summary>
         /// 质检费
         /// </summary>
-        public int QualityCosts
+        public int? QualityCosts
         {
             get;
             set;
@@ -74,7 +71,7 @@ namespace GMS.Project.Contract
         /// <summary>
         /// 文明施工
         /// </summary>
-        public int Civilization
+        public int? Civilization
         {
             get;
             set;
@@ -82,7 +79,7 @@ namespace GMS.Project.Contract
         /// <summary>
         /// 安全工程
         /// </summary>
-        public int Secure
+        public int? Secure
         {
             get;
             set;
@@ -90,7 +87,7 @@ namespace GMS.Project.Contract
         /// <summary>
         /// 材料二次搬运
         /// </summary>
-        public int SecondHand
+        public int? SecondHand
         {
             get;
             set;
@@ -98,7 +95,7 @@ namespace GMS.Project.Contract
         /// <summary>
         /// 临时设施摊销费
         /// </summary>
-        public int TempFacility
+        public int? TempFacility
         {
             get;
             set;
@@ -106,7 +103,7 @@ namespace GMS.Project.Contract
         /// <summary>
         /// 其他费用
         /// </summary>
-        public int OtherFee
+        public int? OtherFee
         {
             get;
             set;
@@ -115,7 +112,7 @@ namespace GMS.Project.Contract
         public string Remark { get; set; }
 
         public int MeasureTotal { get; set; }
-
+        public virtual ProjectBasedata ProjectBasedata { get; set; }
 
         #endregion Model
 

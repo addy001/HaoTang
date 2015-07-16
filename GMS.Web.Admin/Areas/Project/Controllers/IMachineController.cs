@@ -15,6 +15,9 @@ namespace GMS.Web.Admin.Areas.Project.Controllers
 
         public ActionResult Index(InsMachineryCostRequest request)
         {
+            var ProjectList = this.ProjectService.GetProjectBasedataList(new ProjectRequest());
+            this.ViewBag.ProjectBasedataID = new SelectList(ProjectList, "ID", "PName");
+
             var result = this.ProjectService.GetInsMachineryCostList(request);
             return View(result);
         }
@@ -24,6 +27,10 @@ namespace GMS.Web.Admin.Areas.Project.Controllers
 
         public ActionResult Create()
         {
+            var ProjectList = this.ProjectService.GetProjectBasedataList(new ProjectRequest());
+            this.ViewBag.ProjectBasedataID = new SelectList(ProjectList, "ID", "PName");
+
+
             var model = new InsMachineryCost();
             return View("Edit", model);
 
@@ -36,6 +43,21 @@ namespace GMS.Web.Admin.Areas.Project.Controllers
         {
             var model = new InsMachineryCost();
             this.TryUpdateModel<InsMachineryCost>(model);
+            if (model.Transport != null)
+                model.MachineryTotal += (int)model.Transport;
+            if (model.Operating != null)
+                model.MachineryTotal += (int)model.Operating;
+            if (model.Repair != null)
+                model.MachineryTotal += (int)model.Repair;
+            if (model.Fuel != null)
+                model.MachineryTotal += (int)model.Fuel;
+            if (model.Depreciation != null)
+                model.MachineryTotal += (int)model.Depreciation;
+            if (model.TravelTax != null)
+                model.MachineryTotal += (int)model.TravelTax;
+            if (model.OtherFee != null)
+                model.MachineryTotal += (int)model.OtherFee;
+           
             this.ProjectService.SaveInsMachineryCost(model);
             return this.RefreshParent();
         }
@@ -44,6 +66,8 @@ namespace GMS.Web.Admin.Areas.Project.Controllers
 
         public ActionResult Edit(int id)
         {
+          
+
             var model = this.ProjectService.GetInsMachineryCost(id);
             return View(model);
         }
@@ -56,7 +80,21 @@ namespace GMS.Web.Admin.Areas.Project.Controllers
         {
             var model = this.ProjectService.GetInsMachineryCost(id);
             this.TryUpdateModel<InsMachineryCost>(model);
-            model.MachineryTotal = model.Transport + model.Operating + model.Repair + model.Fuel + model.Depreciation + model.TravelTax + model.OtherFee;
+            model.MachineryTotal = 0;
+            if (model.Transport != null)
+                model.MachineryTotal += (int)model.Transport;
+            if (model.Operating != null)
+                model.MachineryTotal += (int)model.Operating;
+            if (model.Repair != null)
+                model.MachineryTotal += (int)model.Repair;
+            if (model.Fuel != null)
+                model.MachineryTotal += (int)model.Fuel;
+            if (model.Depreciation != null)
+                model.MachineryTotal += (int)model.Depreciation;
+            if (model.TravelTax != null)
+                model.MachineryTotal += (int)model.TravelTax;
+            if (model.OtherFee != null)
+                model.MachineryTotal += (int)model.OtherFee;
             this.ProjectService.SaveInsMachineryCost(model);
             return this.RefreshParent();
         }

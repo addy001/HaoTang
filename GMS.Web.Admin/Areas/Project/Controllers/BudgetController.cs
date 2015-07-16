@@ -37,7 +37,9 @@ namespace GMS.Web.Admin.Areas.Project.Controllers
                 {
                     rt.BudgetTotal += rt.Overhead.OverheadTotal;
                 }
-                rt.BudgetTotal +=rt.Warranty + rt.Subcontracting + rt.OtherBudget;
+
+
+                //rt.BudgetTotal +=rt.Warranty + rt.Subcontracting + rt.OtherBudget;
             }
             return View(result);
         }
@@ -90,8 +92,13 @@ namespace GMS.Web.Admin.Areas.Project.Controllers
 
             var model = this.ProjectService.GetBudget(id);
             this.TryUpdateModel<BudgetInfo>(model);
-            //model.BudgetTotal = model.Labour + model.MachineryCost + model.Material + model.Overhead + model.Measure + model.Warranty + model.Subcontracting + model.OtherBudget;
-
+            model.BudgetTotal = 0;
+            if (model.Warranty != null)
+                model.BudgetTotal += (int)model.Warranty;
+            if (model.Subcontracting != null)
+                model.BudgetTotal += (int)model.Subcontracting;
+            if (model.OtherBudget != null)
+                model.BudgetTotal += (int)model.OtherBudget;  
             this.ProjectService.SaveBudget(model);
 
             return this.RefreshParent();

@@ -21,44 +21,43 @@ namespace GMS.Project.Contract
         /// <summary>
         /// 项目Id
         /// </summary>
-     
-        public int ProjectID { get; set; }
-        /// <summary>
-        /// 项目名称
-        /// </summary>
-        [StringLength(100)]
-        [Required]
-        public string ProjectName { get; set; }
+
+        public int ProjectBasedataID { get; set; }
+
+
+       [Required(ErrorMessage = "日期不能为空")]
+        public string Date { get; set; }
         /// <summary>
         /// 进退场费
         /// </summary>
-        public int Transport { get; set; }
+       [Display(Name = "进退场费")]      
+       public int? Transport { get; set; }
         /// <summary>
         /// 机械人员工资
         /// </summary>
-        public int Operating { get; set; }
+       public int? Operating { get; set; }
         /// <summary>
         /// 修理保养费
         /// </summary>
-        public int Repair { get; set; }
+        public int? Repair { get; set; }
         /// <summary>
         /// 燃油费
         /// </summary>
-        public int Fuel { get; set; }
+        public int? Fuel { get; set; }
         /// <summary>
         ///折旧费
         /// </summary>
-        public int Depreciation { get; set; }
+        public int? Depreciation { get; set; }
         /// <summary>
         /// 车船税
         /// </summary>
-        public int TravelTax { get; set; }
+        public int? TravelTax { get; set; }
         /// <summary>
         /// 其他费用
         /// </summary>
-        public int OtherFee { get; set; }
+        public int? OtherFee { get; set; }
        
-        /// <summary>
+        /// <summary>d
         /// 备注
         /// </summary>
         public string Remark { get; set; }
@@ -66,7 +65,7 @@ namespace GMS.Project.Contract
         /// 总额
         /// </summary>
         public int MachineryTotal { get; set; }
-
+        public virtual ProjectBasedata ProjectBasedata { get; set; }
         #endregion Model
     }
 }

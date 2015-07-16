@@ -15,6 +15,9 @@ namespace GMS.Web.Admin.Areas.Project.Controllers
 
         public ActionResult Index(InsMeasureRequest request)
         {
+            var ProjectList = this.ProjectService.GetProjectBasedataList(new ProjectRequest());
+            this.ViewBag.ProjectBasedataID = new SelectList(ProjectList, "ID", "PName");
+
             var result = this.ProjectService.GetInsMeasureList(request);
             return View(result);
         }
@@ -24,6 +27,9 @@ namespace GMS.Web.Admin.Areas.Project.Controllers
 
         public ActionResult Create()
         {
+            var ProjectList = this.ProjectService.GetProjectBasedataList(new ProjectRequest());
+            this.ViewBag.ProjectBasedataID = new SelectList(ProjectList, "ID", "PName");
+
             var model = new InsMeasure();
             return View("Edit", model);
 
@@ -34,9 +40,34 @@ namespace GMS.Web.Admin.Areas.Project.Controllers
         [HttpPost]
         public ActionResult Create(FormCollection collection)
         {
-            var model = new InsMeasure();
 
+
+            var model = new InsMeasure();
             this.TryUpdateModel<InsMeasure>(model);
+
+            if (model.Water != null)
+                model.MeasureTotal += (int)model.Water;
+            if (model.Electric != null)
+                model.MeasureTotal += (int)model.Electric;
+            if (model.TempTool != null)
+                model.MeasureTotal += (int)model.TempTool;
+
+            if (model.Test != null)
+                model.MeasureTotal += (int)model.Test;
+            if (model.Electric != null)
+                model.MeasureTotal += (int)model.QualityCosts;
+            if (model.Civilization != null)
+                model.MeasureTotal += (int)model.Civilization;
+
+            if (model.Secure != null)
+                model.MeasureTotal += (int)model.Secure;
+            if (model.SecondHand != null)
+                model.MeasureTotal += (int)model.SecondHand;
+            if (model.TempFacility != null)
+                model.MeasureTotal += (int)model.TempFacility;
+            if (model.OtherFee != null)
+                model.MeasureTotal += (int)model.OtherFee; 
+
             this.ProjectService.SaveInsMeasure(model);
 
             return this.RefreshParent();
@@ -58,20 +89,36 @@ namespace GMS.Web.Admin.Areas.Project.Controllers
         {
             var model = this.ProjectService.GetInsMeasure(id);
             this.TryUpdateModel<InsMeasure>(model);
-            model.MeasureTotal = model.Water + model.Electric + model.TempTool + model.TempFacility + model.Secure + model.Test + model.QualityCosts + model.Civilization + model.SecondHand + model.OtherFee;
+            model.MeasureTotal = 0;
+            if (model.Water != null)
+                model.MeasureTotal += (int)model.Water;
+            if (model.Electric != null)
+                model.MeasureTotal += (int)model.Electric;
+            if (model.TempTool != null)
+                model.MeasureTotal += (int)model.TempTool;
+
+            if (model.Test != null)
+                model.MeasureTotal += (int)model.Test;
+            if (model.QualityCosts != null)
+                model.MeasureTotal += (int)model.QualityCosts;
+            if (model.Civilization != null)
+                model.MeasureTotal += (int)model.Civilization;
+
+            if (model.Secure != null)
+                model.MeasureTotal += (int)model.Secure;
+            if (model.SecondHand != null)
+                model.MeasureTotal += (int)model.SecondHand;
+            if (model.TempFacility != null)
+                model.MeasureTotal += (int)model.TempFacility;
+            if (model.OtherFee != null)
+                model.MeasureTotal += (int)model.OtherFee; 
 
             this.ProjectService.SaveInsMeasure(model);
 
             return this.RefreshParent();
         }
 
-        //
-        // GET: /Project/Labor/Delete/5
-
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
+     
 
         //
         // POST: /Project/Labor/Delete/5

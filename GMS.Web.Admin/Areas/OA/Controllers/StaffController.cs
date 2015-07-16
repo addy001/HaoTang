@@ -18,6 +18,8 @@ namespace GMS.Web.Admin.Areas.OA.Controllers
 
         public ActionResult Index(StaffRequest request)
         {
+
+
             var result = this.OAService.GetStaffList(request);
             return View(result);
         }
@@ -27,6 +29,9 @@ namespace GMS.Web.Admin.Areas.OA.Controllers
 
         public ActionResult Create()
         {
+            var Branchlist = this.OAService.GetBranchList(new BranchRequest());
+            this.ViewBag.BranchId = new SelectList(Branchlist, "ID", "Name");
+
             var model = new Staff() { };
             this.RenderMyViewData(model);
             return View("Edit", model);
@@ -51,7 +56,11 @@ namespace GMS.Web.Admin.Areas.OA.Controllers
 
         public ActionResult Edit(int id)
         {
+            var Branchlist = this.OAService.GetBranchList(new BranchRequest());
+          
             var model = this.OAService.GetStaff(id);
+            this.ViewBag.BranchId = new SelectList(Branchlist, "ID", "Name",model.BranchId);
+
             this.RenderMyViewData(model);
             return View(model);
         }
@@ -81,6 +90,7 @@ namespace GMS.Web.Admin.Areas.OA.Controllers
 
         private void RenderMyViewData(Staff model)
         {
+            //ViewData.Add("BranchId", new SelectList(EnumHelper.GetItemValueList<EnumPosition>(), "Key", "Value", model.Position));
             ViewData.Add("Position", new SelectList(EnumHelper.GetItemValueList<EnumPosition>(), "Key", "Value", model.Position));
             ViewData.Add("Gender", new SelectList(EnumHelper.GetItemValueList<EnumGender>(), "Key", "Value", model.Gender));
         }

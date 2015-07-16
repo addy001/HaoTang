@@ -19,8 +19,9 @@ namespace GMS.Web.Admin.Areas.Project.Controllers
         public ActionResult Index(AccountingRequest request)
         {
             var model = new Accounting();
-            ViewData.Add("Rank", new SelectList(EnumHelper.GetItemValueList<EnumRank>(), "Key", "Value", model.Rank));
-            ViewData.Add("AccountDep", new SelectList(EnumHelper.GetItemValueList<EnumDep>(), "Key", "Value", model.AccountDep));
+            this.RenderMyViewData(model);
+            //ViewData.Add("Rank", new SelectList(EnumHelper.GetItemValueList<EnumRank>(), "Key", "Value", model.Rank));
+            //ViewData.Add("AccountDep", new SelectList(EnumHelper.GetItemValueList<EnumDep>(), "Key", "Value", model.AccountDep));
 
             var result = this.ProjectService.GetAccountingList(request);
             
@@ -71,7 +72,7 @@ namespace GMS.Web.Admin.Areas.Project.Controllers
         {
             var model = this.ProjectService.GetAccounting(id);
             this.RenderMyViewData(model);
-            return View();
+            return View(model);
         }
 
         //

@@ -34,7 +34,7 @@ namespace GMS.Project.Contract
         /// <summary>
         /// 钢材
         /// </summary>
-        public int MSteel
+        public int? MSteel
         {
             get;
             set;
@@ -42,7 +42,7 @@ namespace GMS.Project.Contract
         /// <summary>
         /// 朔料管件及配件
         /// </summary>
-        public int MHose
+        public int? MHose
         {
             get;
             set;
@@ -50,7 +50,7 @@ namespace GMS.Project.Contract
         /// <summary>
         /// 水泥及制品
         /// </summary>
-        public int MCement
+        public int? MCement
         {
             get;
             set;
@@ -58,7 +58,7 @@ namespace GMS.Project.Contract
         /// <summary>
         /// 灰油
         /// </summary>
-        public int MGrayOil
+        public int? MGrayOil
         {
             get;
             set;
@@ -66,7 +66,7 @@ namespace GMS.Project.Contract
         /// <summary>
         /// 电线电缆
         /// </summary>
-        public int MWire
+        public int? MWire
         {
             get;
             set;
@@ -74,7 +74,7 @@ namespace GMS.Project.Contract
         /// <summary>
         /// 木竹及制品
         /// </summary>
-        public int MWood
+        public int? MWood
         {
             get;
             set;
@@ -82,7 +82,7 @@ namespace GMS.Project.Contract
         /// <summary>
         /// 瓷砖类
         /// </summary>
-        public int MCeramicTile
+        public int? MCeramicTile
         {
             get;
             set;
@@ -90,7 +90,7 @@ namespace GMS.Project.Contract
         /// <summary>
         /// 门窗型材及配件类
         /// </summary>
-        public int MWindowsDoors
+        public int? MWindowsDoors
         {
             get;
             set;
@@ -98,7 +98,7 @@ namespace GMS.Project.Contract
         /// <summary>
         /// 玻璃及配件
         /// </summary>
-        public int MGalss
+        public int? MGalss
         {
             get;
             set;
@@ -106,7 +106,7 @@ namespace GMS.Project.Contract
         /// <summary>
         /// 零星五金类
         /// </summary>
-        public int MHardware
+        public int? MHardware
         {
             get;
             set;
@@ -114,7 +114,7 @@ namespace GMS.Project.Contract
         /// <summary>
         /// 电气及配件
         /// </summary>
-        public int MElectric
+        public int? MElectric
         {
             get;
             set;
@@ -122,7 +122,7 @@ namespace GMS.Project.Contract
         /// <summary>
         /// 混凝土
         /// </summary>
-        public int MConcrete
+        public int? MConcrete
         {
             get;
             set;
@@ -130,7 +130,7 @@ namespace GMS.Project.Contract
         /// <summary>
         /// 砖
         /// </summary>
-        public int MBrick
+        public int? MBrick
         {
             get;
             set;
@@ -138,7 +138,7 @@ namespace GMS.Project.Contract
         /// <summary>
         /// 模板
         /// </summary>
-        public int MTemplate
+        public int? MTemplate
         {
             get;
             set;
@@ -146,7 +146,7 @@ namespace GMS.Project.Contract
         /// <summary>
         /// 铝材
         /// </summary>
-        public int MAluminum
+        public int? MAluminum
         {
             get;
             set;
@@ -154,7 +154,7 @@ namespace GMS.Project.Contract
         /// <summary>
         /// 材料检测费
         /// </summary>
-        public int MTest
+        public int? MTest
         {
             get;
             set;
@@ -162,7 +162,7 @@ namespace GMS.Project.Contract
         /// <summary>
         /// 砂浆王
         /// </summary>
-        public int MMortar
+        public int? MMortar
         {
             get;
             set;
@@ -170,7 +170,7 @@ namespace GMS.Project.Contract
         /// <summary>
         /// 消防、通风、排烟
         /// </summary>
-        public int MFireAirSmoke
+        public int? MFireAirSmoke
         {
             get;
             set;
@@ -178,7 +178,7 @@ namespace GMS.Project.Contract
         /// <summary>
         /// 周转材料租赁
         /// </summary>
-        public int MTurnoverRent
+        public int? MTurnoverRent
         {
             get;
             set;
@@ -186,7 +186,7 @@ namespace GMS.Project.Contract
         /// <summary>
         /// 周转材料摊销
         /// </summary>
-        public int MTurnovers
+        public int? MTurnovers
         {
             get;
             set;
@@ -194,7 +194,7 @@ namespace GMS.Project.Contract
         /// <summary>
         /// 其他材料费用
         /// </summary>
-        public int MOther
+        public int? MOther
         {
             get;
             set;

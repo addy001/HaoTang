@@ -22,13 +22,15 @@ namespace GMS.Project.Contract
         /// <summary>
         /// 科目名字
         /// </summary>
-        [StringLength(50)]
+        [StringLength(100)]
+        [Required]
         public string Name { get; set; }
 
         /// <summary>
         /// 科目编码
         /// </summary>
         [StringLength(100)]
+        [Required]
         public string Code { get; set; }
         /// <summary>
         /// 会计级别 如：一级科目，二级科目

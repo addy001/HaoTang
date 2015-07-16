@@ -113,87 +113,87 @@
                     <td>
                         @m.ProjectName
                     </td>
-                    <td>
-                        @m.OPay
+                     <td>
+                         @(m.OPay == null ? "未预算" : ((int)m.OPay).ToString("N0"))
                     </td>
                     <td>
-                        @m.OBonus
-                    </td>
-
-                    <td>
-                        @m.OEntertainment
+                        @(m.OBonus == null ? "未预算" : ((int)m.OBonus).ToString("N0"))
                     </td>
 
                     <td>
-                        @m.OTraffic
-
-                    </td>
-                    <td>
-                        @m.OVehicle
-
-                    </td>
-                    <td>
-                        @m.OOffice
-
-                    </td>
-                    <td>
-                        @m.OWelfare
-
-                    </td>
-                    <td>
-                        @m.OSecurity
-
-                    </td>
-                    <td>
-                        @m.OAccidentInsurance
-
+                          @(m.OEntertainment == null ? "未预算" : ((int)m.OEntertainment).ToString("N0"))
                     </td>
 
                     <td>
-                        @m.OMeals
+                           @(m.OTraffic == null ? "未预算" : ((int)m.OTraffic).ToString("N0"))
 
                     </td>
                     <td>
-                        @m.OAccommodation
+                          @(m.OVehicle == null ? "未预算" : ((int)m.OVehicle).ToString("N0"))
 
                     </td>
                     <td>
-                        @m.OUnion
+                           @(m.OOffice == null ? "未预算" : ((int)m.OOffice).ToString("N0"))
 
                     </td>
                     <td>
-                        @m.OEducation
+                       @(m.OWelfare == null ? "未预算" : ((int)m.OWelfare).ToString("N0"))
 
                     </td>
                     <td>
-                        @m.OlaborInsurance
+                         @(m.OSecurity == null ? "未预算" : ((int)m.OSecurity).ToString("N0"))
+
+                    </td>
+                    <td>
+                          @(m.OAccidentInsurance == null ? "未预算" : ((int)m.OAccidentInsurance).ToString("N0"))
 
                     </td>
 
                     <td>
-                        @m.OSewageCharges
+                      
+                            @(m.OMeals == null ? "未预算" : ((int)m.OMeals).ToString("N0"))
+                    </td>
+                    <td>
+                         @(m.OAccommodation == null ? "未预算" : ((int)m.OAccommodation).ToString("N0"))
 
                     </td>
                     <td>
-                        @m.OMeasuring
+                        @(m.OUnion == null ? "未预算" : ((int)m.OUnion).ToString("N0"))
 
                     </td>
                     <td>
-                        @m.OCost
+                            @(m.OEducation == null ? "未预算" : ((int)m.OEducation).ToString("N0"))
 
                     </td>
                     <td>
-                        @m.OFinance
+                        @(m.OlaborInsurance == null ? "未预算" : ((int)m.OlaborInsurance).ToString("N0"))
+
                     </td>
+
                     <td>
-                        @m.OOther
-                    </td>
-                    <td>
-                        @m.OFare
+                          @(m.OSewageCharges == null ? "未预算" : ((int)m.OSewageCharges).ToString("N0"))
 
                     </td>
                     <td>
-                        @m.OverheadTotal
+                       @(m.OMeasuring == null ? "未预算" : ((int)m.OMeasuring).ToString("N0"))
+
+                    </td>
+                    <td>
+                          @(m.OCost == null ? "未预算" : ((int)m.OCost).ToString("N0"))
+
+                    </td>
+                    <td>
+                        @(m.OFinance == null ? "未预算" : ((int)m.OFinance).ToString("N0"))
+                    </td>
+                    <td>
+                        @(m.OOther == null ? "未预算" : ((int)m.OOther).ToString("N0"))
+                    </td>
+                    <td>
+                          @(m.OFare == null ? "未预算" : ((int)m.OFare).ToString("N0"))
+
+                    </td>
+                    <td>
+                         @((m.OverheadTotal).ToString("N0"))
 
                     </td>
                     <td>
@@ -201,7 +201,7 @@
 
                     </td>
                     <td style="width: 70px">
-                        <a class="btn mini purple thickbox" title='编辑分类内容' href="@Url.Action("Edit", new { id = m.ID })?TB_iframe=true&height=530&width=1000">
+                        <a class="btn mini purple thickbox" title='编辑间接预算' href="@Url.Action("Edit", new { id = m.ID })?TB_iframe=true&height=650&width=900">
                             <i class="icon-edit"></i>
                             编辑
                         </a>

@@ -15,6 +15,9 @@ namespace GMS.Web.Admin.Areas.Project.Controllers
 
         public ActionResult Index(InsMaterialCostRequest request)
         {
+            var ProjectList = this.ProjectService.GetProjectBasedataList(new ProjectRequest());
+            this.ViewBag.ProjectBasedataID = new SelectList(ProjectList, "ID", "PName");
+
             var result = this.ProjectService.GetInsMaterialCostList(request);
             return View(result);
         }
@@ -24,6 +27,9 @@ namespace GMS.Web.Admin.Areas.Project.Controllers
 
         public ActionResult Create()
         {
+            var ProjectList = this.ProjectService.GetProjectBasedataList(new ProjectRequest());
+            this.ViewBag.ProjectBasedataID = new SelectList(ProjectList, "ID", "PName");
+
             var model = new InsMaterialCost();
             return View("Edit", model);
 
@@ -34,8 +40,56 @@ namespace GMS.Web.Admin.Areas.Project.Controllers
         [HttpPost]
         public ActionResult Create(FormCollection collection)
         {
+           
+
             var model = new InsMaterialCost();
             this.TryUpdateModel<InsMaterialCost>(model);
+
+            if (model.MSteel != null)
+                model.MaterialTotal += (int)model.MSteel;
+            if (model.MHose != null)
+                model.MaterialTotal += (int)model.MHose;
+            if (model.MCement != null)
+                model.MaterialTotal += (int)model.MCement;
+            if (model.MGrayOil != null)
+                model.MaterialTotal += (int)model.MGrayOil;
+            if (model.MWire != null)
+                model.MaterialTotal += (int)model.MWire;
+            if (model.MWood != null)
+                model.MaterialTotal += (int)model.MWood;
+            if (model.MCeramicTile != null)
+                model.MaterialTotal += (int)model.MCeramicTile;
+            if (model.MWindowsDoors != null)
+                model.MaterialTotal += (int)model.MWindowsDoors;
+            if (model.MGalss != null)
+                model.MaterialTotal += (int)model.MGalss;
+            if (model.MHardware != null)
+                model.MaterialTotal += (int)model.MHardware;
+            if (model.MElectric != null)
+                model.MaterialTotal += (int)model.MElectric;
+            if (model.MConcrete != null)
+                model.MaterialTotal += (int)model.MConcrete;
+            if (model.MBrick != null)
+                model.MaterialTotal += (int)model.MBrick;
+            if (model.MTemplate != null)
+                model.MaterialTotal += (int)model.MTemplate;
+            if (model.MAluminum != null)
+                model.MaterialTotal += (int)model.MAluminum;
+
+            if (model.MTest != null)
+                model.MaterialTotal += (int)model.MTest;
+            if (model.MMortar != null)
+                model.MaterialTotal += (int)model.MMortar;
+            if (model.MFireAirSmoke != null)
+                model.MaterialTotal += (int)model.MFireAirSmoke;
+
+            if (model.MTurnoverRent != null)
+                model.MaterialTotal += (int)model.MTurnoverRent;
+            if (model.MTurnovers != null)
+                model.MaterialTotal += (int)model.MTurnovers;
+            if (model.MOther != null)
+                model.MaterialTotal += (int)model.MOther;
+
             this.ProjectService.SaveInsMaterialCost(model);
             return this.RefreshParent();
         }
@@ -44,6 +98,8 @@ namespace GMS.Web.Admin.Areas.Project.Controllers
 
         public ActionResult Edit(int id)
         {
+           
+
             var model = this.ProjectService.GetInsMaterialCost(id);
             return View(model);
         }
@@ -56,7 +112,52 @@ namespace GMS.Web.Admin.Areas.Project.Controllers
         {
             var model = this.ProjectService.GetInsMaterialCost(id);
             this.TryUpdateModel<InsMaterialCost>(model);
-            model.MaterialTotal = model.MSteel + model.MHose + model.MCement + model.MGrayOil + model.MWire + model.MWood + model.MCeramicTile + model.MWindowsDoors + model.MGalss + model.MHardware + model.MElectric + model.MConcrete + model.MBrick + model.MTemplate + model.MAluminum + model.MTest + model.MFireAirSmoke + model.MTurnoverRent + model.MTurnovers + model.MOther;
+            model.MaterialTotal = 0;
+            if (model.MSteel != null)
+                model.MaterialTotal += (int)model.MSteel;
+            if (model.MHose != null)
+                model.MaterialTotal += (int)model.MHose;
+            if (model.MCement != null)
+                model.MaterialTotal += (int)model.MCement;
+            if (model.MGrayOil != null)
+                model.MaterialTotal += (int)model.MGrayOil;
+            if (model.MWire != null)
+                model.MaterialTotal += (int)model.MWire;
+            if (model.MWood != null)
+                model.MaterialTotal += (int)model.MWood;
+            if (model.MCeramicTile != null)
+                model.MaterialTotal += (int)model.MCeramicTile;
+            if (model.MWindowsDoors != null)
+                model.MaterialTotal += (int)model.MWindowsDoors;
+            if (model.MGalss != null)
+                model.MaterialTotal += (int)model.MGalss;
+            if (model.MHardware != null)
+                model.MaterialTotal += (int)model.MHardware;
+            if (model.MElectric != null)
+                model.MaterialTotal += (int)model.MElectric;
+            if (model.MConcrete != null)
+                model.MaterialTotal += (int)model.MConcrete;
+            if (model.MBrick != null)
+                model.MaterialTotal += (int)model.MBrick;
+            if (model.MTemplate != null)
+                model.MaterialTotal += (int)model.MTemplate;
+            if (model.MAluminum != null)
+                model.MaterialTotal += (int)model.MAluminum;
+
+            if (model.MTest != null)
+                model.MaterialTotal += (int)model.MTest;
+            if (model.MMortar != null)
+                model.MaterialTotal += (int)model.MMortar;
+            if (model.MFireAirSmoke != null)
+                model.MaterialTotal += (int)model.MFireAirSmoke;
+
+            if (model.MTurnoverRent != null)
+                model.MaterialTotal += (int)model.MTurnoverRent;
+            if (model.MTurnovers != null)
+                model.MaterialTotal += (int)model.MTurnovers;
+            if (model.MOther != null)
+                model.MaterialTotal += (int)model.MOther; 
+            
             this.ProjectService.SaveInsMaterialCost(model);
             return this.RefreshParent();
         }

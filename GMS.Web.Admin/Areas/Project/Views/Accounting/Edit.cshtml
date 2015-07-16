@@ -22,14 +22,14 @@
     <div class="portlet-body form-horizontal form-bordered form-row-stripped">
         <div class="row-fluid">
             <div class="control-group">
-                <label class="control-label">名称：</label>
+                <label class="control-label"><span class="required">*</span>名称：</label>
                 <div class="controls">
                     @Html.TextBoxFor(m => m.Name, new { @class = "m-wrap small" })
                     <span class="help-inline">@Html.ValidationMessageFor(m => m.Name)</span>
                 </div>
             </div>
               <div class="control-group">
-                <label class="control-label">编码：</label>
+                <label class="control-label"><span class="required">*</span>编码：</label>
                 <div class="controls">
                     @Html.TextBoxFor(m => m.Code, new { @class = "m-wrap small" })
                     <span class="help-inline">@Html.ValidationMessageFor(m => m.Code)</span>
@@ -39,14 +39,14 @@
             <div class="control-group">
                 <label class="control-label">类别：</label>
                 <div class="controls">
-                    @Html.DropDownList("AccountDep")
+                    @Html.DropDownList("AccountDep","请选择")
                     <span class="help-inline">@Html.ValidationMessageFor(m => m.AccountDep)</span>
                 </div>
             </div>
             <div class="control-group">
                 <label class="control-label">科目级别：</label>
                 <div class="controls">
-                    @Html.DropDownList("Rank")
+                    @Html.DropDownList("Rank","请选择")
                     <span class="help-inline">@Html.ValidationMessageFor(m => m.Rank)</span>
                 </div>
             </div>

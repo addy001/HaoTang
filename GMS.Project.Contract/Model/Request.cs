@@ -9,7 +9,8 @@ namespace GMS.Project.Contract
     public class ProjectRequest : Request
     {
         public string PName { get; set; }
-        public string PCharger { get; set; }
+        public string Status { get; set; }
+        public string Fund { get; set; }
     }
     public class BudgetRequest : Request
     {
@@ -53,7 +54,7 @@ namespace GMS.Project.Contract
 
     public class InsBudgetRequest : Request
     {
-        public string ProjectName { get; set; }
+        public int ProjectBasedataID { get; set; }
     }
 
 
@@ -64,19 +65,19 @@ namespace GMS.Project.Contract
     }
     public class InsMaterialCostRequest : Request
     {
-        public string ProjectName { get; set; }
+        public int ProjectBasedataID { get; set; }
     }
     public class InsMachineryCostRequest : Request
     {
-        public string ProjectName { get; set; }
+        public int ProjectBasedataID { get; set; }
     }
     public class InsMeasureRequest : Request
     {
-        public string ProjectName { get; set; }
+        public int ProjectBasedataID { get; set; }
     }
     public class InsOverheadRequest : Request
     {
-        public string ProjectName { get; set; }
+        public int ProjectBasedataID { get; set; }
     }
     //----------------------------资产管理-------------------------------
     public class FileRequest : Request

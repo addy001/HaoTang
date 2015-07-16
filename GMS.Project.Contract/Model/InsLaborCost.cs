@@ -19,7 +19,7 @@ namespace GMS.Project.Contract
             
         }
 
-        #region Model       
+        #region Model
         /// <summary>
         /// 项目Id
         /// </summary>       
@@ -27,12 +27,13 @@ namespace GMS.Project.Contract
         /// <summary>
         /// 预算日期
 
-        [Required(ErrorMessage = "预算日期不能为空")]
+        [Required(ErrorMessage = "日期不能为空")]
         public string Date { get; set; }
        
         /// <summary>
         /// 泥瓦工费用
         /// </summary>
+        [RegularExpression(@"[1-9]\d*", ErrorMessage = "请输入正整数")]
         public int? Masons { get; set; }
         /// <summary>
         /// 拆除人工费用
@@ -81,8 +82,18 @@ namespace GMS.Project.Contract
 
         public virtual ProjectBasedata ProjectBasedata { get; set; }
 
-        #endregion Model
+       
 
+        //public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+        //{
+        //    var result = new List<ValidationResult>();
+        //    if (ProjectBasedataID == 0)
+        //    {
+        //        result.Add(new ValidationResult("请选择项目"));
+        //    }
+        //    return result;
+        //}
+        #endregion Model
     }
 
    

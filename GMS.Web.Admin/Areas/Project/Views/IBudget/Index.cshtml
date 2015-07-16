@@ -7,24 +7,14 @@
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-@section PageSpecificStyleSheetIncludes{
-    <style type="text/css">
-       
-    </style>
-    <script>
-     
-    </script>
-}
-
-
 
 <div class="row-fluid">
     <div class="span4">
-       <span style="margin-bottom:0" >单位：元</span>
-       <div>
-          <a class="btn red" id="delete" href="javascript:;"><i class="icon-trash icon-white"></i>删除</a>
-            <a class="btn blue thickbox" title='添加新项目' href="@Url.Action("Create")?TB_iframe=true&height=350&width=350"><i class="icon-plus icon-white"></i>新增</a>
-            
+        @* <span style="margin-bottom: 0">单位：元</span>*@
+        <div>
+            <a class="btn red" id="delete" href="javascript:;"><i class="icon-trash icon-white"></i>删除</a>
+            <a class="btn blue thickbox" title='添加新预算' href="@Url.Action("Create")?TB_iframe=true&height=500&width=500"><i class="icon-plus icon-white"></i>新增</a>
+
         </div>
     </div>
 
@@ -36,8 +26,8 @@
                     <button type="submit" class="btn">搜索 <i class="icon-search"></i></button>
                 </label>
                 <label>
-                    <span>项目名称：</span>
-                    @Html.TextBox("ProjectName", null, new { @class = "m-wrap small" })
+                    <span>项目：</span>
+                    @Html.DropDownList("ProjectBasedataID", "所有项目")
                 </label>
             </div>
         }
@@ -45,17 +35,19 @@
 </div>
 
 
-@using (Html.BeginForm("Delete", "ProjectBasedata", FormMethod.Post, new { id = "mainForm" }))
+@using (Html.BeginForm("Delete", "IBudget", FormMethod.Post, new { id = "mainForm" }))
 {
     <table class="table table-striped table-hover ">
         <thead>
             <tr>
-             @*   <th style="width: 8px;">
+                <th style="width: 8px;">
                     <input type="checkbox" id="checkall" class="group-checkable" />
-                </th>*@
-
-                <th>项目名称
                 </th>
+
+                <th>项目名称                
+                </th>
+                <th>日期
+               @* </th>
                 <th>人工费
                 </th>
                 <th>材料费
@@ -65,7 +57,7 @@
 
                 <th>其他直接费用
                 </th>
-                <th>间接费用
+                <th>间接费用*@
                 </th>
                 <th>工程保修金
                 </th>
@@ -87,55 +79,60 @@
             @foreach (var m in Model)
             {
                 <tr>
-                  @*  <td>
+                    <td>
                         <input type="checkbox" class="checkboxes" name='ids' value='@m.ID' />
-                    </td>    *@               
-                    <td>
-                        @m.ProjectName
                     </td>
                     <td>
-                        @(m.InsLaborCost == null ? "未预算" : (m.InsLaborCost.LaborTotal).ToString("###,###")  )
+                        @m.ProjectBasedata.PName
                     </td>
                     <td>
-                        @(m.InsMaterialCost == null ? "未预算" : (m.InsMaterialCost.MaterialTotal).ToString("###,###")  )
-
+                        @m.Date
                     </td>
-
+                    @*<td>
+                        @(m.InsLaborCost == null ? "未预算" : (m.InsLaborCost.LaborTotal).ToString("###,###"))
+                    </td>
                     <td>
-                        @(m.InsMachineryCost == null ? "未预算" : (m.InsMachineryCost.MachineryTotal).ToString("###,###")  )
+                        @(m.InsMaterialCost == null ? "未预算" : (m.InsMaterialCost.MaterialTotal).ToString("###,###"))
 
                     </td>
 
                     <td>
-                        @(m.InsMeasure == null ? "未预算" : (m.InsMeasure.MeasureTotal).ToString("###,###")  )
+                        @(m.InsMachineryCost == null ? "未预算" : (m.InsMachineryCost.MachineryTotal).ToString("###,###"))
+
+                    </td>
+
+                    <td>
+                        @(m.InsMeasure == null ? "未预算" : (m.InsMeasure.MeasureTotal).ToString("###,###"))
 
 
                     </td>
                     <td>
 
-                        @(m.InsOverhead == null ? "未预算" : (m.InsOverhead.OverheadTotal).ToString("###,###")  )
-                    </td>
+                        @(m.InsOverhead == null ? "未预算" : (m.InsOverhead.OverheadTotal).ToString("###,###"))
+                    </td>*@
                     <td>
-                        @m.InsWarranty.ToString("###,###")  
+
+                        @(m.InsWarranty == null ? "未预算" : ((int)m.InsWarranty).ToString("N0"))
 
                     </td>
                     <td>
-                        @m.InsSubcontracting.ToString("###,###")  
+                        @(m.InsSubcontracting == null ? "未预算" : ((int)m.InsSubcontracting).ToString("N0"))
 
                     </td>
                     <td>
-                        @m.InsOtherBudget.ToString("###,###")  
+                        @(m.InsOtherBudget == null ? "未预算" : ((int)m.InsOtherBudget).ToString("N0"))
+
 
                     </td>
                     <td>
-                        @m.InsBudgetTotal.ToString("###,###")  
+                        @m.InsBudgetTotal.ToString("N0")
                     </td>
                     <td>
                         @m.Remark
 
                     </td>
                     <td style="width: 70px">
-                        <a class="btn mini purple thickbox" title='@m.ProjectName' href="@Url.Action("Edit", new { id = m.ID })?TB_iframe=true&height=350&width=450">
+                        <a class="btn mini purple thickbox" title='编辑即时预算' href="@Url.Action("Edit", new { id = m.ID })?TB_iframe=true&height=500&width=500">
                             <i class="icon-edit"></i>
                             编辑
                         </a>

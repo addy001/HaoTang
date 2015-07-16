@@ -14,31 +14,34 @@ namespace GMS.Web.Admin.Areas.Project.Controllers
     {
         public ActionResult Index(InsBudgetRequest request)
         {
+            var ProjectList = this.ProjectService.GetProjectBasedataList(new ProjectRequest());
+            this.ViewBag.ProjectBasedataID = new SelectList(ProjectList, "ID", "PName");
+
             var result = this.ProjectService.GetInsBudgetList(request);
-            foreach (var rt in result)
-            {
-                if (rt.InsLaborCost != null)
-                {
-                    rt.InsBudgetTotal += rt.InsLaborCost.LaborTotal;
-                }
-                if (rt.InsMaterialCost != null)
-                {
-                    rt.InsBudgetTotal += rt.InsMaterialCost.MaterialTotal;
-                }
-                if (rt.InsMachineryCost != null)
-                {
-                    rt.InsBudgetTotal += rt.InsMachineryCost.MachineryTotal;
-                }
-                if (rt.InsMeasure != null)
-                {
-                    rt.InsBudgetTotal += rt.InsMeasure.MeasureTotal;
-                }
-                if (rt.InsOverhead != null)
-                {
-                    rt.InsBudgetTotal += rt.InsOverhead.OverheadTotal;
-                }
-                rt.InsBudgetTotal += rt.InsWarranty + rt.InsSubcontracting + rt.InsOtherBudget;
-            }
+            //foreach (var rt in result)
+            //{
+            //    if (rt.InsLaborCost != null)
+            //    {
+            //        rt.InsBudgetTotal += rt.InsLaborCost.LaborTotal;
+            //    }
+            //    if (rt.InsMaterialCost != null)
+            //    {
+            //        rt.InsBudgetTotal += rt.InsMaterialCost.MaterialTotal;
+            //    }
+            //    if (rt.InsMachineryCost != null)
+            //    {
+            //        rt.InsBudgetTotal += rt.InsMachineryCost.MachineryTotal;
+            //    }
+            //    if (rt.InsMeasure != null)
+            //    {
+            //        rt.InsBudgetTotal += rt.InsMeasure.MeasureTotal;
+            //    }
+            //    if (rt.InsOverhead != null)
+            //    {
+            //        rt.InsBudgetTotal += rt.InsOverhead.OverheadTotal;
+            //    }
+               
+            //}
             return View(result);
         }
 
@@ -48,13 +51,13 @@ namespace GMS.Web.Admin.Areas.Project.Controllers
         //public ActionResult Details(int id)
         //{
         //    return View();
-        //}
-
-        //
         // GET: /Project/ProjectBasedata/Create
 
         public ActionResult Create()
         {
+            var ProjectList = this.ProjectService.GetProjectBasedataList(new ProjectRequest());
+            this.ViewBag.ProjectBasedataID = new SelectList(ProjectList, "ID", "PName");
+
             var model = new InsBudgetInfo();
             return View("Edit", model);
 
@@ -65,8 +68,15 @@ namespace GMS.Web.Admin.Areas.Project.Controllers
         public ActionResult Create(FormCollection collection)
         {
             var model = new InsBudgetInfo();
-
             this.TryUpdateModel<InsBudgetInfo>(model);
+           
+            if (model.InsWarranty != null)
+                model.InsBudgetTotal += (int)model.InsWarranty;
+            if (model.InsSubcontracting != null)
+                model.InsBudgetTotal += (int)model.InsSubcontracting;
+            if (model.InsOtherBudget != null)
+                model.InsBudgetTotal += (int)model.InsOtherBudget;  
+
             this.ProjectService.SaveInsBudget(model);
 
             return this.RefreshParent();
@@ -77,6 +87,7 @@ namespace GMS.Web.Admin.Areas.Project.Controllers
 
         public ActionResult Edit(int id)
         {
+           
             var model = this.ProjectService.GetInsBudget(id);
             return View(model);
         }
@@ -90,10 +101,15 @@ namespace GMS.Web.Admin.Areas.Project.Controllers
 
             var model = this.ProjectService.GetInsBudget(id);
             this.TryUpdateModel<InsBudgetInfo>(model);
-            //model.BudgetTotal = model.Labour + model.MachineryCost + model.Material + model.Overhead + model.Measure + model.Warranty + model.Subcontracting + model.OtherBudget;
+            model.InsBudgetTotal = 0;
+            if (model.InsWarranty != null)
+                model.InsBudgetTotal += (int)model.InsWarranty;
+            if (model.InsSubcontracting != null)
+                model.InsBudgetTotal += (int)model.InsSubcontracting;
+            if (model.InsOtherBudget != null)
+                model.InsBudgetTotal += (int)model.InsOtherBudget;  
 
             this.ProjectService.SaveInsBudget(model);
-
             return this.RefreshParent();
         }
 
