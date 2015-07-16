@@ -1,0 +1,15 @@
+F:\GMS\GMS\bin\GMS.Core.Module.dll
+F:\GMS\GMS\bin\GMS.Core.Module.pdb
+F:\GMS\GMS\Src\GMS.Core.Module\obj\Debug\GMS.Core.Module.csprojResolveAssemblyReference.cache
+F:\GMS\GMS\Src\GMS.Core.Module\obj\Debug\GMS.Core.Module.dll
+F:\GMS\GMS\Src\GMS.Core.Module\obj\Debug\GMS.Core.Module.pdb
+F:\GMS\Src1\HaoTang\GMS.Core.Module\obj\Debug\GMS.Core.Module.csprojResolveAssemblyReference.cache
+F:\GMS\Src1\HaoTang\GMS.Core.Module\obj\Debug\GMS.Core.Module.dll
+F:\GMS\Src1\HaoTang\GMS.Core.Module\obj\Debug\GMS.Core.Module.pdb
+F:\GMS\Src1\bin\GMS.Core.Module.dll
+F:\GMS\Src1\bin\GMS.Core.Module.pdb
+F:\GMS\bin\GMS.Core.Module.dll
+F:\GMS\bin\GMS.Core.Module.pdb
+F:\GMS\Src\GMS.Core.Module\obj\Debug\GMS.Core.Module.csprojResolveAssemblyReference.cache
+F:\GMS\Src\GMS.Core.Module\obj\Debug\GMS.Core.Module.dll
+F:\GMS\Src\GMS.Core.Module\obj\Debug\GMS.Core.Module.pdb

@@ -1,0 +1,13 @@
+F:\GMS\GMS\Src\GMS.Core.Module\bin\Release\GMS.Core.Module.dll
+F:\GMS\GMS\Src\GMS.Core.Module\bin\Release\GMS.Core.Module.pdb
+F:\GMS\GMS\Src\GMS.Core.Module\bin\Release\DevTrends.MvcDonutCaching.dll
+F:\GMS\GMS\Src\GMS.Core.Module\bin\Release\GMS.Core.Cache.dll
+F:\GMS\GMS\Src\GMS.Core.Module\bin\Release\GMS.Core.Config.dll
+F:\GMS\GMS\Src\GMS.Core.Module\bin\Release\GMS.Framework.Utility.dll
+F:\GMS\GMS\Src\GMS.Core.Module\bin\Release\Newtonsoft.Json.dll
+F:\GMS\GMS\Src\GMS.Core.Module\bin\Release\GMS.Core.Cache.pdb
+F:\GMS\GMS\Src\GMS.Core.Module\bin\Release\GMS.Core.Config.pdb
+F:\GMS\GMS\Src\GMS.Core.Module\bin\Release\GMS.Framework.Utility.pdb
+F:\GMS\GMS\Src\GMS.Core.Module\obj\Release\GMS.Core.Module.dll
+F:\GMS\GMS\Src\GMS.Core.Module\obj\Release\GMS.Core.Module.pdb
+F:\GMS\GMS\Src\GMS.Core.Module\obj\Release\GMS.Core.Module.csprojResolveAssemblyReference.cache

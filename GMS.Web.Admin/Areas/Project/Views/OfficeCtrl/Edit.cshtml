@@ -1,0 +1,56 @@
+﻿@using GMS.Framework.Contract
+@using GMS.Framework.Web.Controls
+@using GMS.Project.Contract
+@using GMS.Web
+@model OfficeCtrl
+@{
+    Layout = "~/Views/Shared/_Layout.Edit.cshtml";
+}
+@section PageSpecificStyleSheetIncludes{
+}
+@section PageSpecificJavascriptIncludes{
+}
+@section MainContent{
+<div class="portlet-body form-horizontal form-bordered form-row-stripped">
+    <div class="row-fluid"> 
+            <div class="control-group">
+                <label class="control-label"><span class="required">*</span>名称：</label>
+                <div class="controls">
+                @Html.TextBoxFor(m => m.Name, new { @class = "m-wrap" })
+                <span class="help-inline">@Html.ValidationMessageFor(m => m.Name)</span>
+                </div>
+                @if (Model.ID != 0)
+                {
+                <label class="control-label">单号：</label>
+                
+                <div class="controls" >
+                @Html.TextBoxFor(m => m.oddnum, new { Readonly = "true" })
+                </div>
+                }
+                <label class="control-label">价格：</label>
+                
+                <div class="controls">
+                @Html.TextBoxFor(m=>m.obb,new{@class="m-wrap"})
+                </div>
+                <label class="control-label">采购渠道：</label>
+                
+                <div class="controls">
+                @Html.TextBoxFor(m=>m.Way,new{@class="m-wrap"})
+                </div>
+
+                <label class="control-label">用途概述：</label>
+                <div class="controls">
+                @Html.TextAreaFor(m => m.Toolname, new { @class = "m-wrap"})
+                
+                </div>
+                <div class="control-group">
+              <label class="control-label">是否审批：</label>
+              <div class="controls">
+               @Html.CheckBoxFor(m => m.IsPro)
+               </div>
+           </div>
+            </div>
+
+    </div>
+</div>
+}

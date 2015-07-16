@@ -1,0 +1,15 @@
+F:\GMS\GMS\bin\GMS.Account.DAL.dll
+F:\GMS\GMS\bin\GMS.Account.DAL.pdb
+F:\GMS\GMS\Src\GMS.Account.DAL\obj\Debug\GMS.Account.DAL.csprojResolveAssemblyReference.cache
+F:\GMS\GMS\Src\GMS.Account.DAL\obj\Debug\GMS.Account.DAL.dll
+F:\GMS\GMS\Src\GMS.Account.DAL\obj\Debug\GMS.Account.DAL.pdb
+F:\GMS\Src1\HaoTang\GMS.Account.DAL\obj\Debug\GMS.Account.DAL.csprojResolveAssemblyReference.cache
+F:\GMS\Src1\HaoTang\GMS.Account.DAL\obj\Debug\GMS.Account.DAL.dll
+F:\GMS\Src1\HaoTang\GMS.Account.DAL\obj\Debug\GMS.Account.DAL.pdb
+F:\GMS\Src1\bin\GMS.Account.DAL.dll
+F:\GMS\Src1\bin\GMS.Account.DAL.pdb
+F:\GMS\bin\GMS.Account.DAL.dll
+F:\GMS\bin\GMS.Account.DAL.pdb
+F:\GMS\Src\GMS.Account.DAL\obj\Debug\GMS.Account.DAL.csprojResolveAssemblyReference.cache
+F:\GMS\Src\GMS.Account.DAL\obj\Debug\GMS.Account.DAL.dll
+F:\GMS\Src\GMS.Account.DAL\obj\Debug\GMS.Account.DAL.pdb

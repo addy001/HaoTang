@@ -1,0 +1,189 @@
+﻿@using GMS.Framework.Contract
+@using GMS.Framework.Web.Controls
+@using GMS.Project.Contract
+@using GMS.Web
+@model ProjectBasedata
+@{
+  
+    Layout = "~/Views/Shared/_Layout.Edit.cshtml";
+}
+@section PageSpecificStyleSheetIncludes{
+    <style type="css/text">
+        .control-group {
+            width: 50%;
+            display: inline;
+            float: left;
+        }
+    </style>
+}
+@section PageSpecificJavascriptIncludes{
+    <script type="text/javascript">
+        $("#PSDate,#PEdate").datepicker();
+        //{
+        //    minDate: new Date()
+        //});
+
+    </script>
+}
+@section MainContent{
+
+
+
+    <div class="portlet-body form-horizontal form-bordered form-row-stripped">
+        <div class="container-fluid">
+            <div class="row-fluid">
+                @if (Model.ID == 0)
+                {
+                    <div class="span6 control-group">
+                        <label class="control-label"><span class="required">*</span>项目：</label>
+                        <div class="controls">
+                            @Html.TextBoxFor(m => m.PName, new { @class = "m-wrap large" })
+                           <span class="help-inline">@Html.ValidationMessageFor(m => m.PName)</span>
+                        </div>
+                    </div>
+                }
+                else
+                {
+                    <div class="span6 control-group">
+                        <label class="control-label"><span class="required">*</span>项目：</label>
+                        <div class="controls">
+                       
+                                @Html.TextBoxFor(m => m.PName, new { @class = "m-wrap large", @readonly = "" })
+                        </div>
+                    </div>
+                }
+                <div class=" span6 control-group">
+                    <label class="control-label "><span class="required"></span>位置：</label>
+                    <div class="controls ">
+                        @Html.TextBoxFor(m => m.PLocation, new { @class = "m-wrap large" })
+                        <span class="help-inline">@Html.ValidationMessageFor(m => m.PLocation)</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row-fluid">
+
+                <div class=" span6 control-group">
+                    <label class="control-label">开工日期：</label>
+                    <div class="controls">
+                        @Html.TextBoxFor(m => m.PSDate, new { @class = "m-wrap small" })
+                    </div>
+                </div>
+
+                <div class=" span6 control-group">
+                    <label class="control-label">结束日期：</label>
+                    <div class="controls">
+                        @Html.TextBoxFor(m => m.PEdate, new { @class = "m-wrap small" })
+                        <span class="help-inline">@Html.ValidationMessageFor(m => m.PEdate)</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row-fluid">
+
+                <div class=" span6 control-group">
+                    <label class="control-label ">负责人：</label>
+                    <div class="controls">
+                        @Html.TextBoxFor(m => m.PCharger, new { @class = "m-wrap " })
+                        <span class="help-inline">@Html.ValidationMessageFor(m => m.PCharger)</span>
+                    </div>
+                </div>
+
+
+                <div class=" span6 control-group">
+                    <label class="control-label">电话：</label>
+                    <div class="controls">
+                        @Html.TextBoxFor(m => m.PPhone, new { @class = "m-wrap " })
+                        <span class="help-inline">@Html.ValidationMessageFor(m => m.PPhone)</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row-fluid">
+
+                <div class=" span6 control-group">
+                    <label class="control-label">状态：</label>
+                    <div class="controls">
+                          @Html.DropDownList("Status")  
+                        @*@Html.TextBoxFor(m => m.PRemark, new { @class = "m-wrap" })*@
+                     
+                    </div>
+                </div>
+                <div class=" span6 control-group">
+                    <label class="control-label">资金来源：</label>
+                    <div class="controls">
+                          @Html.DropDownList("Fund")  
+                        @*@Html.TextBoxFor(m => m.PFund, new { @class = "m-wrap" })*@
+                        <span class="help-inline">@Html.ValidationMessageFor(m => m.Fund)</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row-fluid">
+                <div class=" span6 control-group">
+                    <label class="control-label">规模：</label>
+                    <div class="controls">
+                        @Html.TextAreaFor(m => m.PScale, new { @class = "m-wrap large" })
+                        <span class="help-inline">@Html.ValidationMessageFor(m => m.PScale)</span>
+                    </div>
+                </div>
+
+                <div class=" span6 control-group">
+                    <label class="control-label">内容：</label>
+                    <div class="controls" style="padding-top: 10px">
+                        @Html.TextAreaFor(m => m.PContent, new { @class = "m-wrap large" })
+                        <span class="help-inline">@Html.ValidationMessageFor(m => m.PContent)</span>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="row-fluid">
+                <div class=" span12 control-group">
+                    <label class="control-label">备注：</label>
+                    <div class="controls">
+                        @Html.TextAreaFor(m => m.PRemark, new { @class = "m-wrap large" })
+                        @*@Html.TextArea("Remark", new { style="width:80%"})*@
+                    </div>
+                </div>
+
+                @*  <div class="control-group" style="float: left; width: 50%">
+                <label class="control-label">结构形式：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.PStructure, new { @class = "m-wrap large" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.PStructure)</span>
+                </div>
+            </div>*@
+
+                @* <div class="control-group" style="float: left; width: 50%">
+                <label class="control-label">立项时间：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.CreateTime, new { @class = "m-wrap small" })                   
+                </div>
+            </div>
+            <div class="control-group" style="float: left; width: 50%">
+                <label class="control-label">报价：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.PPrice, new { @class = "m-wrap" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.PPrice)</span>
+                </div>
+            </div>
+
+
+            <div class="control-group" style="float: left; width: 50%">
+                <label class="control-label">成本预算：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.PBuget, new { @class = "m-wrap" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.PBuget)</span>
+                </div>
+            </div>*@
+
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+}

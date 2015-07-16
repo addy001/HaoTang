@@ -1,0 +1,12 @@
+F:\GMS\GMS\Src\GMS.Basedata.Contract\bin\Release\GMS.Basedata.Contract.dll
+F:\GMS\GMS\Src\GMS.Basedata.Contract\bin\Release\GMS.Basedata.Contract.pdb
+F:\GMS\GMS\Src\GMS.Basedata.Contract\bin\Release\EntityFramework.dll
+F:\GMS\GMS\Src\GMS.Basedata.Contract\bin\Release\GMS.Framework.Contract.dll
+F:\GMS\GMS\Src\GMS.Basedata.Contract\bin\Release\GMS.Framework.Utility.dll
+F:\GMS\GMS\Src\GMS.Basedata.Contract\bin\Release\Newtonsoft.Json.dll
+F:\GMS\GMS\Src\GMS.Basedata.Contract\bin\Release\GMS.Framework.Contract.pdb
+F:\GMS\GMS\Src\GMS.Basedata.Contract\bin\Release\GMS.Framework.Utility.pdb
+F:\GMS\GMS\Src\GMS.Basedata.Contract\bin\Release\EntityFramework.xml
+F:\GMS\GMS\Src\GMS.Basedata.Contract\obj\Release\GMS.Basedata.Contract.dll
+F:\GMS\GMS\Src\GMS.Basedata.Contract\obj\Release\GMS.Basedata.Contract.pdb
+F:\GMS\GMS\Src\GMS.Basedata.Contract\obj\Release\GMS.Basedata.Contract.csprojResolveAssemblyReference.cache

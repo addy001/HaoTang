@@ -1,0 +1,126 @@
+﻿@using GMS.Framework.Contract
+@using GMS.Framework.Utility
+@using GMS.Framework.Web.Controls
+@using GMS.BasisData.Contract
+@using GMS.Account.Contract;
+@using GMS.Web.Admin.Common;
+@using GMS.Web.Admin.Areas.BasisData.Controllers;
+@model Supplier
+
+@{
+    Layout = "~/Views/Shared/_Layout.supplier.cshtml";
+}
+
+<div class="row-fluid">
+    <div class="span8">
+        <div class="dataTables_filter">
+            <label style="float: none;">
+                <span>供应商名称:</span>
+                <span class="m-wrap small">@Model.Name</span>
+            </label>
+
+            <label style="float: none;">
+                <span>联系人：</span>
+                <span class="m-wrap small">@Model.Contactor</span>
+
+            </label>
+
+            <label style="float: none;">
+                <span>联系方式：</span>
+                <span class="m-wrap small">@Model.Contact</span>
+
+            </label>
+            <label style="float: none;">
+                <span>传真：</span>
+                <span class="m-wrap small">@Model.Fax</span>
+
+            </label>
+            <label style="float: none;">
+                <span>邮箱：</span>
+                <span class="m-wrap small">@Model.Email</span>
+
+            </label>
+
+            <label style="float: none;">
+                <span>地址：</span>
+                <span class="m-wrap small">@Model.Address</span>
+            </label>
+        </div>
+    </div>
+</div>
+供应材料如下：
+@using (Html.BeginForm(null, null, null, FormMethod.Get, new { id = "mainForm" }))
+{
+    <table class="table table-striped table-hover ">
+        <thead>
+            <tr>
+                <th>材料名
+                </th>
+                <th>分类
+                </th>
+                <th>一次性/可重复利用材料
+                </th>
+
+                <th>单价</th>
+                <th>品质说明</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if ((ViewData["material"] as List<MaSu>) != null)
+            {
+
+                foreach (var m in (ViewData["material"] as List<MaSu>))
+                {
+                <tr>
+                    <td>
+                        @m.Name
+                    </td>
+                    <td>
+                        @{
+                    string ss = "";
+                    int classid = m.ClassificationID ?? -1;
+                    if (classid > 0)
+                    {
+                        ss = (ViewData["BasisDataService"] as IBasisDataService).GetClassification(classid).Name;
+                    }
+                        }
+                        @ss
+                    </td>
+                    <td>
+                        @{
+                    string s = "一次性材料";
+                    bool isava = m.IsAvailability ?? false;
+                    if (isava) { s = "可重复利用材料"; }
+
+                        }
+                        @s
+                    </td>
+                    <td>
+                        <input readonly="readonly" type="text" id='@("Price" + @m.ID)' value="@m.Price" class="m-wrap small" />
+
+                    </td>
+                    <td>
+                        <input readonly="readonly" type="text" id='@("Remark" + @m.ID)' value="@m.Remark" class="m-wrap small" />
+
+                    </td>
+                    <td>
+                        <a class="btn mini purple editSupplier" mid="@m.ID" sid="@Model.ID"  title='编辑' href="javascript:void(0)">
+                            <i class="icon-edit"></i>
+                            编辑
+                        </a>
+                        <a style="visibility: hidden" class="btn mini purple saveSupplier" mid="@m.ID" sid="@Model.ID" title='保存' href="javascript:void(0)">
+                            <i class="icon-edit"></i>
+                            保存
+                        </a>
+                    </td>
+                </tr>
+                }
+            }
+        </tbody>
+    </table>
+}
+<div class="dataTables_paginate paging_bootstrap pagination">
+    @Html.Pager((ViewData["material"] as PagedList<Material>), new PagerOptions() { ShowTotalItemCount = true })
+</div>
+

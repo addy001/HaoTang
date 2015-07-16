@@ -1,0 +1,8 @@
+F:\GMS\GMS\Src\GMS.Framework.Contract\bin\Release\GMS.Framework.Contract.dll
+F:\GMS\GMS\Src\GMS.Framework.Contract\bin\Release\GMS.Framework.Contract.pdb
+F:\GMS\GMS\Src\GMS.Framework.Contract\bin\Release\GMS.Framework.Utility.dll
+F:\GMS\GMS\Src\GMS.Framework.Contract\bin\Release\Newtonsoft.Json.dll
+F:\GMS\GMS\Src\GMS.Framework.Contract\bin\Release\GMS.Framework.Utility.pdb
+F:\GMS\GMS\Src\GMS.Framework.Contract\obj\Release\GMS.Framework.Contract.csprojResolveAssemblyReference.cache
+F:\GMS\GMS\Src\GMS.Framework.Contract\obj\Release\GMS.Framework.Contract.dll
+F:\GMS\GMS\Src\GMS.Framework.Contract\obj\Release\GMS.Framework.Contract.pdb

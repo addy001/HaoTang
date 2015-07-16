@@ -1,0 +1,10 @@
+F:\GMS\GMS\Src\GMS.Framework.DAL\bin\Release\GMS.Framework.DAL.dll
+F:\GMS\GMS\Src\GMS.Framework.DAL\bin\Release\GMS.Framework.DAL.pdb
+F:\GMS\GMS\Src\GMS.Framework.DAL\bin\Release\EntityFramework.dll
+F:\GMS\GMS\Src\GMS.Framework.DAL\bin\Release\GMS.Framework.Contract.dll
+F:\GMS\GMS\Src\GMS.Framework.DAL\bin\Release\Newtonsoft.Json.dll
+F:\GMS\GMS\Src\GMS.Framework.DAL\bin\Release\GMS.Framework.Contract.pdb
+F:\GMS\GMS\Src\GMS.Framework.DAL\bin\Release\EntityFramework.xml
+F:\GMS\GMS\Src\GMS.Framework.DAL\obj\Release\GMS.Framework.DAL.csprojResolveAssemblyReference.cache
+F:\GMS\GMS\Src\GMS.Framework.DAL\obj\Release\GMS.Framework.DAL.dll
+F:\GMS\GMS\Src\GMS.Framework.DAL\obj\Release\GMS.Framework.DAL.pdb

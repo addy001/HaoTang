@@ -1,0 +1,44 @@
+﻿@using GMS.Framework.Contract
+@using GMS.Framework.Web.Controls
+@using GMS.Account.Contract
+@using GMS.Account.Contract
+@using GMS.Project.Contract
+@model Accountant
+@{
+    Layout = "~/Views/Shared/_Layout.Edit.cshtml";
+}
+@section PageSpecificStyleSheetIncludes{
+    <style type="text/css">
+
+
+    </style>
+}
+@section PageSpecificJavascriptIncludes{
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+        });
+    </script>
+}
+@section MainContent{
+    <div class="portlet-body form-horizontal form-bordered form-row-stripped">
+        <div class="row-fluid">
+            <div class="control-group">
+                <label class="control-label">分类编码：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.Code, new { @class = "m-wrap small" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.Code)</span>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label">分类名称：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.Name, new { @class = "m-wrap small" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.Name)</span>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+

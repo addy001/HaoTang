@@ -1,0 +1,13 @@
+F:\GMS\GMS\bin\GMS.Crm.Contract.dll
+F:\GMS\GMS\bin\GMS.Crm.Contract.pdb
+F:\GMS\GMS\Src\GMS.Crm.Contract\obj\Debug\GMS.Crm.Contract.dll
+F:\GMS\GMS\Src\GMS.Crm.Contract\obj\Debug\GMS.Crm.Contract.pdb
+F:\GMS\Src1\HaoTang\GMS.Crm.Contract\obj\Debug\GMS.Crm.Contract.dll
+F:\GMS\Src1\HaoTang\GMS.Crm.Contract\obj\Debug\GMS.Crm.Contract.pdb
+F:\GMS\Src1\bin\GMS.Crm.Contract.dll
+F:\GMS\Src1\bin\GMS.Crm.Contract.pdb
+F:\GMS\bin\GMS.Crm.Contract.dll
+F:\GMS\bin\GMS.Crm.Contract.pdb
+F:\GMS\Src\GMS.Crm.Contract\obj\Debug\GMS.Crm.Contract.csprojResolveAssemblyReference.cache
+F:\GMS\Src\GMS.Crm.Contract\obj\Debug\GMS.Crm.Contract.dll
+F:\GMS\Src\GMS.Crm.Contract\obj\Debug\GMS.Crm.Contract.pdb

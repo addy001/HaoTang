@@ -1,0 +1,10 @@
+F:\GMS\GMS\Src\GMS.Framework.Web\bin\Release\GMS.Framework.Web.dll
+F:\GMS\GMS\Src\GMS.Framework.Web\bin\Release\GMS.Framework.Web.pdb
+F:\GMS\GMS\Src\GMS.Framework.Web\bin\Release\GMS.Framework.Contract.dll
+F:\GMS\GMS\Src\GMS.Framework.Web\bin\Release\GMS.Framework.Utility.dll
+F:\GMS\GMS\Src\GMS.Framework.Web\bin\Release\Newtonsoft.Json.dll
+F:\GMS\GMS\Src\GMS.Framework.Web\bin\Release\GMS.Framework.Contract.pdb
+F:\GMS\GMS\Src\GMS.Framework.Web\bin\Release\GMS.Framework.Utility.pdb
+F:\GMS\GMS\Src\GMS.Framework.Web\obj\Release\GMS.Framework.Web.csprojResolveAssemblyReference.cache
+F:\GMS\GMS\Src\GMS.Framework.Web\obj\Release\GMS.Framework.Web.dll
+F:\GMS\GMS\Src\GMS.Framework.Web\obj\Release\GMS.Framework.Web.pdb

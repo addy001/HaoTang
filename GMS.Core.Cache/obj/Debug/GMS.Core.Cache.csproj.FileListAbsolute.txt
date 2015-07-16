@@ -1,0 +1,15 @@
+F:\GMS\GMS\bin\GMS.Core.Cache.dll
+F:\GMS\GMS\bin\GMS.Core.Cache.pdb
+F:\GMS\GMS\Src\GMS.Core.Cache\obj\Debug\GMS.Core.Cache.csprojResolveAssemblyReference.cache
+F:\GMS\GMS\Src\GMS.Core.Cache\obj\Debug\GMS.Core.Cache.dll
+F:\GMS\GMS\Src\GMS.Core.Cache\obj\Debug\GMS.Core.Cache.pdb
+F:\GMS\Src1\HaoTang\GMS.Core.Cache\obj\Debug\GMS.Core.Cache.csprojResolveAssemblyReference.cache
+F:\GMS\Src1\HaoTang\GMS.Core.Cache\obj\Debug\GMS.Core.Cache.dll
+F:\GMS\Src1\HaoTang\GMS.Core.Cache\obj\Debug\GMS.Core.Cache.pdb
+F:\GMS\Src1\bin\GMS.Core.Cache.dll
+F:\GMS\Src1\bin\GMS.Core.Cache.pdb
+F:\GMS\bin\GMS.Core.Cache.dll
+F:\GMS\bin\GMS.Core.Cache.pdb
+F:\GMS\Src\GMS.Core.Cache\obj\Debug\GMS.Core.Cache.csprojResolveAssemblyReference.cache
+F:\GMS\Src\GMS.Core.Cache\obj\Debug\GMS.Core.Cache.dll
+F:\GMS\Src\GMS.Core.Cache\obj\Debug\GMS.Core.Cache.pdb

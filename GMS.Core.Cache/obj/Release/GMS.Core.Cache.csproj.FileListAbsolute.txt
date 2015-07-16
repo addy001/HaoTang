@@ -1,0 +1,9 @@
+F:\GMS\GMS\Src\GMS.Core.Cache\bin\Release\GMS.Core.Cache.dll
+F:\GMS\GMS\Src\GMS.Core.Cache\bin\Release\GMS.Core.Cache.pdb
+F:\GMS\GMS\Src\GMS.Core.Cache\bin\Release\GMS.Core.Config.dll
+F:\GMS\GMS\Src\GMS.Core.Cache\bin\Release\GMS.Framework.Utility.dll
+F:\GMS\GMS\Src\GMS.Core.Cache\bin\Release\GMS.Core.Config.pdb
+F:\GMS\GMS\Src\GMS.Core.Cache\bin\Release\GMS.Framework.Utility.pdb
+F:\GMS\GMS\Src\GMS.Core.Cache\obj\Release\GMS.Core.Cache.csprojResolveAssemblyReference.cache
+F:\GMS\GMS\Src\GMS.Core.Cache\obj\Release\GMS.Core.Cache.dll
+F:\GMS\GMS\Src\GMS.Core.Cache\obj\Release\GMS.Core.Cache.pdb
