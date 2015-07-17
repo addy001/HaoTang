@@ -31,6 +31,7 @@ namespace GMS.Project.Contract
         /// <summary>
         /// 钢材
         /// </summary>
+        [RegularExpression(@"[1-9]\d*", ErrorMessage = "请输入正整数")]
         public int? MSteel
         {
             get;
@@ -39,6 +40,7 @@ namespace GMS.Project.Contract
         /// <summary>
         /// 朔料管件及配件
         /// </summary>
+        [RegularExpression(@"[1-9]\d*", ErrorMessage = "请输入正整数")]
         public int? MHose
         {
             get;
@@ -47,6 +49,7 @@ namespace GMS.Project.Contract
         /// <summary>
         /// 水泥及制品
         /// </summary>
+        [RegularExpression(@"[1-9]\d*", ErrorMessage = "请输入正整数")]
         public int? MCement
         {
             get;
@@ -55,6 +58,7 @@ namespace GMS.Project.Contract
         /// <summary>
         /// 灰油
         /// </summary>
+        [RegularExpression(@"[1-9]\d*", ErrorMessage = "请输入正整数")]
         public int? MGrayOil
         {
             get;
@@ -63,6 +67,7 @@ namespace GMS.Project.Contract
         /// <summary>
         /// 电线电缆
         /// </summary>
+        [RegularExpression(@"[1-9]\d*", ErrorMessage = "请输入正整数")]
         public int? MWire
         {
             get;
@@ -71,6 +76,7 @@ namespace GMS.Project.Contract
         /// <summary>
         /// 木竹及制品
         /// </summary>
+        [RegularExpression(@"[1-9]\d*", ErrorMessage = "请输入正整数")]
         public int? MWood
         {
             get;
@@ -79,6 +85,7 @@ namespace GMS.Project.Contract
         /// <summary>
         /// 瓷砖类
         /// </summary>
+        [RegularExpression(@"[1-9]\d*", ErrorMessage = "请输入正整数")]
         public int? MCeramicTile
         {
             get;
@@ -87,6 +94,7 @@ namespace GMS.Project.Contract
         /// <summary>
         /// 门窗型材及配件类
         /// </summary>
+        [RegularExpression(@"[1-9]\d*", ErrorMessage = "请输入正整数")]
         public int? MWindowsDoors
         {
             get;
@@ -95,6 +103,7 @@ namespace GMS.Project.Contract
         /// <summary>
         /// 玻璃及配件
         /// </summary>
+        [RegularExpression(@"[1-9]\d*", ErrorMessage = "请输入正整数")]
         public int? MGalss
         {
             get;
@@ -103,6 +112,7 @@ namespace GMS.Project.Contract
         /// <summary>
         /// 零星五金类
         /// </summary>
+        [RegularExpression(@"[1-9]\d*", ErrorMessage = "请输入正整数")]
         public int? MHardware
         {
             get;
@@ -111,6 +121,7 @@ namespace GMS.Project.Contract
         /// <summary>
         /// 电气及配件
         /// </summary>
+        [RegularExpression(@"[1-9]\d*", ErrorMessage = "请输入正整数")]
         public int? MElectric
         {
             get;
@@ -119,6 +130,7 @@ namespace GMS.Project.Contract
         /// <summary>
         /// 混凝土
         /// </summary>
+        [RegularExpression(@"[1-9]\d*", ErrorMessage = "请输入正整数")]
         public int? MConcrete
         {
             get;
@@ -127,6 +139,7 @@ namespace GMS.Project.Contract
         /// <summary>
         /// 砖
         /// </summary>
+        [RegularExpression(@"[1-9]\d*", ErrorMessage = "请输入正整数")]
         public int? MBrick
         {
             get;
@@ -135,6 +148,7 @@ namespace GMS.Project.Contract
         /// <summary>
         /// 模板
         /// </summary>
+        [RegularExpression(@"[1-9]\d*", ErrorMessage = "请输入正整数")]
         public int? MTemplate
         {
             get;
@@ -143,6 +157,7 @@ namespace GMS.Project.Contract
         /// <summary>
         /// 铝材
         /// </summary>
+        [RegularExpression(@"[1-9]\d*", ErrorMessage = "请输入正整数")]
         public int? MAluminum
         {
             get;
@@ -151,6 +166,7 @@ namespace GMS.Project.Contract
         /// <summary>
         /// 材料检测费
         /// </summary>
+        [RegularExpression(@"[1-9]\d*", ErrorMessage = "请输入正整数")]
         public int? MTest
         {
             get;
@@ -159,6 +175,7 @@ namespace GMS.Project.Contract
         /// <summary>
         /// 砂浆王
         /// </summary>
+        [RegularExpression(@"[1-9]\d*", ErrorMessage = "请输入正整数")]
         public int? MMortar
         {
             get;
@@ -167,6 +184,7 @@ namespace GMS.Project.Contract
         /// <summary>
         /// 消防、通风、排烟
         /// </summary>
+        [RegularExpression(@"[1-9]\d*", ErrorMessage = "请输入正整数")]
         public int? MFireAirSmoke
         {
             get;
@@ -175,6 +193,7 @@ namespace GMS.Project.Contract
         /// <summary>
         /// 周转材料租赁
         /// </summary>
+        [RegularExpression(@"[1-9]\d*", ErrorMessage = "请输入正整数")]
         public int? MTurnoverRent
         {
             get;
@@ -183,6 +202,7 @@ namespace GMS.Project.Contract
         /// <summary>
         /// 周转材料摊销
         /// </summary>
+        [RegularExpression(@"[1-9]\d*", ErrorMessage = "请输入正整数")]
         public int? MTurnovers
         {
             get;
@@ -191,6 +211,7 @@ namespace GMS.Project.Contract
         /// <summary>
         /// 其他材料费用
         /// </summary>
+        [RegularExpression(@"[1-9]\d*", ErrorMessage = "请输入正整数")]
         public int? MOther
         {
             get;

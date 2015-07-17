@@ -31,6 +31,7 @@ namespace GMS.Project.Contract
         /// <summary>
         /// 水费
         /// </summary>
+        [RegularExpression(@"[1-9]\d*", ErrorMessage = "请输入正整数")]
         public int? Water
         {
             get;
@@ -39,6 +40,7 @@ namespace GMS.Project.Contract
         /// <summary>
         /// 电费
         /// </summary>
+        [RegularExpression(@"[1-9]\d*", ErrorMessage = "请输入正整数")]
         public int? Electric
         {
             get;
@@ -47,6 +49,7 @@ namespace GMS.Project.Contract
         /// <summary>
         /// 临时生产工具费用
         /// </summary>
+        [RegularExpression(@"[1-9]\d*", ErrorMessage = "请输入正整数")]
         public int? TempTool
         {
             get;
@@ -55,6 +58,7 @@ namespace GMS.Project.Contract
         /// <summary>
         /// 检测费
         /// </summary>
+        [RegularExpression(@"[1-9]\d*", ErrorMessage = "请输入正整数")]
         public int? Test
         {
             get;
@@ -63,6 +67,7 @@ namespace GMS.Project.Contract
         /// <summary>
         /// 质检费
         /// </summary>
+        [RegularExpression(@"[1-9]\d*", ErrorMessage = "请输入正整数")]
         public int? QualityCosts
         {
             get;
@@ -71,6 +76,7 @@ namespace GMS.Project.Contract
         /// <summary>
         /// 文明施工
         /// </summary>
+        [RegularExpression(@"[1-9]\d*", ErrorMessage = "请输入正整数")]
         public int? Civilization
         {
             get;
@@ -79,6 +85,7 @@ namespace GMS.Project.Contract
         /// <summary>
         /// 安全工程
         /// </summary>
+        [RegularExpression(@"[1-9]\d*", ErrorMessage = "请输入正整数")]
         public int? Secure
         {
             get;
@@ -87,6 +94,7 @@ namespace GMS.Project.Contract
         /// <summary>
         /// 材料二次搬运
         /// </summary>
+        [RegularExpression(@"[1-9]\d*", ErrorMessage = "请输入正整数")]
         public int? SecondHand
         {
             get;
@@ -95,6 +103,7 @@ namespace GMS.Project.Contract
         /// <summary>
         /// 临时设施摊销费
         /// </summary>
+        [RegularExpression(@"[1-9]\d*", ErrorMessage = "请输入正整数")]
         public int? TempFacility
         {
             get;
@@ -103,6 +112,7 @@ namespace GMS.Project.Contract
         /// <summary>
         /// 其他费用
         /// </summary>
+        [RegularExpression(@"[1-9]\d*", ErrorMessage = "请输入正整数")]
         public int? OtherFee
         {
             get;

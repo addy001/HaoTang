@@ -39,38 +39,47 @@ namespace GMS.Project.Contract
         /// <summary>
         /// 拆除人工费用
         /// </summary>
+        [RegularExpression(@"[1-9]\d*", ErrorMessage = "请输入正整数")]
         public int? TearDown { get; set; }
         /// <summary>
         /// 木工费用
         /// </summary>
+        [RegularExpression(@"[1-9]\d*", ErrorMessage = "请输入正整数")]
         public int? Carpenter { get; set; }
         /// <summary>
         /// 水电工费用
         /// </summary>
+        [RegularExpression(@"[1-9]\d*", ErrorMessage = "请输入正整数")]
         public int? Plumbers { get; set; }
         /// <summary>
         /// 油漆工费用
         /// </summary>
+        [RegularExpression(@"[1-9]\d*", ErrorMessage = "请输入正整数")]
         public int? Painter { get; set; }
         /// <summary>
         /// 电焊工费用
         /// </summary>
+        [RegularExpression(@"[1-9]\d*", ErrorMessage = "请输入正整数")]
         public int? ELectricWelder { get; set; }
         /// <summary>
         /// 钢筋工费用
         /// </summary>
+        [RegularExpression(@"[1-9]\d*", ErrorMessage = "请输入正整数")]
         public int? Steel { get; set; }
         /// <summary>
         /// 搬运工费用
         /// </summary>
+        [RegularExpression(@"[1-9]\d*", ErrorMessage = "请输入正整数")]
         public int? Transportor { get; set; }
         /// <summary>
         /// 垃圾清理工费
         /// </summary>
+        [RegularExpression(@"[1-9]\d*", ErrorMessage = "请输入正整数")]
         public int? Cleaner { get; set; }
         /// <summary>
         /// 其他费用
         /// </summary>
+        [RegularExpression(@"[1-9]\d*", ErrorMessage = "请输入正整数")]
         public int? OtherLabor { get; set; }
         /// <summary>
         /// 其他费用说明

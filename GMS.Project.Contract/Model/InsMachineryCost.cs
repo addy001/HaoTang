@@ -30,31 +30,38 @@ namespace GMS.Project.Contract
         /// <summary>
         /// 进退场费
         /// </summary>
-       [Display(Name = "进退场费")]      
+       [Display(Name = "进退场费")]
+       [RegularExpression(@"[1-9]\d*", ErrorMessage = "请输入正整数")]
        public int? Transport { get; set; }
         /// <summary>
         /// 机械人员工资
         /// </summary>
+        [RegularExpression(@"[1-9]\d*", ErrorMessage = "请输入正整数")]
        public int? Operating { get; set; }
         /// <summary>
         /// 修理保养费
         /// </summary>
+        [RegularExpression(@"[1-9]\d*", ErrorMessage = "请输入正整数")]
         public int? Repair { get; set; }
         /// <summary>
         /// 燃油费
         /// </summary>
+        [RegularExpression(@"[1-9]\d*", ErrorMessage = "请输入正整数")]
         public int? Fuel { get; set; }
         /// <summary>
         ///折旧费
         /// </summary>
+        [RegularExpression(@"[1-9]\d*", ErrorMessage = "请输入正整数")]
         public int? Depreciation { get; set; }
         /// <summary>
         /// 车船税
         /// </summary>
+        [RegularExpression(@"[1-9]\d*", ErrorMessage = "请输入正整数")]
         public int? TravelTax { get; set; }
         /// <summary>
         /// 其他费用
         /// </summary>
+        [RegularExpression(@"[1-9]\d*", ErrorMessage = "请输入正整数")]
         public int? OtherFee { get; set; }
        
         /// <summary>d

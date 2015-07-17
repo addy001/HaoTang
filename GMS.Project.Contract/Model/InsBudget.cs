@@ -49,14 +49,17 @@ namespace GMS.Project.Contract
         /// <summary>
         /// 工程保修金
         /// </summary>
+        [RegularExpression(@"[1-9]\d*", ErrorMessage = "请输入正整数")]
         public int? InsWarranty { get; set; }
         /// <summary>
         /// 分包工程
         /// </summary>
+        [RegularExpression(@"[1-9]\d*", ErrorMessage = "请输入正整数")]
         public int? InsSubcontracting { get; set; }
         /// <summary>
         /// 其他费用
         /// </summary>
+        [RegularExpression(@"[1-9]\d*", ErrorMessage = "请输入正整数")]
         public int? InsOtherBudget { get; set; }
         /// <summary>
         /// 备注
