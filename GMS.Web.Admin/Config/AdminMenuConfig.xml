@@ -77,17 +77,17 @@
       <AdminMenuArray>
         <AdminMenu name="文档管理" url="/Project/Files/Index" info="文档资料管理" permission="ProjectManage_File" />
         <AdminMenu name="余料管理" url="/Project/Oddments/Index" info="余料管理" permission="ProjectManage_Oddments" />
-        <AdminMenu name="项目采购" url="/Project/ProjectCtrl/Index" info="会计科目设置" permission="ProjectManage_Accountant" />
-        <AdminMenu name="公司采购" url="/Project/OfficeCtrl/Index" info="会计科目设置" permission="ProjectManage_Accountant" />
+        <AdminMenu name="项目采购" url="/Project/ProjectCtrl/Index" info="会计科目设置" permission="ProjectManage_ProjectCtrl" />
+        <AdminMenu name="公司采购" url="/Project/OfficeCtrl/Index" info="会计科目设置" permission="ProjectManage_OfficeCtrl" />
 
       </AdminMenuArray>
     </AdminMenuGroup>
     
     <AdminMenuGroup name="财务管理" icon="icon-phone-sign">
       <AdminMenuArray>
-        <!--<AdminMenu name="会计科目大类" url="/Project/Accountant/Index" info="会计科目设置" permission="ProjectManage_Accountant" />-->
-        <AdminMenu name="会计科目管理" url="/Project/Accounting/Index" info="会计科目设置" permission="ProjectManage_Budget" />
-        <!--<AdminMenu name="项目即时管理" url="" info="各项目每月的运营管理" permission="CrmManage_Project" />-->
+        <AdminMenu name="会计科目管理" url="/Project/Accounting/Index" info="会计科目设置" permission="ProjectManage_Accounting" />
+        <AdminMenu name="应付帐管理" url="/Project/Payables/Index" info="应收帐设置" permission="ProjectManage_Payables" />
+        <AdminMenu name="应收帐管理" url="/Project/Income/Index" info="应收帐设置" permission="ProjectManage_Income" />
 
       </AdminMenuArray>
     </AdminMenuGroup>

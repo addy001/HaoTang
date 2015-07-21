@@ -11,7 +11,7 @@
     <div class="span4">
         <div>
             <a class="btn red" id="delete" title='删除选中项' href="javascript:;"><i class="icon-trash icon-white"></i>删除</a>
-            <a class="btn blue thickbox" title='添加新文档' href="@Url.Action("Create")?TB_iframe=true&height=450&width=400"><i class="icon-plus icon-white"></i>新增</a>
+            <a class="btn blue thickbox" title='添加新文档' href="@Url.Action("Create")?TB_iframe=true&height=550&width=900"><i class="icon-plus icon-white"></i>新增</a>
         </div>
     </div>
     <div class="span8">
@@ -38,16 +38,31 @@
                 <th style="width: 8px;">
                     <input type="checkbox" id="checkall" class="group-checkable" />
                 </th>
-                  <th>
-                    编号
+                <th>编号
                 </th>
                 <th>名称
                 </th>
-              
-                 <th>类型
+                <th>类型
                 </th>
-                <th>描述
-                </th>               
+                <th>甲方
+                </th>
+                <th>乙方
+                </th>
+                <th>签订日期
+                </th>
+                <th>履行日期
+                </th>
+                <th>结束日期
+                </th>
+                <th>合同金额
+              
+                </th>
+                <th>内容
+                </th>
+                <th>附件
+                </th>
+                <th>备注
+                </th>
                 <th>详情/编辑
                 </th>
 
@@ -66,21 +81,45 @@
                     <td>
                         @m.Name
                     </td>
-                    
-                      <td>
-                        @m.Type
 
+                    <td>
+                        @m.Type
                     </td>
+                    <td>
+                        @m.FirstParty
+                    </td>
+                    <td>
+                        @m.SecondParty
+                    </td>
+                    <td>
+                        @m.SignDate
+                    </td>
+                    <td>
+                        @m.FulfillDate
+                    </td>
+                    <td>
+                        @m.EndDate
+                    </td>
+                    <td>
+                        @m.Money
+                    </td>
+                   
                     <td>
                         @m.Description
                     </td>
-                  
-                   @* <td>
+                    <td>
+                        @m.Accessory
+                    </td>
+                    <td>
+                        @m.Remark
+                    </td>
+
+                    @* <td>
                         <span class="label label-@(m.IsPro ? "success" : "inverse")">@m.IsPro</span>
                     </td>*@
 
                     <td>
-                        <a class="btn mini purple thickbox" title='文档详情，点击保存' href="@Url.Action("Edit", new { id = m.ID })?TB_iframe=true&height=450&width=400">
+                        <a class="btn mini purple thickbox" title='文档详情，点击保存' href="@Url.Action("Edit", new { id = m.ID })?TB_iframe=true&height=550&width=900">
                             <i class="icon-edit"></i>
                             Edit
                         </a>

@@ -418,52 +418,104 @@ namespace GMS.Project.BLL
             }
         }
         #endregion
-
-        #region  Accountant CURD
-        public Accountant GetAccount(int id)
+        //-----------------------------------财务管理--------------------------------------------
+        #region Incomes CURD
+        public Income GetIncome(int id)
         {
             using (var dbContext = new ProjectDbContext())
             {
-                return dbContext.Find<Accountant>(id);
+                return dbContext.Find<Income>(id);
             }
         }
 
-        public IEnumerable<Accountant> GetAccountantList(AccountantRequest request = null)
+        public IEnumerable<Income> GetIncomeList(IncomeRequest request = null)
         {
-            request = request ?? new AccountantRequest();
+            request = request ?? new IncomeRequest();
             using (var dbContext = new ProjectDbContext())
             {
-                IQueryable<Accountant> Accountant = dbContext.Accountants;
+                IQueryable<Income> Income = dbContext.Incomes;
 
-                if (!string.IsNullOrEmpty(request.Name))
-                    Accountant = Accountant.Where(u => u.Name.Contains(request.Name));
+                if (!string.IsNullOrEmpty(request.RecObject))
+                    Income = Income.Where(u => u.RecObject.Contains(request.RecObject));
 
-                return Accountant.OrderByDescending(u => u.ID).ToPagedList(request.PageIndex, request.PageSize);
+                return Income.OrderByDescending(u => u.ID).ToPagedList(request.PageIndex, request.PageSize);
             }
         }
 
-        public void SaveAccountant(Accountant account)
+        public void SaveIncome(Income income)
         {
             using (var dbContext = new ProjectDbContext())
             {
 
-                if (account.ID > 0)
+                if (income.ID > 0)
                 {
 
-                    dbContext.Update<Accountant>(account);
+                    dbContext.Update<Income>(income);
                 }
                 else
                 {
-                    dbContext.Insert<Accountant>(account);
+                    dbContext.Insert<Income>(income);
                 }
             }
         }
 
-        public void DeleteAccountant(List<int> ids)
+        public void DeleteIncome(List<int> ids)
         {
             using (var dbContext = new ProjectDbContext())
             {
-                dbContext.Accountants.Where(u => ids.Contains(u.ID)).Delete();
+                dbContext.Incomes.Where(u => ids.Contains(u.ID)).Delete();
+            }
+        }
+
+        #endregion
+
+
+
+        #region  Payables CURD
+        public Payables GetPayables(int id)
+        {
+            using (var dbContext = new ProjectDbContext())
+            {
+                return dbContext.Find<Payables>(id);
+            }
+        }
+
+        public IEnumerable<Payables> GetPayablesList(PayablesRequest request = null)
+        {
+            request = request ?? new PayablesRequest();
+            using (var dbContext = new ProjectDbContext())
+            {
+                IQueryable<Payables> Payables = dbContext.Payables;
+
+                if (!string.IsNullOrEmpty(request.Receivables))
+                    Payables = Payables.Where(u => u.Receivables.Contains(request.Receivables));
+
+                return Payables.OrderByDescending(u => u.ID).ToPagedList(request.PageIndex, request.PageSize);
+            }
+        }
+
+        public void SavePayables(Payables pay)
+        {
+            using (var dbContext = new ProjectDbContext())
+            {
+
+                if (pay.ID > 0)
+                {
+
+                    dbContext.Update<Payables>(pay);
+                }
+                else
+                {
+                    dbContext.Insert<Payables>(pay);
+                }
+            }
+        }
+
+        public void DeletePayables(List<int> ids)
+        {
+            using (var dbContext = new ProjectDbContext())
+            {
+                dbContext.Payables.Where(u => ids.Contains(u.ID)).Delete();
             }
         }
         #endregion
@@ -1013,6 +1065,64 @@ namespace GMS.Project.BLL
         #endregion
 
 
+        //#region ProjectCtrl CURD
+        //public ProjectCtrl GetProjectCtrl(int id)
+        //{
+        //    using (var dbContext = new ProjectDbContext())
+        //    {
+        //        return dbContext.Find<ProjectCtrl>(id);
+        //    }
+        //}
+
+        //public IEnumerable<ProjectCtrl> GetProjectCtrlList(ProjectCtrlRequest request = null)
+        //{
+        //    request = request ?? new ProjectCtrlRequest();
+        //    using (var dbContext = new ProjectDbContext())
+        //    {
+        //        IQueryable<ProjectCtrl> projects = dbContext.ProjectCtrls;
+
+
+        //        if (!string.IsNullOrEmpty(request.Name))
+
+        //            projects = projects.Where(u => u.Name.Contains(request.Name));
+
+        //        //if (!string.IsNullOrEmpty(request.Stuffname))
+        //        //    projects = projects.Where(u => u.Stuffname.Contains(request.Stuffname));
+
+        //        //if (!string.IsNullOrEmpty(request.obb))
+        //        //    projects = projects.Where(u => u.obb.Contains(request.obb));
+
+        //        //if (!string.IsNullOrEmpty(request.Way))
+        //        //    projects = projects.Where(u => u.Way.Contains(request.Way));
+
+        //        return projects.OrderByDescending(u => u.ID).ToPagedList(request.PageIndex, request.PageSize);
+        //    }
+        //}
+
+        //public void SaveProjectCtrl(ProjectCtrl project)
+        //{
+        //    using (var dbContext = new ProjectDbContext())
+        //    {
+        //        if (project.ID > 0)
+        //        {
+        //            dbContext.Update<ProjectCtrl>(project);
+        //        }
+        //        else
+        //        {
+        //            dbContext.Insert<ProjectCtrl>(project);
+        //        }
+        //    }
+        //}
+
+        //public void DeleteProjectCtrl(List<int> ids)
+        //{
+        //    using (var dbContext = new ProjectDbContext())
+        //    {
+        //        dbContext.ProjectCtrls.Where(u => ids.Contains(u.ID)).Delete();
+        //    }
+        //}
+        //#endregion
+
         #region ProjectCtrl CURD
         public ProjectCtrl GetProjectCtrl(int id)
         {
@@ -1027,12 +1137,14 @@ namespace GMS.Project.BLL
             request = request ?? new ProjectCtrlRequest();
             using (var dbContext = new ProjectDbContext())
             {
-                IQueryable<ProjectCtrl> projects = dbContext.ProjectCtrls;
+                IQueryable<ProjectCtrl> projects = dbContext.ProjectCtrls.Include("ProjectBasedata");
 
 
                 if (!string.IsNullOrEmpty(request.Name))
 
                     projects = projects.Where(u => u.Name.Contains(request.Name));
+                if (request.ProjectBasedataID > 0)
+                    projects = projects.Where(u => u.ProjectBasedataID == request.ProjectBasedataID);
 
                 //if (!string.IsNullOrEmpty(request.Stuffname))
                 //    projects = projects.Where(u => u.Stuffname.Contains(request.Stuffname));

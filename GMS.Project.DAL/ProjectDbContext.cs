@@ -43,8 +43,10 @@ namespace GMS.Project.DAL
         public DbSet<Measure> Measures { get; set; }
 
         public DbSet<Overhead> Overheads { get; set; }
+        //--------------------------财务管理---------------------------------
+        public DbSet<Income> Incomes { get; set; }
 
-        public DbSet<Accountant> Accountants { get; set; }
+        public DbSet<Payables> Payables { get; set; }
 
         public DbSet<Accounting> Accountings { get; set; }
 

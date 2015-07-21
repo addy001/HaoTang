@@ -89,10 +89,11 @@ namespace GMS.Account.Contract
 
         [EnumTitle("项目间接费用预算")]
         ProjectManage_Overhead = 705,
-        //-----------------------------------------------------------------------------------------------------------
-        [EnumTitle("会计科目管理")]
-        ProjectManage_Accountant = 801,
-
+        //--------------------------------------------财务管理--------------------------------------------------------------
+        [EnumTitle("应付款管理")]
+        ProjectManage_Payables = 801,
+        [EnumTitle("应收款管理")]
+        ProjectManage_Income = 803,
 
         [EnumTitle("会计科目管理")]
         ProjectManage_Accounting = 802,

@@ -7,80 +7,157 @@
     Layout = "~/Views/Shared/_Layout.Edit.cshtml";
 }
 @section PageSpecificStyleSheetIncludes{
-    
+
 }
 @section PageSpecificJavascriptIncludes{
     <script type="text/javascript" src="@Url.StaticFile("/content/scripts/flashupload.js")"></script>
     <script type="text/javascript" src="@Url.StaticFile("/content/xheditor/xheditor-1.1.6-zh-cn.min.js")"></script>
-	
-        <script type="text/javascript">
-            $('#uploader').FileUpload({
-                'subfolder': 'cms',
-                'callback': function (msg) {
-                    //msg.url为图片地址
-                    $("#PaperCon").val(msg.url);
-                    $("#preview").popover({ trigger: 'hover', html: true, placement: 'right ', content: "<img src='" + getThumbAbsoluteUrl(msg.url) + "'/>" });
-                }
-            });
 
-            if ($("#PaperCon").val()) {
-                $("#preview").popover({ trigger: 'hover', html: true, placement: 'right ', content: "<img src='" + getThumbAbsoluteUrl($("#PaperCon").val()) + "'/>" });
+    <script type="text/javascript">
+        $('#uploader').FileUpload({
+            'subfolder': 'cms',
+            'callback': function (msg) {
+                //msg.url为图片地址
+                $("#PaperCon").val(msg.url);
+                $("#preview").popover({ trigger: 'hover', html: true, placement: 'right ', content: "<img src='" + getThumbAbsoluteUrl(msg.url) + "'/>" });
             }
-        
-            </script>
+        });
+
+        if ($("#PaperCon").val()) {
+            $("#preview").popover({ trigger: 'hover', html: true, placement: 'right ', content: "<img src='" + getThumbAbsoluteUrl($("#PaperCon").val()) + "'/>" });
+        }
+
+    </script>
 }
 @section MainContent{
-<div class="portlet-body form-horizontal form-bordered form-row-stripped">
-    <div class="row-fluid"> 
-            <div class="control-group">
-                <label class="control-label"><span class="required">*</span>名称：</label>
-                <div class="controls">
-                @Html.TextBoxFor(m => m.Name, new { @class = "m-wrap" })
-                <span class="help-inline">@Html.ValidationMessageFor(m => m.Name)</span>
+    <div class="portlet-body form-horizontal form-bordered form-row-stripped">
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span6 control-group">
+                    <label class="control-label"><span class="required">*</span>名称：</label>
+                    <div class="controls">
+                        @Html.TextBoxFor(m => m.Name, new { @class = "m-wrap" })
+                        <span class="help-inline">@Html.ValidationMessageFor(m => m.Name)</span>
+                    </div>
                 </div>
-               
-                <label class="control-label">描述：</label>
-                <div class="controls">
-                @Html.TextAreaFor(m => m.Description, new { @class = "m-wrap"})
-                
+                <div class="span6 control-group">
+                    <label class="control-label"><span class="required">*</span>类型：</label>
+                    <div class="controls">
+                        @Html.TextBoxFor(m => m.Type, new { @class = "m-wrap" })
+                        <span class="help-inline">@Html.ValidationMessageFor(m => m.Type)</span>
+                    </div>
                 </div>
-         @*   
-              <label class="control-label">是否审批：</label>
-              <div class="controls">
-               @Html.CheckBoxFor(m => m.IsPro)
-               </div>*@
+            </div>
 
-              <label class="control-label">文件上传：</label>
-              <div class="controls">
-                   <div class="input-append">
-                    @Html.TextBoxFor(m => m.Accessory, new { @class = "m-wrap large" })
-                   <span class="add-on" title="预览" id="preview"><i class="icon-picture"></i></span>
-                   </div>
-                   <div id="uploader"></div>
-                   <div id="fileQueue"></div>
-                   <span class="help-inline">@Html.ValidationMessageFor(m => m.Accessory)</span>
-              </div>
-              <label class="control-label">类别：</label>
-              <div class="comtrols">
-              @if(Model.ID == 0){
+            <div class="row-fluid">
+                <div class="span6 control-group">
+                    <label class="control-label">甲方：</label>
+                    <div class="controls">
+                        @Html.TextBoxFor(m => m.FirstParty, new { @class = "m-wrap" })
+                        <span class="help-inline">@Html.ValidationMessageFor(m => m.FirstParty)</span>
+                    </div>
+                </div>
+                <div class="span6 control-group">
+                    <label class="control-label">乙方：</label>
+                    <div class="controls">
+                        @Html.TextBoxFor(m => m.SecondParty, new { @class = "m-wrap" })
+                        <span class="help-inline">@Html.ValidationMessageFor(m => m.SecondParty)</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row-fluid">
+                <div class="span6 control-group">
+                    <label class="control-label">合同签订日期：</label>
+                    <div class="controls">
+                        @Html.TextBoxFor(m => m.SignDate, new { @class = "m-wrap" })
+                        <span class="help-inline">@Html.ValidationMessageFor(m => m.SignDate)</span>
+                    </div>
+                </div>
+                <div class="span6 control-group">
+                    <label class="control-label">合同履行日期：</label>
+                    <div class="controls">
+                        @Html.TextBoxFor(m => m.FulfillDate, new { @class = "m-wrap" })
+                        <span class="help-inline">@Html.ValidationMessageFor(m => m.FulfillDate)</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row-fluid">
+                <div class="span6 control-group">
+                    <label class="control-label">合同结束日期：</label>
+                    <div class="controls">
+                        @Html.TextBoxFor(m => m.EndDate, new { @class = "m-wrap" })
+                        <span class="help-inline">@Html.ValidationMessageFor(m => m.EndDate)</span>
+                    </div>
+                </div>
+                <div class="span6 control-group">
+                    <label class="control-label">合同金额：</label>
+                    <div class="controls">
+                        @Html.TextBoxFor(m => m.Money, new { @class = "m-wrap" })
+                        <span class="help-inline">@Html.ValidationMessageFor(m => m.Money)</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row-fluid">
+                <div class="span6 control-group">
+                    <label class="control-label">内容：</label>
+                    <div class="controls">
+                        @Html.TextBoxFor(m => m.Description, new { @class = "m-wrap" })
+                        <span class="help-inline">@Html.ValidationMessageFor(m => m.Description)</span>
+                    </div>
+                </div>
+                <div class="span6 control-group">
+                    <label class="control-label">备注：</label>
+                    <div class="controls">
+                        @Html.TextBoxFor(m => m.Remark, new { @class = "m-wrap" })
+                        <span class="help-inline">@Html.ValidationMessageFor(m => m.Remark)</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row-fluid">
+                <div class="span12 control-group">
+                    <label class="control-label">文件上传：</label>
+                    <div class="controls">
+                        <div class="input-append">
+                            @Html.TextBoxFor(m => m.Accessory, new { @class = "m-wrap large" })
+                            <span class="add-on" title="预览" id="preview"><i class="icon-picture"></i></span>
+                        </div>
+                        <div id="uploader"></div>
+                        <div id="fileQueue"></div>
+                        <span class="help-inline">@Html.ValidationMessageFor(m => m.Accessory)</span>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+
+}
+@*<label class="control-label">类别：</label>
+            <div class="comtrols">
+                @if (Model.ID == 0)
+                {
               
-              @Html.DropDownList("Type", new List<SelectListItem> { 
+                    @Html.DropDownList("Type", new List<SelectListItem> { 
               (new SelectListItem() {Text = "对内合同", Value = "对内合同", Selected = false}),
               (new SelectListItem() {Text = "对外合同", Value = "对外合同", Selected = false}),
               (new SelectListItem() {Text = "设计图纸", Value = "设计图纸", Selected = false})
               })
 
-              <p style="right:auto">---创建后不可更改类型---</p>
-              }
-              @if (Model.ID != 0)
-              {
-              @Html.TextBoxFor(m => m.Type, new { Readonly = "true" })
-              }
-              
-                
-              </div>
-           </div>
+<p style="right: auto">---创建后不可更改类型---</p>
+                }
+    @if (Model.ID != 0)
+    {
+        @Html.TextBoxFor(m => m.Type, new { Readonly = "true" })
+    }*@
 
-    </div>
-</div>
-}
+
+
+
+@*   
+              <label class="control-label">是否审批：</label>
+              <div class="controls">
+               @Html.CheckBoxFor(m => m.IsPro)
+               </div>*@

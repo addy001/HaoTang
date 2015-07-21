@@ -11,11 +11,12 @@
 @section PageSpecificJavascriptIncludes{
 }
 @section MainContent{
+<tr>
 <div class="portlet-body form-horizontal form-bordered form-row-stripped">
     <div class="row-fluid"> 
             <div class="control-group">
                 
-                <label class="control-label"><span class="required">*</span>名称：</label>
+                <label class="control-label"><span class="required">*</span>材料名称：</label>
                 <div class="controls">
                 @Html.TextBoxFor(m => m.Name, new { @class = "m-wrap" })
                 <span class="help-inline">@Html.ValidationMessageFor(m => m.Name)</span>
@@ -26,30 +27,117 @@
                 @Html.TextBoxFor(m => m.oddnum, new {Readonly = "true" });
                 
                 </div>
+                  
+                    
                 }
-                <label class="control-label">价格：</label>
+                @if(Model.ID==0){
+                <label class="control-label">所属项目：</label>
+                
+                <div class="controls">
+                @Html.DropDownList("ProjectBasedataID")
+                </div>
+                    }
+                <label class="control-label">采购人：</label>
+                
+                <div class="controls">
+                @Html.TextBoxFor(m=>m.Buyer,new{@class="m-wrap"})
+                </div>
+
+         </div>
+
+    </div>
+</div>
+</tr>
+<tr>
+
+<div class="portlet-body form-horizontal form-bordered form-row-stripped">
+    <div class="row-fluid"> 
+            <div class="control-group">
+                
+               
+                <label class="control-label">单价：</label>
                 
                 <div class="controls">
                 @Html.TextBoxFor(m=>m.obb,new{@class="m-wrap"})
                 </div>
+                <label class="control-label">数量：</label>
+                
+                <div class="controls">
+                @Html.TextBoxFor(m=>m.Num,new{@class="m-wrap"})
+                </div>
+
+                @if(Model.ID!=0){
+                <label class="control-label">合计：</label>
+                <div class="controls">
+                @Html.TextBoxFor(m => m.Total, new {Readonly = "true" });
+                
+                </div>
+                }
+                
                 <label class="control-label">供应商：</label>
                 
                 <div class="controls">
                 @Html.TextBoxFor(m=>m.Way,new{@class="m-wrap"})
                 </div>
-
-                <label class="control-label">简述：</label>
-                <div class="controls">
-                @Html.TextAreaFor(m => m.Stuffname, new { @class = "m-wrap"})
-                </div>
-                <div class="control-group">
-                <label class="control-label">是否审批：</label>
-                    <div class="controls">
-                      @Html.CheckBoxFor(m => m.IsPro)
-                    </div>
-                </div>
+                
          </div>
 
     </div>
 </div>
+</tr>
+<tr>
+
+<div class="portlet-body form-horizontal form-bordered form-row-stripped">
+    <div class="row-fluid"> 
+            <div class="control-group">
+                
+                 <label class="control-label">批准人：</label>
+                
+                <div class="controls">
+                @Html.TextBoxFor(m=>m.Approver,new{@class="m-wrap"})
+                </div>
+                <label class="control-label">核准人：</label>
+                
+                <div class="controls">
+                @Html.TextBoxFor(m=>m.Authorizer,new{@class="m-wrap"})
+                </div>
+
+                <label class="control-label">是否审批：</label>
+                    <div class="controls">
+                      @Html.CheckBoxFor(m => m.IsPro)
+                    </div>
+                <label class="control-label">是否达标：</label>
+                <div class="controls">
+                      @Html.CheckBoxFor(m => m.IsStandard)
+                </div>
+                 
+           </div>
+
+    </div>
+</div>
+
+</tr>
+<tr>
+
+<div class="portlet-body form-horizontal form-bordered form-row-stripped">
+    <div class="row-fluid"> 
+            <div class="control-group">
+                
+                 <label class="control-label">到货时间：</label>
+                
+                <div class="controls">
+                @Html.TextBoxFor(m=>m.Arrival,new{@class="m-wrap"})
+                </div>
+                <label class="control-label">备注：</label>
+                
+                <div class="controls">
+                @Html.TextAreaFor(m=>m.Authorizer,new{@class="m-wrap"})
+                </div>
+
+           </div>
+
+    </div>
+</div>
+
+</tr>
 }

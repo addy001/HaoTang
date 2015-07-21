@@ -1,0 +1,115 @@
+﻿@using GMS.Framework.Contract
+@using GMS.Framework.Web.Controls
+@using GMS.Account.Contract
+@using GMS.Account.Contract
+@using GMS.Project.Contract
+@model Income
+@{
+    Layout = "~/Views/Shared/_Layout.Edit.cshtml";
+}
+@section PageSpecificStyleSheetIncludes{
+    <style type="text/css">
+    </style>
+}
+@section PageSpecificJavascriptIncludes{
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+        });
+    </script>
+}
+@section MainContent{
+    <div class="portlet-body form-horizontal form-bordered form-row-stripped">
+        <div class="row-fluid">
+            <div class="control-group">
+                <label class="control-label"><span class="required">*</span>应收款单号：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.RecID, new { @class = "m-wrap small" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.RecID)</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label"><span class="required">*</span>应收款类型：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.RecType, new { @class = "m-wrap small" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.RecType)</span>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label">金额：</label>
+                <div class="controls">
+
+                    @Html.TextBoxFor(m => m.RecTotal, new { @class = "m-wrap small" })
+
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.RecTotal)</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">内容：</label>
+                <div class="controls">
+                         @Html.TextBoxFor(m => m.Content, new { @class = "m-wrap small" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.Content)</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">应收款对象：</label>
+                <div class="controls">
+                    @Html.TextAreaFor(m => m.RecObject, new { @class = "m-wrap " })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.RecObject)</span>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label">成立时间：</label>
+                <div class="controls">
+                    @Html.TextAreaFor(m => m.RecTime, new { @class = "m-wrap " })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.RecTime)</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">账龄：</label>
+                <div class="controls">
+                    @Html.TextAreaFor(m => m.Aging, new { @class = "m-wrap " })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.Aging)</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">是否已收：</label>
+                <div class="controls">
+                    @Html.TextAreaFor(m => m.Status, new { @class = "m-wrap " })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.Status)</span>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label">合同：</label>
+                <div class="controls">
+                      @Html.TextAreaFor(m => m.ContractID, new { @class = "m-wrap " })
+@*                    @Html.DropDownList("ContractID", "请选择")*@
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.ContractID)</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">项目：</label>
+                <div class="controls">
+                      @Html.TextAreaFor(m => m.ProjectBasedataID, new { @class = "m-wrap " })
+@*                    @Html.DropDownList("ProjectBasedataID", "请选择")*@
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.ProjectBasedataID)</span>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label">备注：</label>
+                <div class="controls">
+                    @Html.TextAreaFor(m => m.Remark, new { @class = "m-wrap " })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.Remark)</span>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+}
+

@@ -9,14 +9,14 @@ using System.Web.Mvc;
 
 namespace GMS.Web.Admin.Areas.Project.Controllers
 {
-    [Permission(EnumBusinessPermission.ProjectManage_Accountant)]
-    public class AccountantController : AdminControllerBase
+    [Permission(EnumBusinessPermission.ProjectManage_Payables)]
+    public class PayablesController : AdminControllerBase
     { //
         // GET: /Basisdata/Classification/
 
-        public ActionResult Index(AccountantRequest request)
-        {           
-            var result = this.ProjectService.GetAccountantList(request);
+        public ActionResult Index(PayablesRequest request)
+        {
+            var result = this.ProjectService.GetPayablesList(request);
             return View(result);
         }
 
@@ -38,7 +38,7 @@ namespace GMS.Web.Admin.Areas.Project.Controllers
 
             //this.ViewBag.ChannelId = new SelectList(classList, "ID", "Name");
 
-            var model = new Accountant();
+            var model = new Payables();
             return View("Edit", model);
         }
 
@@ -49,16 +49,16 @@ namespace GMS.Web.Admin.Areas.Project.Controllers
         [ValidateInput(false)]
         public ActionResult Create(FormCollection collection)
         {
-            var model = new Accountant();
-            this.TryUpdateModel<Accountant>(model);
-            this.ProjectService.SaveAccountant(model);
+            var model = new Payables();
+            this.TryUpdateModel<Payables>(model);
+            this.ProjectService.SavePayables(model);
             return this.RefreshParent();
         }
 
 
         public ActionResult Edit(int id)
         {
-            var model = this.ProjectService.GetAccount(id);
+            var model = this.ProjectService.GetPayables(id);
 
             //var materialList = this.ProjectService.GetMaterialList(new MaterialRequest());
             //this.ViewBag.ChannelId = new SelectList(materialList, "ID", "Name");
@@ -70,9 +70,9 @@ namespace GMS.Web.Admin.Areas.Project.Controllers
         [ValidateInput(false)]
         public ActionResult Edit(int id, FormCollection collection)
         {
-            var model = this.ProjectService.GetAccount(id);
-            this.TryUpdateModel<Accountant>(model);
-            this.ProjectService.SaveAccountant(model);
+            var model = this.ProjectService.GetPayables(id);
+            this.TryUpdateModel<Payables>(model);
+            this.ProjectService.SavePayables(model);
             return this.RefreshParent();
         }
 
@@ -80,7 +80,7 @@ namespace GMS.Web.Admin.Areas.Project.Controllers
         [HttpPost]
         public ActionResult Delete(List<int> ids)
         {
-            this.ProjectService.DeleteAccountant(ids);
+            this.ProjectService.DeletePayables(ids);
             return RedirectToAction("Index");
         }
     }

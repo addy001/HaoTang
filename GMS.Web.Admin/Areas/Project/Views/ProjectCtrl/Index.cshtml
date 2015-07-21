@@ -11,8 +11,7 @@
     <div class="span4">
         <div>
             <a class="btn red" id="delete" title='删除选中项' href="javascript:;"><i class="icon-trash icon-white"></i> 删除</a>
-            <a class="btn blue thickbox" title='项目采购单' href="@Url.Action("Create")?TB_iframe=true&height=450&width=400"><i class="icon-plus icon-white"></i> 新增</a>
-
+            <a class="btn blue thickbox" title='项目采购单' href="@Url.Action("Create")?TB_iframe=true&height=500&width=900"><i class="icon-plus icon-white"></i> 新增</a>
         </div>
     </div>
     <div class="span8">
@@ -47,14 +46,21 @@
                 单号
             </th>
              <th>
-                所属项目或人员要求
+                所属项目
             </th>
+             <th>
+                采购人
+            </th>
+
             <th>
                 创建时间
 
             </th>
             <th>
               审批
+            </th>
+            <th>
+              到货
             </th>
             <th>
                 详情/编辑
@@ -76,7 +82,10 @@
                 NO.@m.oddnum
             </td>
               <td>
-                @m.Stuffname
+                @m.ProjectBasedata.PName
+            </td>
+            <td>
+                @m.Buyer
             </td>
             <td>
             @m.CreateTime.ToCnDataString()
@@ -85,7 +94,10 @@
                 <span class="label label-@(m.IsPro  ? "success" : "inverse")">@m.IsPro</span>
             </td>
             <td>
-                <a class="btn mini purple thickbox" title='采购单详情，点击保存' href="@Url.Action("Edit", new { id = m.ID })?TB_iframe=true&height=450&width=400">
+                <span class="label label-@(m.IsStandard  ? "success" : "inverse")">@m.IsStandard</span>
+            </td>
+            <td>
+                <a class="btn mini purple thickbox" title='采购单详情，点击保存' href="@Url.Action("Edit", new { id = m.ID })?TB_iframe=true&height=820&width=400">
                     <i class="icon-edit"></i>
                     详情
                 </a>

@@ -18,6 +18,9 @@ namespace GMS.Web.Admin.Areas.Project.Controllers
 
         public ActionResult Index(ProjectCtrlRequest requset)
         {
+            var ProjectBasedataIDList = this.ProjectService.GetProjectBasedataList(new ProjectRequest());
+            this.ViewBag.ProjectBasedataID = new SelectList(ProjectBasedataIDList, "ID", "PName");
+            
             var result = this.ProjectService.GetProjectCtrlList(requset);
             return View(result);
         }
@@ -27,6 +30,9 @@ namespace GMS.Web.Admin.Areas.Project.Controllers
 
         public ActionResult Create()
         {
+            var ProjectBasedataIDList = this.ProjectService.GetProjectBasedataList(new ProjectRequest());
+            this.ViewBag.ProjectBasedataID = new SelectList(ProjectBasedataIDList, "ID", "PName");
+            
             var model = new ProjectCtrl();
             return View("Edit", model);
         }
@@ -49,6 +55,9 @@ namespace GMS.Web.Admin.Areas.Project.Controllers
 
         public ActionResult Edit(int id)
         {
+            var ProjectBasedataIDList = this.ProjectService.GetProjectBasedataList(new ProjectRequest());
+            this.ViewBag.ProjectBasedataID = new SelectList(ProjectBasedataIDList, "ID", "PName");
+            
             var model = this.ProjectService.GetProjectCtrl(id);
             return View(model);
         }

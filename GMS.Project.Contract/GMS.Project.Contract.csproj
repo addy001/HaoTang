@@ -47,7 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IProjectService.cs" />
-    <Compile Include="Model\Accountant.cs" />
+    <Compile Include="Model\Payables.cs" />
     <Compile Include="Model\Accounting.cs" />
     <Compile Include="Model\Budget.cs" />
     <Compile Include="Model\Files.cs" />
@@ -64,6 +64,7 @@
     <Compile Include="Model\Request.cs" />
     <Compile Include="Model\LaborCost.cs" />
     <Compile Include="Model\MaterialCost.cs" />
+    <Compile Include="Model\Income.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -53,12 +53,17 @@ namespace GMS.Project.Contract
         void SaveOverhead(Overhead project);
         void DeleteOverhead(List<int> ids);
 
-
-        //会计科目大类 
-        Accountant GetAccount(int id);
-        IEnumerable<Accountant> GetAccountantList(AccountantRequest request = null);
-        void SaveAccountant(Accountant account);
-        void DeleteAccountant(List<int> ids);
+        //-----------------------------财务管理----------------------------------------
+        //应收款管理
+        Income GetIncome(int id);
+        IEnumerable<Income> GetIncomeList(IncomeRequest request = null);
+        void SaveIncome(Income payable);
+        void DeleteIncome(List<int> ids);
+        //应付款管理 
+        Payables GetPayables(int id);
+        IEnumerable<Payables> GetPayablesList(PayablesRequest request = null);
+        void SavePayables(Payables payable);
+        void DeletePayables(List<int> ids);
 
 
         //会计科目

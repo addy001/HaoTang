@@ -37,12 +37,17 @@ namespace GMS.Project.Contract
     {
         public string ProjectName { get; set; }
     }
-
-    public class AccountantRequest : Request
+    //-----------------------财务管理----------------------------------------------
+    public class PayablesRequest : Request
     {
-        public string Name { get; set; }
+        public string Receivables { get; set; }
+       
+    }
+    public class IncomeRequest : Request
+    {
+        public string RecObject { get; set; }
+        public string Status { get; set; }
 
-        public string Code { get; set; }
     }
     public class AccountingRequest : Request
     {
@@ -94,6 +99,7 @@ namespace GMS.Project.Contract
     public class ProjectCtrlRequest : Request
     {
         public string Name { get; set; }
+        public int ProjectBasedataID { get; set; }
 
     }
     public class OfficeCtrlRequest : Request

@@ -10,8 +10,8 @@
 <div class="row-fluid">
     <div class="span4">
         <div>
-            <a class="btn red" id="delete" href="javascript:;"><i class="icon-trash icon-white"></i> 删除</a>
-            <a class="btn blue thickbox" title='添加分类' href="@Url.Action("Create")?TB_iframe=true&height=350&width=500"><i class="icon-plus icon-white"></i> 新增</a>
+            <a class="btn red" id="delete" href="javascript:;"><i class="icon-trash icon-white"></i>删除</a>
+            <a class="btn blue thickbox" title='添加分类' href="@Url.Action("Create")?TB_iframe=true&height=350&width=500"><i class="icon-plus icon-white"></i>新增</a>
         </div>
     </div>
     <div class="span8">
@@ -34,11 +34,11 @@
     </div>
 </div>
 
-<div class="alert">
+@*<div class="alert">
     <button class="close" data-dismiss="alert"></button>
     <strong>用户权限相关：</strong>
     请编辑其所属角色的权限，用户的权限是其所有角色所拥有的权限汇总！
-</div>
+</div>*@
 
 @using (Html.BeginForm("Delete", "Classification", FormMethod.Post, new { id = "mainForm" }))
 {
@@ -48,43 +48,58 @@
                 <th style="width: 8px;">
                     <input type="checkbox" id="checkall" class="group-checkable" />
                 </th>
-                <th>
-                    分类名称
+                <th>分类名称
                 </th>
-                <th>
+                @* <th>
                     分类编码
-                </th>
-                
-                <th>
-                    操作
+                </th>*@
+
+                <th>操作
                 </th>
             </tr>
         </thead>
         <tbody>
-            @if (Model != null) { 
-            foreach (var m in Model)
+            @if (Model != null)
             {
+                foreach (var m in Model)
+                {
                 <tr>
                     <td>
                         <input type="checkbox" class="checkboxes" name='ids' value='@m.ID' />
                     </td>
                     <td>
                         <a href="../Material/Index?id=@m.ID">@m.Name</a>
-                        
+
                     </td>
-                    <td>
+                    @*    <td>
                         @m.Code
                     </td>
-                    
-                    
+                    *@
+
                     <td>
-                        <a class="btn mini purple thickbox" title='编辑分类' href="@Url.Action("Edit", new { id = m.ID })?TB_iframe=true&height=350&width=500">
+                        <a class="btn mini purple thickbox" title='基础数据' href="@Url.Action("Edit", new { id = m.ID })?TB_iframe=true&height=350&width=500">
                             <i class="icon-edit"></i>
                             编辑
                         </a>
+                        <a class="btn mini purple " title='基础数据' href="AddMaterial?id=@m.ID" >
+                            <i class="icon-edit"></i>
+                            编辑数据
+                        </a>
+                    </td>
+
+                    <td>
+                        <input id="btntext" type="button" value="添加文本组件" data-toggle="modal" data-target="#myModal" href="../SysManage/ZuJianManage.aspx" />
+                        <!-- Modal -->
+                        <div class="modal hide fade" id="myModal" tabindex="-1" role="dialog">
+                            <div class="modal-header">
+                                <button class="close" type="button" data-dismiss="modal">×</button>
+                                <h3 id="myModalLabel">Modal header</h3>
+                            </div>
+                            <div class="modal-body"></div>
+                        </div>
                     </td>
                 </tr>
-            }
+                }
             }
         </tbody>
     </table>

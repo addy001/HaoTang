@@ -1,0 +1,83 @@
+﻿@using GMS.Framework.Contract
+@using GMS.Framework.Utility
+@using GMS.Framework.Web.Controls
+@using GMS.Project.Contract
+@model Payables
+@{
+    Layout = "~/Views/Shared/_Layout.Edit.cshtml";
+}
+@section PageSpecificStyleSheetIncludes{
+    <style type="text/css">
+
+
+    </style>
+}
+@section PageSpecificJavascriptIncludes{
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+        });
+    </script>
+}
+@section MainContent{
+    <div class="portlet-body form-horizontal form-bordered form-row-stripped">
+        <div class="row-fluid">
+            <div class="control-group">
+                <label class="control-label">单号：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.PID, new { @class = "m-wrap small" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.PID)</span>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label">类型：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.Type, new { @class = "m-wrap small" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.Type)</span>
+                </div>
+            </div>
+
+              <div class="control-group">
+                <label class="control-label">采购单：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.PurchaseID, new { @class = "m-wrap small" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.PurchaseID)</span>
+                </div>
+            </div>
+
+              <div class="control-group">
+                <label class="control-label">金额：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.Total, new { @class = "m-wrap small" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.Total)</span>
+                </div>
+            </div>
+
+              <div class="control-group">
+                <label class="control-label">收款方：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.Receivables, new { @class = "m-wrap small" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.Receivables)</span>
+                </div>
+            </div>
+
+              <div class="control-group">
+                <label class="control-label">截止日期：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.Date, new { @class = "m-wrap small" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.Date)</span>
+                </div>
+            </div>
+
+              <div class="control-group">
+                <label class="control-label">备注：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.Remark, new { @class = "m-wrap small" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.Remark)</span>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+

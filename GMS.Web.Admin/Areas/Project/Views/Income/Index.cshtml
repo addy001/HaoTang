@@ -1,0 +1,156 @@
+﻿@using GMS.Framework.Contract
+@using GMS.Framework.Utility
+@using GMS.Framework.Web.Controls
+@using GMS.Project.Contract
+@using GMS.Account.Contract;
+@using GMS.Web.Admin.Common;
+@model PagedList<Income>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row-fluid">
+    <div class="span2">
+        <div>
+            <a class="btn red" id="delete" href="javascript:;"><i class="icon-trash icon-white"></i>删除</a>
+            <a class="btn blue thickbox" title='添加应收账款' href="@Url.Action("Create")?TB_iframe=true&height=500&width=500"><i class="icon-plus icon-white"></i>新增</a>
+        </div>
+    </div>
+    <div class="span10">
+        @using (Html.BeginForm("Search", "Accounting", FormMethod.Post, new { id = "mainForm1" }))
+        {
+            <div class="dataTables_filter">
+
+                <div class="p5">
+                    <label>
+                        <button type="submit" class="seachButton">搜索 <i class="icon-search"></i></button>
+                    </label>
+                    <label>
+                        <span>应收款对象：</span>
+                        @Html.TextBox("RecObject", null, new { @class = "m-wrap small" })
+                    </label>
+                  @*  <label>
+                        <span>类别：</span>
+                        @Html.DropDownList("AccountDep")
+
+                    </label>
+                    <label>
+                        <span>级别：</span>
+                        @Html.DropDownList("Rank")
+
+                    </label>*@
+                </div>               
+            </div>
+        }
+    </div>
+</div>
+
+<div class="alert">
+    <button class="close" data-dismiss="alert"></button>
+    <strong>应收账款相关：</strong>
+   应收账款设置！
+</div>
+
+@using (Html.BeginForm("Delete", "Income", FormMethod.Post, new { id = "mainForm" }))
+{
+    <table class="table table-striped table-hover ">
+        <thead>
+            <tr>
+                <th style="width: 8px;">
+                    <input type="checkbox" id="checkall" class="group-checkable" />
+                </th>
+                <th>应收款单号
+                </th>
+                <th>应收款类型
+                </th>
+                <th>金额
+                </th>
+                <th>内容
+                </th>
+                <th>应收款对象
+                </th>
+                <th>成立时间
+                </th>
+                <th>账龄
+                </th>
+                <th>是否已收
+                </th>
+                <th>合同
+                </th>
+                <th>项目
+                </th>
+                <th>备注
+                </th>
+                <th>操作
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null)
+            {
+                foreach (var m in Model)
+                {
+                <tr>
+                    <td>
+                        <input type="checkbox" class="checkboxes" name='ids' value='@m.ID' />
+                    </td>
+                    <td>
+                        @m.RecID
+                    </td>
+                    <td>
+                        @m.RecType
+                    </td>
+
+                    <td>
+                        @m.RecTotal
+                    </td>
+                    <td>
+                        @m.Content
+                    </td>
+
+                    <td>
+                        @m.RecObject
+                    </td>
+                    <td>
+                        @m.RecTime
+                    </td>
+
+                    <td>
+                        @m.Aging
+                    </td>
+                     <td>
+                        @m.Status
+                    </td>
+                    <td>
+                        @m.ProjectBasedataID
+                    </td>
+                    <td>
+                        @m.ContractID
+                    </td>
+
+                   @* <td>
+                        @EnumHelper.GetEnumTitle((EnumDep)Convert.ToInt32(m.AccountDep))
+
+                    </td>
+                    <td>
+                        @EnumHelper.GetEnumTitle((EnumRank)Convert.ToInt32(m.Rank))
+
+                    </td>*@                  
+                    <td>
+                        @m.Remark
+                    </td>
+                    <td>
+                        <a class="btn mini purple thickbox" title='编辑应收账款' href="@Url.Action("Edit", new { id = m.ID })?TB_iframe=true&height=500&width=500">
+                            <i class="icon-edit"></i>
+                            编辑
+                        </a>
+                    </td>
+                </tr>
+                }
+            }
+        </tbody>
+    </table>
+}
+<div class="dataTables_paginate paging_bootstrap pagination">
+    @Html.Pager(Model, new PagerOptions() { ShowTotalItemCount = true })
+</div>
+

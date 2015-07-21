@@ -48,6 +48,7 @@ namespace GMS.Project.Contract
         /// <summary>
         /// 水电工费用
         /// </summary>
+         [RegularExpression(@"[1-9]\d*", ErrorMessage = "请输入正整数")]
         public int? Plumbers { get; set; }
         /// <summary>
         /// 油漆工费用

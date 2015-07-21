@@ -34,11 +34,11 @@
     </div>
 </div>
 
-<div class="alert">
+@*<div class="alert">
     <button class="close" data-dismiss="alert"></button>
     <strong>用户权限相关：</strong>
     请编辑其所属角色的权限，用户的权限是其所有角色所拥有的权限汇总！
-</div>
+</div>*@
 
 @using (Html.BeginForm("Delete", "Classification", FormMethod.Post, new { id = "mainForm" }))
 {
@@ -51,10 +51,10 @@
                 <th>
                     分类名称
                 </th>
-                <th>
+               @* <th>
                     分类编码
                 </th>
-               
+               *@
                 <th>
                     操作
                 </th>
@@ -73,13 +73,17 @@
                         <td>
                             <a href="../Material/Index?id=@m.ID">@m.Name</a>
                         </td>
-                        <td>
+                      @*  <td>
                             @m.Code
-                        </td>
+                        </td>*@
                         <td>
-                            <a class="btn mini purple thickbox" title='编辑分类' href="@Url.Action("Edit", new { id = m.ID })?TB_iframe=true&height=350&width=500">
+                            <a class="btn mini purple thickbox" title='基础数据' href="@Url.Action("Edit", new { id = m.ID })?TB_iframe=true&height=350&width=500">
                                 <i class="icon-edit"></i>
                                 编辑
+                            </a>
+                             <a class="btn mini purple " title='基础数据' href="AddMaterial?id=@m.ID" >
+                                <i class="icon-edit"></i>
+                                编辑数据
                             </a>
                         </td>
                     </tr>

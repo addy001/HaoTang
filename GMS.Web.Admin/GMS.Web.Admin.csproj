@@ -87,7 +87,7 @@
     <Compile Include="Areas\OA\Controllers\OrgController.cs" />
     <Compile Include="Areas\OA\Controllers\StaffController.cs" />
     <Compile Include="Areas\OA\OAAreaRegistration.cs" />
-    <Compile Include="Areas\Project\Controllers\AccountantController.cs" />
+    <Compile Include="Areas\Project\Controllers\PayablesController.cs" />
     <Compile Include="Areas\Project\Controllers\AccountingController.cs" />
     <Compile Include="Areas\Project\Controllers\BudgetController.cs" />
     <Compile Include="Areas\Project\Controllers\FilesController.cs" />
@@ -106,6 +106,7 @@
     <Compile Include="Areas\Project\Controllers\IMeasureController.cs" />
     <Compile Include="Areas\Project\Controllers\IOverheadController.cs" />
     <Compile Include="Areas\Project\Controllers\ProjectCtrlController.cs" />
+    <Compile Include="Areas\Project\Controllers\IncomeController.cs" />
     <Compile Include="Areas\Project\ProjectAreaRegistration.cs" />
     <Compile Include="Common\AdminCookieContext.cs" />
     <Compile Include="Common\AdminUserContext.cs" />
@@ -1343,8 +1344,8 @@
     <Content Include="Areas\Project\Views\Overhead\Edit.cshtml" />
     <Content Include="Areas\Project\Views\Accounting\Index.cshtml" />
     <Content Include="Areas\Project\Views\Accounting\Edit.cshtml" />
-    <Content Include="Areas\Project\Views\Accountant\Index.cshtml" />
-    <Content Include="Areas\Project\Views\Accountant\Edit.cshtml">
+    <Content Include="Areas\Project\Views\Payables\Index.cshtml" />
+    <Content Include="Areas\Project\Views\Payables\Edit.cshtml">
       <SubType>Code</SubType>
     </Content>
     <Content Include="Areas\Project\Views\ILabor\Index.cshtml" />
@@ -1367,6 +1368,8 @@
     <Content Include="Areas\Project\Views\OfficeCtrl\Index.cshtml" />
     <Content Include="Areas\Project\Views\ProjectCtrl\Edit.cshtml" />
     <Content Include="Areas\Project\Views\ProjectCtrl\Index.cshtml" />
+    <Content Include="Areas\Project\Views\Income\Index.cshtml" />
+    <Content Include="Areas\Project\Views\Income\Edit.cshtml" />
     <None Include="Assets\bootstrap-colorpicker\less\colorpicker.less" />
     <None Include="Assets\bootstrap-datepicker\less\datepicker.less" />
     <None Include="Assets\bootstrap-daterangepicker\README.md" />
