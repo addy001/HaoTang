@@ -13,3 +13,8 @@ F:\GMS\bin\GMS.Account.BLL.pdb
 F:\GMS\Src\GMS.Account.BLL\obj\Debug\GMS.Account.BLL.csprojResolveAssemblyReference.cache
 F:\GMS\Src\GMS.Account.BLL\obj\Debug\GMS.Account.BLL.dll
 F:\GMS\Src\GMS.Account.BLL\obj\Debug\GMS.Account.BLL.pdb
+D:\Documents\GitHub\project\bin\GMS.Account.BLL.dll
+D:\Documents\GitHub\project\bin\GMS.Account.BLL.pdb
+D:\Documents\GitHub\project\HaoTang\GMS.Account.BLL\obj\Debug\GMS.Account.BLL.csprojResolveAssemblyReference.cache
+D:\Documents\GitHub\project\HaoTang\GMS.Account.BLL\obj\Debug\GMS.Account.BLL.dll
+D:\Documents\GitHub\project\HaoTang\GMS.Account.BLL\obj\Debug\GMS.Account.BLL.pdb

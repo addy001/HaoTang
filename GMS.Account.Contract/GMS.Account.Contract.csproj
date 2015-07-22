@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="IAccountService.cs" />
     <Compile Include="Model\EnumBusinessPermission.cs" />
+    <Compile Include="Model\Log.cs" />
     <Compile Include="Model\LoginInfo.cs" />
     <Compile Include="Model\Requests.cs" />
     <Compile Include="Model\Role.cs" />
@@ -51,6 +52,10 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <ProjectReference Include="..\GMS.Core.Log\GMS.Core.Log.csproj">
+      <Project>{8ae51ee2-67db-4f57-98fe-cbb890c9a5a2}</Project>
+      <Name>GMS.Core.Log</Name>
+    </ProjectReference>
     <ProjectReference Include="..\GMS.Framework.Contract\GMS.Framework.Contract.csproj">
       <Project>{11214D97-F23C-4E16-AA12-ECD824454744}</Project>
       <Name>GMS.Framework.Contract</Name>

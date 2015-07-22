@@ -11,3 +11,8 @@ F:\GMS\bin\GMS.OA.Contract.pdb
 F:\GMS\Src\GMS.OA.Contract\obj\Debug\GMS.OA.Contract.csprojResolveAssemblyReference.cache
 F:\GMS\Src\GMS.OA.Contract\obj\Debug\GMS.OA.Contract.dll
 F:\GMS\Src\GMS.OA.Contract\obj\Debug\GMS.OA.Contract.pdb
+D:\Documents\GitHub\project\bin\GMS.OA.Contract.dll
+D:\Documents\GitHub\project\bin\GMS.OA.Contract.pdb
+D:\Documents\GitHub\project\HaoTang\GMS.OA.Contract\obj\Debug\GMS.OA.Contract.csprojResolveAssemblyReference.cache
+D:\Documents\GitHub\project\HaoTang\GMS.OA.Contract\obj\Debug\GMS.OA.Contract.dll
+D:\Documents\GitHub\project\HaoTang\GMS.OA.Contract\obj\Debug\GMS.OA.Contract.pdb

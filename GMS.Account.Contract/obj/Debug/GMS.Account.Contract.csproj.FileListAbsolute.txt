@@ -13,3 +13,8 @@ F:\GMS\bin\GMS.Account.Contract.pdb
 F:\GMS\Src\GMS.Account.Contract\obj\Debug\GMS.Account.Contract.csprojResolveAssemblyReference.cache
 F:\GMS\Src\GMS.Account.Contract\obj\Debug\GMS.Account.Contract.dll
 F:\GMS\Src\GMS.Account.Contract\obj\Debug\GMS.Account.Contract.pdb
+D:\Documents\GitHub\project\bin\GMS.Account.Contract.dll
+D:\Documents\GitHub\project\bin\GMS.Account.Contract.pdb
+D:\Documents\GitHub\project\HaoTang\GMS.Account.Contract\obj\Debug\GMS.Account.Contract.csprojResolveAssemblyReference.cache
+D:\Documents\GitHub\project\HaoTang\GMS.Account.Contract\obj\Debug\GMS.Account.Contract.dll
+D:\Documents\GitHub\project\HaoTang\GMS.Account.Contract\obj\Debug\GMS.Account.Contract.pdb

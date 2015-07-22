@@ -7,6 +7,7 @@
       <AdminMenuArray>
         <AdminMenu name="用户管理" url="/Account/User/Index" info="添加修改删除用户" permission="AccountManage_User" />
         <AdminMenu name="角色管理" url="/Account/Role/Index" info="添加修改删除角色" permission="AccountManage_Role" />
+        <AdminMenu name="日志管理" url="/Account/Log/Index" info="查看日志" permission="AccountManage_Log" />
       </AdminMenuArray>
     </AdminMenuGroup> 
 

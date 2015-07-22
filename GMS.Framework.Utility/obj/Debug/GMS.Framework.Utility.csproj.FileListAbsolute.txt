@@ -16,3 +16,9 @@ F:\GMS\bin\GMS.Framework.Utility.pdb
 F:\GMS\Src\GMS.Framework.Utility\obj\Debug\GMS.Framework.Utility.csprojResolveAssemblyReference.cache
 F:\GMS\Src\GMS.Framework.Utility\obj\Debug\GMS.Framework.Utility.dll
 F:\GMS\Src\GMS.Framework.Utility\obj\Debug\GMS.Framework.Utility.pdb
+D:\Documents\GitHub\project\bin\GMS.Framework.Utility.XML
+D:\Documents\GitHub\project\bin\GMS.Framework.Utility.dll
+D:\Documents\GitHub\project\bin\GMS.Framework.Utility.pdb
+D:\Documents\GitHub\project\HaoTang\GMS.Framework.Utility\obj\Debug\GMS.Framework.Utility.csprojResolveAssemblyReference.cache
+D:\Documents\GitHub\project\HaoTang\GMS.Framework.Utility\obj\Debug\GMS.Framework.Utility.dll
+D:\Documents\GitHub\project\HaoTang\GMS.Framework.Utility\obj\Debug\GMS.Framework.Utility.pdb
