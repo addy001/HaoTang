@@ -1577,6 +1577,7 @@
     <Content Include="FileUpload.ashx" />
     <None Include="Properties\PublishProfiles\gms.pubxml" />
     <Content Include="Views\Shared\_Layout.supplier.cshtml" />
+    <Content Include="Views\Shared\_Content.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GMS.Account.BLL\GMS.Account.BLL.csproj">

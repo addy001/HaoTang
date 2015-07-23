@@ -14,7 +14,7 @@
     <AdminMenuGroup name="基础数据管理" icon="icon-leaf">
       <AdminMenuArray>
         <AdminMenu name="分类管理"  url="/BasisData/Classification/Index" info="添加修改删除分类"  permission="Basis_Classification" />
-        <AdminMenu name="材料管理"  url="/BasisData/Material/Index" info="添加修改删除材料"  permission="Basis_Material" />
+        <!--<AdminMenu name="材料管理"  url="/BasisData/Material/Index" info="添加修改删除材料"  permission="Basis_Material" />-->
         <AdminMenu name="供应商管理"  url="/BasisData/Supplier/Index" info="添加修改删除供应商"  permission="Basis_Supplier" />
       </AdminMenuArray>
     </AdminMenuGroup>

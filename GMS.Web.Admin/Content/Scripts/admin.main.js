@@ -104,13 +104,14 @@ $("#postBtn").click(function () {
                 data: { "sId": $(this).attr('dataSupplierid'), "mid": mid, "price": $('#Price' + mid).val(), "remark": $('#Remark' + mid).val() },
                 success: function (msg) {
                     if (msg == "true") {
-                        alert("添加成功");
+                        //alert("添加成功");
+                        //Window.close();
                     } else { }
                 }
             });
 
         })
-        window.location.href = '/BasisData/Supplier/Index'
+        window.close();
     }
 });
 
@@ -156,6 +157,7 @@ $(".addMaterial").click(function () {
                 data: { "sId": $(this).attr('dataSupplierid'), "mid": mid },
                 success: function (msg) {
                     if (msg == "true") {
+
                         alert("删除成功");
                     } else {
                         that.checked = true;
@@ -163,6 +165,7 @@ $(".addMaterial").click(function () {
                 }
             });
         }
+        else { that.checked = true; }
     }
 });
 
