@@ -107,6 +107,7 @@
     <Compile Include="Areas\Project\Controllers\IOverheadController.cs" />
     <Compile Include="Areas\Project\Controllers\ProjectCtrlController.cs" />
     <Compile Include="Areas\Project\Controllers\IncomeController.cs" />
+    <Compile Include="Areas\Project\Controllers\OdderController.cs" />
     <Compile Include="Areas\Project\ProjectAreaRegistration.cs" />
     <Compile Include="Common\AdminCookieContext.cs" />
     <Compile Include="Common\AdminUserContext.cs" />
@@ -1370,6 +1371,8 @@
     <Content Include="Areas\Project\Views\ProjectCtrl\Index.cshtml" />
     <Content Include="Areas\Project\Views\Income\Index.cshtml" />
     <Content Include="Areas\Project\Views\Income\Edit.cshtml" />
+    <Content Include="Areas\Project\Views\Odder\Edit.cshtml" />
+    <Content Include="Areas\Project\Views\Odder\Index.cshtml" />
     <None Include="Assets\bootstrap-colorpicker\less\colorpicker.less" />
     <None Include="Assets\bootstrap-datepicker\less\datepicker.less" />
     <None Include="Assets\bootstrap-daterangepicker\README.md" />

@@ -94,18 +94,28 @@ namespace GMS.Project.Contract
     public class OddmentsRequest : Request
     {
         public string Name { get; set; }
+        public string OType { get; set; }
+        public int ProjectBasedataID { get; set; }
         
     }
     public class ProjectCtrlRequest : Request
     {
         public string Name { get; set; }
+        public string oddnum { get; set; }
         public int ProjectBasedataID { get; set; }
 
     }
     public class OfficeCtrlRequest : Request
     {
         public string Name { get; set; }
+        public string oddnum { get; set; }
 
     }
+    public class OdderRequest : Request
+    {
+        public string Buyer { get; set; }
+        public string oddnum { get; set; }
+        //public int ProjectBasedataID { get; set; }
 
+    }
 }

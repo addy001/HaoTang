@@ -12,44 +12,87 @@
 }
 @section MainContent{
 <div class="portlet-body form-horizontal form-bordered form-row-stripped">
+<div class="container-fluid">
     <div class="row-fluid"> 
-            <div class="control-group">
+            <div class="span6 control-group">
                 <label class="control-label"><span class="required">*</span>名称：</label>
                 <div class="controls">
                 @Html.TextBoxFor(m => m.Name, new { @class = "m-wrap" })
                 <span class="help-inline">@Html.ValidationMessageFor(m => m.Name)</span>
                 </div>
-                @if (Model.ID != 0)
+            </div>
+                @if (Model.oddnum != null)
                 {
+                <div class="span6 control-group">
                 <label class="control-label">单号：</label>
                 
                 <div class="controls" >
                 @Html.TextBoxFor(m => m.oddnum, new { Readonly = "true" })
                 </div>
+                </div>
                 }
-                <label class="control-label">价格：</label>
+       </div>
+       <div class="row-fluid"> 
+            <div class="span6 control-group">
+                <label class="control-label">数量：</label>
+                
+                <div class="controls">
+                @Html.TextBoxFor(m=>m.num,new{@class="m-wrap"})
+                </div>
+            </div>
+            <div class="span6 control-group">
+                <label class="control-label">单位：</label>
+                
+                <div class="controls">
+                @Html.TextBoxFor(m=>m.danwei,new{@class="m-wrap"})
+                </div>
+
+             </div>
+        </div>
+
+      <div class="row-fluid"> 
+            <div class="span6 control-group">
+                <label class="control-label">单价：</label>
                 
                 <div class="controls">
                 @Html.TextBoxFor(m=>m.obb,new{@class="m-wrap"})
                 </div>
-                <label class="control-label">采购渠道：</label>
+            </div>
+            @if(Model.ID!=0){
+            <div class="span6 control-group">
+                <label class="control-label">总价：</label>
                 
                 <div class="controls">
-                @Html.TextBoxFor(m=>m.Way,new{@class="m-wrap"})
+                @Html.TextBoxFor(m=>m.total,new{@class="m-wrap"})
                 </div>
 
-                <label class="control-label">用途概述：</label>
-                <div class="controls">
-                @Html.TextAreaFor(m => m.Toolname, new { @class = "m-wrap"})
+             </div>
+            }
+        </div>
+        <div class="row-fluid"> 
+            <div class="span6 control-group">
+                <label class="control-label">规格：</label>
                 
+                <div class="controls">
+                @Html.TextBoxFor(m=>m.guige,new{@class="m-wrap"})
                 </div>
+            </div>
+            <div class="span6 control-group">
+                <label class="control-label">品牌：</label>
+                
+                <div class="controls">
+                @Html.TextBoxFor(m=>m.pinpai,new{@class="m-wrap"})
+                </div>
+
+             </div>
+        </div>
                 <div class="control-group">
-              <label class="control-label">是否审批：</label>
+              <label class="control-label">备注：</label>
               <div class="controls">
-               @Html.CheckBoxFor(m => m.IsPro)
+               @Html.TextAreaFor(m=>m.beizhu,new { style="height:215px;width:700px"})
                </div>
            </div>
-            </div>
+            
 
     </div>
 </div>

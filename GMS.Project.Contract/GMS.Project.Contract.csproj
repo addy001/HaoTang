@@ -65,6 +65,7 @@
     <Compile Include="Model\LaborCost.cs" />
     <Compile Include="Model\MaterialCost.cs" />
     <Compile Include="Model\Income.cs" />
+    <Compile Include="Model\Odder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -12,33 +12,61 @@
 }
 @section MainContent{
 <div class="portlet-body form-horizontal form-bordered form-row-stripped">
-    <div class="row-fluid"> 
-            <div class="control-group">
+    <div class="container-fluid">
+        <div class="row-fluid"> 
+            <div class="span6 control-group">
                 <label class="control-label"><span class="required">*</span>名称：</label>
                 <div class="controls">
                 @Html.TextBoxFor(m => m.Name, new { @class = "m-wrap" })
                 <span class="help-inline">@Html.ValidationMessageFor(m => m.Name)</span>
                 </div>
-
-                <label class="control-label">价格：</label>
-                
-                <div class="controls">
-                @Html.TextBoxFor(m=>m.obb,new{@class="m-wrap"})
-                </div>
+            </div>
+            
+         </div>
+        <div class="row-fluid">
+            <div class="span6 control-group">
                 <label class="control-label">折旧率：</label>
                 
                 <div class="controls">
                 @Html.TextBoxFor(m=>m.Way,new{@class="m-wrap"})
                 </div>
+            </div>
+            <div class="span6 control-group">
+                <label class="control-label">价格：</label>
+                
+                <div class="controls">
+                @Html.TextBoxFor(m=>m.obb,new{@class="m-wrap"})
+                </div>
+            </div>
+        </div>
+        <div class="row-fluid">
+            <div class="span6 control-group">
+                <label class="control-label">材料类型：</label>
+                
+                <div class="controls">
+                @Html.DropDownList("OType")
+                </div>
+            </div>
+            
+            <div class="span6 control-group">
+                <label class="control-label">所属项目：</label>
+                
+                <div class="controls">
+                @Html.DropDownList("ProjectBasedataID")
+                </div>
+            </div>
+        </div>
+        <div class="row-fluid">
+            <div class="span6 control-group">
 
                 <label class="control-label">用途概述：</label>
                 <div class="controls">
-                @Html.TextAreaFor(m => m.Toolname, new { @class = "m-wrap"})
+                @Html.TextAreaFor(m => m.Toolname, new { style="height:150px;width:585px"})
                 
                 </div>
                 <p style="float:right">提示：保存即计算折旧价值          </p>
             </div>
-
-    </div>
+        </div>
+     </div>
 </div>
 }

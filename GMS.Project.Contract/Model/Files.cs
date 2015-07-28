@@ -19,8 +19,8 @@ namespace GMS.Project.Contract
         /// <summary>
 		/// 文件名称
 		/// </summary>
-        [Required]
         [StringLength(300)]
+        [Required(ErrorMessage = "文件名称不能为空")]
 		public string Name{ get; set; }
 		/// <summary>
 		/// 文件编号
@@ -37,18 +37,19 @@ namespace GMS.Project.Contract
 		/// <summary>
 		/// 合同签订日期
 		/// </summary>
-		public DateTime? SignDate{ get; set; }
+		public String SignDate{ get; set; }
 		/// <summary>
 		/// 合同履行日期
 		/// </summary>
-		public DateTime? FulfillDate{ get; set; }
+        public String FulfillDate { get; set; }
 		/// <summary>
 		/// 合同结束日期
 		/// </summary>
-		public DateTime? EndDate{ get; set; }
+        public String EndDate { get; set; }
 		/// <summary>
 		/// 合同金额
 		/// </summary>
+        [RegularExpression(@"\d*", ErrorMessage = "请输入正整数")]
 		public string Money{ get; set; }
 		/// <summary>
 		/// 文件类型

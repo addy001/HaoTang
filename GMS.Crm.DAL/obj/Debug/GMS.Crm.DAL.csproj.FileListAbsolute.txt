@@ -13,3 +13,8 @@ F:\GMS\bin\GMS.Crm.DAL.pdb
 F:\GMS\Src\GMS.Crm.DAL\obj\Debug\GMS.Crm.DAL.csprojResolveAssemblyReference.cache
 F:\GMS\Src\GMS.Crm.DAL\obj\Debug\GMS.Crm.DAL.dll
 F:\GMS\Src\GMS.Crm.DAL\obj\Debug\GMS.Crm.DAL.pdb
+D:\workspace\GMS\bin\GMS.Crm.DAL.dll
+D:\workspace\GMS\bin\GMS.Crm.DAL.pdb
+D:\workspace\GMS\HaoTang\GMS.Crm.DAL\obj\Debug\GMS.Crm.DAL.csprojResolveAssemblyReference.cache
+D:\workspace\GMS\HaoTang\GMS.Crm.DAL\obj\Debug\GMS.Crm.DAL.dll
+D:\workspace\GMS\HaoTang\GMS.Crm.DAL\obj\Debug\GMS.Crm.DAL.pdb

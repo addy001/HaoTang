@@ -128,5 +128,8 @@ namespace GMS.Account.Contract
         [EnumTitle("公司采购管理")]
         ProjectManage_ProjectCtrl = 1004,
 
+        [EnumTitle("采购管理")]
+        ProjectManage_Odder = 1005,
+
     }
 }

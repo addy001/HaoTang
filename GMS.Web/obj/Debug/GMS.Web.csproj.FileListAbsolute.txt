@@ -13,3 +13,8 @@ F:\GMS\Src1\HaoTang\GMS.Web\obj\Debug\GMS.Web.dll
 F:\GMS\Src1\HaoTang\GMS.Web\obj\Debug\GMS.Web.pdb
 F:\GMS\Src1\bin\GMS.Web.dll
 F:\GMS\Src1\bin\GMS.Web.pdb
+D:\workspace\GMS\bin\GMS.Web.dll
+D:\workspace\GMS\bin\GMS.Web.pdb
+D:\workspace\GMS\HaoTang\GMS.Web\obj\Debug\GMS.Web.csprojResolveAssemblyReference.cache
+D:\workspace\GMS\HaoTang\GMS.Web\obj\Debug\GMS.Web.dll
+D:\workspace\GMS\HaoTang\GMS.Web\obj\Debug\GMS.Web.pdb

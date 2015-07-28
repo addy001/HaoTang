@@ -79,6 +79,7 @@
         <AdminMenu name="余料管理" url="/Project/Oddments/Index" info="余料管理" permission="ProjectManage_Oddments" />
         <AdminMenu name="项目采购" url="/Project/ProjectCtrl/Index" info="会计科目设置" permission="ProjectManage_ProjectCtrl" />
         <AdminMenu name="公司采购" url="/Project/OfficeCtrl/Index" info="会计科目设置" permission="ProjectManage_OfficeCtrl" />
+        <AdminMenu name="采购管理" url="/Project/Odder/Index" info="会计科目设置" permission="ProjectManage_Odder" />
 
       </AdminMenuArray>
     </AdminMenuGroup>

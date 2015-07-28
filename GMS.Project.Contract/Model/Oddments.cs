@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using GMS.Framework.Contract;
+using GMS.Framework.Utility;
 
 namespace GMS.Project.Contract
 {
@@ -42,5 +43,27 @@ namespace GMS.Project.Contract
         /// 折旧损耗价值
         /// </summary>
         public string Discount { get; set; }
+        /// <summary>
+        /// 材料类型
+        /// </summary>
+        public string OType { get; set; }
+
+        /// <summary>
+        /// 当前项目
+        /// </summary>
+        public int ProjectBasedataID { get; set; }
+        public virtual ProjectBasedata ProjectBasedata { get; set; }
+       
+    }
+    public enum EnumOType
+    {
+        [EnumTitle("材料一")]
+        one = 1,
+
+        [EnumTitle("材料二")]
+        two = 2,
+
+        [EnumTitle("材料三")]
+        three = 3
     }
 }

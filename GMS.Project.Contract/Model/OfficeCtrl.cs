@@ -23,24 +23,36 @@ namespace GMS.Project.Contract
         [Required]
         public string Name { get; set; }
         /// <summary>
-        /// 用途概述
+        /// 单价
         /// </summary>
-        public string Toolname { get; set; }
+        public double obb { get; set; }
         /// <summary>
-        /// 价格
+        /// 数量
         /// </summary>
-        public string obb { get; set; }
-        /// <summary>
-        /// 渠道
-        /// </summary>
-        public string Way { get; set; }
+        public int num { get; set; }
         /// <summary>
         /// 单号
         /// </summary>
         public string oddnum { get; set; }
         /// <summary>
-        /// 审批
+        /// 总价
         /// </summary>
-        public bool IsPro { get; set; }
+        public double total{ get; set; }
+        /// <summary>
+        /// 单位
+        /// </summary>
+        public string danwei { get; set; }
+        /// <summary>
+        /// 规格
+        /// </summary>
+        public string guige { get; set; }
+        /// <summary>
+        /// 品牌
+        /// </summary>
+        public string pinpai { get; set; }
+        /// <summary>
+        /// 备注
+        /// </summary>
+        public string beizhu { get; set; }
     }
 }

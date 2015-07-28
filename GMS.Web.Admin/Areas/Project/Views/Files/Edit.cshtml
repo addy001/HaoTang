@@ -15,17 +15,19 @@
 
     <script type="text/javascript">
         $('#uploader').FileUpload({
-            'subfolder': 'cms',
+            'subfolder': 'files',
             'callback': function (msg) {
                 //msg.url为图片地址
-                $("#PaperCon").val(msg.url);
+                $("#Accessory").val(msg.url);
                 $("#preview").popover({ trigger: 'hover', html: true, placement: 'right ', content: "<img src='" + getThumbAbsoluteUrl(msg.url) + "'/>" });
             }
         });
 
-        if ($("#PaperCon").val()) {
-            $("#preview").popover({ trigger: 'hover', html: true, placement: 'right ', content: "<img src='" + getThumbAbsoluteUrl($("#PaperCon").val()) + "'/>" });
+        if ($("#Accessory").val()) {
+            $("#preview").popover({ trigger: 'hover', html: true, placement: 'right ', content: "<img src='" + getThumbAbsoluteUrl($("#Accessory").val()) + "'/>" });
         }
+
+        $("#SignDate,#FulfillDate,#EndDate").datepicker();
 
     </script>
 }
@@ -43,54 +45,28 @@
                 <div class="span6 control-group">
                     <label class="control-label"><span class="required">*</span>类型：</label>
                     <div class="controls">
-                        @Html.TextBoxFor(m => m.Type, new { @class = "m-wrap" })
+                        @Html.DropDownList("Type")
                         <span class="help-inline">@Html.ValidationMessageFor(m => m.Type)</span>
                     </div>
                 </div>
             </div>
 
             <div class="row-fluid">
-                <div class="span6 control-group">
+                <div class="span4 control-group">
                     <label class="control-label">甲方：</label>
                     <div class="controls">
                         @Html.TextBoxFor(m => m.FirstParty, new { @class = "m-wrap" })
                         <span class="help-inline">@Html.ValidationMessageFor(m => m.FirstParty)</span>
                     </div>
                 </div>
-                <div class="span6 control-group">
+                <div class="span4 control-group">
                     <label class="control-label">乙方：</label>
                     <div class="controls">
                         @Html.TextBoxFor(m => m.SecondParty, new { @class = "m-wrap" })
                         <span class="help-inline">@Html.ValidationMessageFor(m => m.SecondParty)</span>
                     </div>
                 </div>
-            </div>
-            <div class="row-fluid">
-                <div class="span6 control-group">
-                    <label class="control-label">合同签订日期：</label>
-                    <div class="controls">
-                        @Html.TextBoxFor(m => m.SignDate, new { @class = "m-wrap" })
-                        <span class="help-inline">@Html.ValidationMessageFor(m => m.SignDate)</span>
-                    </div>
-                </div>
-                <div class="span6 control-group">
-                    <label class="control-label">合同履行日期：</label>
-                    <div class="controls">
-                        @Html.TextBoxFor(m => m.FulfillDate, new { @class = "m-wrap" })
-                        <span class="help-inline">@Html.ValidationMessageFor(m => m.FulfillDate)</span>
-                    </div>
-                </div>
-
-            </div>
-            <div class="row-fluid">
-                <div class="span6 control-group">
-                    <label class="control-label">合同结束日期：</label>
-                    <div class="controls">
-                        @Html.TextBoxFor(m => m.EndDate, new { @class = "m-wrap" })
-                        <span class="help-inline">@Html.ValidationMessageFor(m => m.EndDate)</span>
-                    </div>
-                </div>
-                <div class="span6 control-group">
+                <div class="span4 control-group">
                     <label class="control-label">合同金额：</label>
                     <div class="controls">
                         @Html.TextBoxFor(m => m.Money, new { @class = "m-wrap" })
@@ -99,27 +75,36 @@
                 </div>
             </div>
             <div class="row-fluid">
-                <div class="span6 control-group">
-                    <label class="control-label">内容：</label>
+                <div class="span4 control-group">
+                    <label class="control-label">合同签订日期：</label>
                     <div class="controls">
-                        @Html.TextBoxFor(m => m.Description, new { @class = "m-wrap" })
-                        <span class="help-inline">@Html.ValidationMessageFor(m => m.Description)</span>
+                        @Html.TextBoxFor(m => m.SignDate, new {  style="height:24px;width:210px" })
+                        <span class="help-inline">@Html.ValidationMessageFor(m => m.SignDate)</span>
                     </div>
                 </div>
-                <div class="span6 control-group">
-                    <label class="control-label">备注：</label>
+                <div class="span4 control-group">
+                    <label class="control-label">合同履行日期：</label>
                     <div class="controls">
-                        @Html.TextBoxFor(m => m.Remark, new { @class = "m-wrap" })
-                        <span class="help-inline">@Html.ValidationMessageFor(m => m.Remark)</span>
+                        @Html.TextBoxFor(m => m.FulfillDate, new {style="height:24px;width:210px" })
+                        <span class="help-inline">@Html.ValidationMessageFor(m => m.FulfillDate)</span>
+                    </div>
+                </div>
+             
+                <div class="span4 control-group">
+                    <label class="control-label">合同结束日期：</label>
+                    <div class="controls">
+                        @Html.TextBoxFor(m => m.EndDate, new {style="height:24px;width:210px" })
+                        <span class="help-inline">@Html.ValidationMessageFor(m => m.EndDate)</span>
                     </div>
                 </div>
             </div>
+            
             <div class="row-fluid">
                 <div class="span12 control-group">
                     <label class="control-label">文件上传：</label>
                     <div class="controls">
                         <div class="input-append">
-                            @Html.TextBoxFor(m => m.Accessory, new { @class = "m-wrap large" })
+                            @Html.TextBoxFor(m => m.Accessory, new { style="height:24px;width:975px" })
                             <span class="add-on" title="预览" id="preview"><i class="icon-picture"></i></span>
                         </div>
                         <div id="uploader"></div>
@@ -128,7 +113,24 @@
                     </div>
                 </div>
             </div>
-
+            <div class="row-fluid">
+                <div class="span4 control-group">
+                    <label class="control-label">内容：</label>
+                    <div class="controls">
+                        @Html.TextBoxFor(m => m.Description, new { style="height:150px;width:1000px"})
+                        <span class="help-inline">@Html.ValidationMessageFor(m => m.Description)</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row-fluid">
+                <div class="span4 control-group">
+                    <label class="control-label">备注：</label>
+                    <div class="controls">
+                        @Html.TextBoxFor(m => m.Remark, new { style="height:150px;width:1000px"})
+                        <span class="help-inline">@Html.ValidationMessageFor(m => m.Remark)</span>
+                    </div>
+                </div>
+            </div>
 
         </div>
 

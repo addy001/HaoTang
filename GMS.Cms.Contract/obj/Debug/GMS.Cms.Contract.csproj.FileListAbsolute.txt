@@ -12,3 +12,8 @@ F:\GMS\bin\GMS.Cms.Contract.pdb
 F:\GMS\Src\GMS.Cms.Contract\obj\Debug\GMS.Cms.Contract.csprojResolveAssemblyReference.cache
 F:\GMS\Src\GMS.Cms.Contract\obj\Debug\GMS.Cms.Contract.dll
 F:\GMS\Src\GMS.Cms.Contract\obj\Debug\GMS.Cms.Contract.pdb
+D:\workspace\GMS\bin\GMS.Cms.Contract.dll
+D:\workspace\GMS\bin\GMS.Cms.Contract.pdb
+D:\workspace\GMS\HaoTang\GMS.Cms.Contract\obj\Debug\GMS.Cms.Contract.csprojResolveAssemblyReference.cache
+D:\workspace\GMS\HaoTang\GMS.Cms.Contract\obj\Debug\GMS.Cms.Contract.dll
+D:\workspace\GMS\HaoTang\GMS.Cms.Contract\obj\Debug\GMS.Cms.Contract.pdb

@@ -13,3 +13,8 @@ F:\GMS\bin\GMS.OA.BLL.pdb
 F:\GMS\Src\GMS.OA.BLL\obj\Debug\GMS.OA.BLL.csprojResolveAssemblyReference.cache
 F:\GMS\Src\GMS.OA.BLL\obj\Debug\GMS.OA.BLL.dll
 F:\GMS\Src\GMS.OA.BLL\obj\Debug\GMS.OA.BLL.pdb
+D:\workspace\GMS\bin\GMS.OA.BLL.dll
+D:\workspace\GMS\bin\GMS.OA.BLL.pdb
+D:\workspace\GMS\HaoTang\GMS.OA.BLL\obj\Debug\GMS.OA.BLL.csprojResolveAssemblyReference.cache
+D:\workspace\GMS\HaoTang\GMS.OA.BLL\obj\Debug\GMS.OA.BLL.dll
+D:\workspace\GMS\HaoTang\GMS.OA.BLL\obj\Debug\GMS.OA.BLL.pdb

@@ -53,9 +53,9 @@ if ("undefined" != typeof staticFileRoot) {
             'method': 'GET',
             'buttonText' : '选择文件上传',
             'queueID': 'fileQueue',
-            'fileSizeLimit': '5MB',
-            'fileTypeDesc': "jpg/png/gif Files",
-            'fileTypeExts': '*.gif; *.jpg; *.png',
+            'fileSizeLimit': '10MB',
+            'fileTypeDesc': "jpg/png/gif/pdf Files",
+            'fileTypeExts': '*.gif; *.jpg; *.png; *.pdf',
             'auto': true,
             'multi': true,
             'onUploadSuccess': function (file, data, response) {

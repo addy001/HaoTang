@@ -71,5 +71,7 @@ namespace GMS.Project.DAL
         public DbSet<ProjectCtrl> ProjectCtrls { get; set; }
 
         public DbSet<OfficeCtrl> OfficeCtrls { get; set; }
+
+        public DbSet<Odder> Odders { get; set; }
     }
 }

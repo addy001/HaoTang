@@ -134,7 +134,11 @@ namespace GMS.Project.Contract
         IEnumerable<OfficeCtrl> GetOfficeCtrlList(OfficeCtrlRequest request = null);
         void SaveOfficeCtrl(OfficeCtrl office);
         void DeleteOfficeCtrl(List<int> ids);
-       
+
+        Odder GetOdder(int id);
+        IEnumerable<Odder> GetOdderList(OdderRequest request = null);
+        void SaveOdder(Odder project);
+        void DeleteOdder(List<int> ids);
  
     }
 }

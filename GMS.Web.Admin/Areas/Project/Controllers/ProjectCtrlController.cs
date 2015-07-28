@@ -45,8 +45,13 @@ namespace GMS.Web.Admin.Areas.Project.Controllers
         {
             var model = new ProjectCtrl();
             this.TryUpdateModel<ProjectCtrl>(model);
-            model.oddnum = model.CreateTime.ToFileTimeUtc().ToString();
+            model.oddnum=model.CreateTime.ToFileTimeUtc().ToString();
+            model.Total = model.Num *model.obb;
             this.ProjectService.SaveProjectCtrl(model);
+
+            var odder = new Odder();
+            odder.oddnum = model.oddnum;
+            this.ProjectService.SaveOdder(odder);
             return this.RefreshParent();
         }
 
@@ -70,12 +75,34 @@ namespace GMS.Web.Admin.Areas.Project.Controllers
         {
             var model = this.ProjectService.GetProjectCtrl(id);
             this.TryUpdateModel<ProjectCtrl>(model);
-           
+            model.Total = model.Num * model.obb;
             this.ProjectService.SaveProjectCtrl(model);
 
             return this.RefreshParent();
         }
 
+        public ActionResult Add(string oddNum)
+        {
+            var ProjectBasedataIDList = this.ProjectService.GetProjectBasedataList(new ProjectRequest());
+            this.ViewBag.ProjectBasedataID = new SelectList(ProjectBasedataIDList, "ID", "PName");
+
+            var model = new ProjectCtrl();
+            model.oddnum = oddNum;
+            return View("Edit", model);
+        }
+
+        [HttpPost]
+        public ActionResult Add(string oddNum, FormCollection collection)
+        {
+            var model = new ProjectCtrl();
+            //var model_last = this.ProjectService.GetProjectCtrl(id);
+            this.TryUpdateModel<ProjectCtrl>(model);
+            model.oddnum = oddNum;
+            model.Total = model.Num * model.obb;
+            this.ProjectService.SaveProjectCtrl(model);
+
+            return this.RefreshParent();
+        }
         // POST: /Crm/Project/Delete/5
 
         [HttpPost]

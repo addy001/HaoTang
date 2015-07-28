@@ -11,7 +11,7 @@
     <div class="span4">
         <div>
             <a class="btn red" id="delete" title='删除选中项' href="javascript:;"><i class="icon-trash icon-white"></i>删除</a>
-            <a class="btn blue thickbox" title='添加新文档' href="@Url.Action("Create")?TB_iframe=true&height=550&width=900"><i class="icon-plus icon-white"></i>新增</a>
+            <a class="btn blue thickbox" title='添加新文档' href="@Url.Action("Create")?TB_iframe=true&height=780&width=1200"><i class="icon-plus icon-white"></i>新增</a>
         </div>
     </div>
     <div class="span8">
@@ -30,7 +30,7 @@
     </div>
 </div>
 
-@using (Html.BeginForm("Delete", "Paper", FormMethod.Post, new { id = "mainForm" }))
+@using (Html.BeginForm("Delete", "Files", FormMethod.Post, new { id = "mainForm" }))
 {
     <table class="table table-striped table-hover ">
         <thead>
@@ -83,7 +83,7 @@
                     </td>
 
                     <td>
-                        @m.Type
+                        @EnumHelper.GetEnumTitle((EnumType)Convert.ToInt32(m.Type))
                     </td>
                     <td>
                         @m.FirstParty
@@ -108,7 +108,11 @@
                         @m.Description
                     </td>
                     <td>
-                        @m.Accessory
+                    @if (m.Accessory == null){
+                        <p class="label label-inverse">无附件</p>}
+                    @if (m.Accessory != null){
+                        <a class="label label-success" href="@m.Accessory">已上传</a>}
+                    
                     </td>
                     <td>
                         @m.Remark
@@ -119,7 +123,7 @@
                     </td>*@
 
                     <td>
-                        <a class="btn mini purple thickbox" title='文档详情，点击保存' href="@Url.Action("Edit", new { id = m.ID })?TB_iframe=true&height=550&width=900">
+                        <a class="btn mini purple thickbox" title='文档详情，点击保存' href="@Url.Action("Edit", new { id = m.ID })?TB_iframe=true&height=780&width=1100">
                             <i class="icon-edit"></i>
                             Edit
                         </a>

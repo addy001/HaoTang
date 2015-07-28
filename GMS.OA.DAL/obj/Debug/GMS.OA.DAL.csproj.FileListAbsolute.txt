@@ -13,3 +13,8 @@ F:\GMS\bin\GMS.OA.DAL.pdb
 F:\GMS\Src\GMS.OA.DAL\obj\Debug\GMS.OA.DAL.csprojResolveAssemblyReference.cache
 F:\GMS\Src\GMS.OA.DAL\obj\Debug\GMS.OA.DAL.dll
 F:\GMS\Src\GMS.OA.DAL\obj\Debug\GMS.OA.DAL.pdb
+D:\workspace\GMS\bin\GMS.OA.DAL.dll
+D:\workspace\GMS\bin\GMS.OA.DAL.pdb
+D:\workspace\GMS\HaoTang\GMS.OA.DAL\obj\Debug\GMS.OA.DAL.csprojResolveAssemblyReference.cache
+D:\workspace\GMS\HaoTang\GMS.OA.DAL\obj\Debug\GMS.OA.DAL.dll
+D:\workspace\GMS\HaoTang\GMS.OA.DAL\obj\Debug\GMS.OA.DAL.pdb

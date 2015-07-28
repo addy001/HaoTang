@@ -13,3 +13,8 @@ F:\GMS\bin\GMS.Core.Log.pdb
 F:\GMS\Src\GMS.Core.Log\obj\Debug\GMS.Core.Log.csprojResolveAssemblyReference.cache
 F:\GMS\Src\GMS.Core.Log\obj\Debug\GMS.Core.Log.dll
 F:\GMS\Src\GMS.Core.Log\obj\Debug\GMS.Core.Log.pdb
+D:\workspace\GMS\bin\GMS.Core.Log.dll
+D:\workspace\GMS\bin\GMS.Core.Log.pdb
+D:\workspace\GMS\HaoTang\GMS.Core.Log\obj\Debug\GMS.Core.Log.csprojResolveAssemblyReference.cache
+D:\workspace\GMS\HaoTang\GMS.Core.Log\obj\Debug\GMS.Core.Log.dll
+D:\workspace\GMS\HaoTang\GMS.Core.Log\obj\Debug\GMS.Core.Log.pdb

@@ -13,3 +13,8 @@ F:\GMS\bin\GMS.Cms.BLL.pdb
 F:\GMS\Src\GMS.Cms.BLL\obj\Debug\GMS.Cms.BLL.csprojResolveAssemblyReference.cache
 F:\GMS\Src\GMS.Cms.BLL\obj\Debug\GMS.Cms.BLL.dll
 F:\GMS\Src\GMS.Cms.BLL\obj\Debug\GMS.Cms.BLL.pdb
+D:\workspace\GMS\bin\GMS.Cms.BLL.dll
+D:\workspace\GMS\bin\GMS.Cms.BLL.pdb
+D:\workspace\GMS\HaoTang\GMS.Cms.BLL\obj\Debug\GMS.Cms.BLL.csprojResolveAssemblyReference.cache
+D:\workspace\GMS\HaoTang\GMS.Cms.BLL\obj\Debug\GMS.Cms.BLL.dll
+D:\workspace\GMS\HaoTang\GMS.Cms.BLL\obj\Debug\GMS.Cms.BLL.pdb

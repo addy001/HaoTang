@@ -16,3 +16,9 @@ F:\GMS\bin\GMS.Framework.BLL.pdb
 F:\GMS\Src\GMS.Framework.BLL\obj\Debug\GMS.Framework.BLL.csprojResolveAssemblyReference.cache
 F:\GMS\Src\GMS.Framework.BLL\obj\Debug\GMS.Framework.BLL.dll
 F:\GMS\Src\GMS.Framework.BLL\obj\Debug\GMS.Framework.BLL.pdb
+D:\workspace\GMS\bin\GMS.Framework.BLL.XML
+D:\workspace\GMS\bin\GMS.Framework.BLL.dll
+D:\workspace\GMS\bin\GMS.Framework.BLL.pdb
+D:\workspace\GMS\HaoTang\GMS.Framework.BLL\obj\Debug\GMS.Framework.BLL.csprojResolveAssemblyReference.cache
+D:\workspace\GMS\HaoTang\GMS.Framework.BLL\obj\Debug\GMS.Framework.BLL.dll
+D:\workspace\GMS\HaoTang\GMS.Framework.BLL\obj\Debug\GMS.Framework.BLL.pdb

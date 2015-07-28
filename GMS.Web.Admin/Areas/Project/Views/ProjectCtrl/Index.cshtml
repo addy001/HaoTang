@@ -22,8 +22,8 @@
                 <button type="submit" class="btn">搜索 <i class="icon-search"></i></button>
              </label>
             <label>
-                <span>名称：</span>
-                @Html.TextBox("Name", null, new { @class = "m-wrap small" })
+                <span>单号：</span>
+                @Html.TextBox("oddnum", null, new { @class = "m-wrap small" })
             </label>
         </div>
         }
@@ -41,27 +41,17 @@
             <th>
                 材料名称
             </th>
-
             <th>
                 单号
             </th>
+            <th>总价</th>
              <th>
                 所属项目
             </th>
-             <th>
-                采购人
-            </th>
-
             <th>
                 创建时间
-
             </th>
-            <th>
-              审批
-            </th>
-            <th>
-              到货
-            </th>
+            <th>添加</th>
             <th>
                 详情/编辑
             </th>            
@@ -81,23 +71,22 @@
             <td>
                 NO.@m.oddnum
             </td>
-              <td>
+            <td>@m.Total</td>
+            <td>
                 @m.ProjectBasedata.PName
             </td>
+            
             <td>
-                @m.Buyer
+                @m.CreateTime.ToCnDataString()
             </td>
             <td>
-            @m.CreateTime.ToCnDataString()
+                <a class="btn mini purple thickbox" title='采购单详情，点击保存' href="@Url.Action("Add", new { oddNum = m.oddnum })TB_iframe=true&height=500&width=900">
+                    <i class="icon-plus"></i>
+                    添加
+                </a>
             </td>
-             <td>
-                <span class="label label-@(m.IsPro  ? "success" : "inverse")">@m.IsPro</span>
-            </td>
-            <td>
-                <span class="label label-@(m.IsStandard  ? "success" : "inverse")">@m.IsStandard</span>
-            </td>
-            <td>
-                <a class="btn mini purple thickbox" title='采购单详情，点击保存' href="@Url.Action("Edit", new { id = m.ID })?TB_iframe=true&height=820&width=400">
+          <td>
+                <a class="btn mini purple thickbox" title='公司采购单详情，点击保存' href="@Url.Action("Edit", new { id = m.ID })?TB_iframe=true&height=500&width=900">
                     <i class="icon-edit"></i>
                     详情
                 </a>

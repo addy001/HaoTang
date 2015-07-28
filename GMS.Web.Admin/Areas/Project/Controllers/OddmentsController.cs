@@ -18,6 +18,10 @@ namespace GMS.Web.Admin.Areas.Project.Controllers
 
         public ActionResult Index(OddmentsRequest requset)
         {
+            var model = new Oddments();
+            this.RenderMyViewData(model);
+            var ProjectBasedataIDList = this.ProjectService.GetProjectBasedataList(new ProjectRequest());
+            this.ViewBag.ProjectBasedataID = new SelectList(ProjectBasedataIDList, "ID", "PName");
             var result = this.ProjectService.GetOddmentsList(requset);
             return View(result);
         }
@@ -27,7 +31,10 @@ namespace GMS.Web.Admin.Areas.Project.Controllers
 
         public ActionResult Create()
         {
-            var model = new Oddments() { };
+            var model = new Oddments();
+            this.RenderMyViewData(model);
+            var ProjectBasedataIDList = this.ProjectService.GetProjectBasedataList(new ProjectRequest());
+            this.ViewBag.ProjectBasedataID = new SelectList(ProjectBasedataIDList, "ID", "PName");
             return View("Edit", model);
         }
 
@@ -51,6 +58,9 @@ namespace GMS.Web.Admin.Areas.Project.Controllers
         public ActionResult Edit(int id)
         {
             var model = this.ProjectService.GetOddments(id);
+            this.RenderMyViewData(model);
+            var ProjectBasedataIDList = this.ProjectService.GetProjectBasedataList(new ProjectRequest());
+            this.ViewBag.ProjectBasedataID = new SelectList(ProjectBasedataIDList, "ID", "PName");
             return View(model);
         }
 
@@ -80,6 +90,10 @@ namespace GMS.Web.Admin.Areas.Project.Controllers
         {
             this.ProjectService.DeleteOddments(ids);
             return RedirectToAction("Index");
+        }
+        private void RenderMyViewData(Oddments model)
+        {
+            ViewData.Add("OType", new SelectList(EnumHelper.GetItemValueList<EnumOType>(), "Key", "Value", model.OType));
         }
     }
 }

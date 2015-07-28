@@ -33,12 +33,12 @@ namespace GMS.Core.Upload
 
         public virtual string[] AllowExt
         {
-            get { return new string[] { "txt", "rar", "zip", "jpg", "jpeg", "gif", "png", "swf"}; }
+            get { return new string[] { "txt", "rar", "zip", "jpg", "jpeg", "gif", "png", "swf", "pdf" }; }
         }
 
         public virtual string[] ImageExt
         {
-            get { return new string[] { "jpg", "jpeg", "gif", "png" }; }
+            get { return new string[] { "jpg", "jpeg", "gif", "png", "pdf" }; }
         }
 
         public abstract string GetResult(string localFileName, string uploadFilePath, string err);

@@ -469,8 +469,6 @@ namespace GMS.Project.BLL
 
         #endregion
 
-
-
         #region  Payables CURD
         public Payables GetPayables(int id)
         {
@@ -1020,15 +1018,17 @@ namespace GMS.Project.BLL
             request = request ?? new OddmentsRequest();
             using (var dbContext = new ProjectDbContext())
             {
-                IQueryable<Oddments> oddments = dbContext.Oddments;
+                IQueryable<Oddments> oddments = dbContext.Oddments.Include("ProjectBasedata"); 
 
 
                 if (!string.IsNullOrEmpty(request.Name))
 
                     oddments = oddments.Where(u => u.Name.Contains(request.Name));
 
-                //if (!string.IsNullOrEmpty(request.Toolname))
-                //    oddments = oddments.Where(u => u.Toolname.Contains(request.Toolname));
+                if (!string.IsNullOrEmpty(request.OType))
+                    oddments = oddments.Where(u => u.OType.Contains(request.OType));
+                if (request.ProjectBasedataID > 0)
+                    oddments = oddments.Where(u => u.ProjectBasedataID == request.ProjectBasedataID);
 
                 //if (!string.IsNullOrEmpty(request.obb))
                 //    oddments = oddments.Where(u => u.obb.Contains(request.obb));
@@ -1149,8 +1149,8 @@ namespace GMS.Project.BLL
                 //if (!string.IsNullOrEmpty(request.Stuffname))
                 //    projects = projects.Where(u => u.Stuffname.Contains(request.Stuffname));
 
-                //if (!string.IsNullOrEmpty(request.obb))
-                //    projects = projects.Where(u => u.obb.Contains(request.obb));
+                if (!string.IsNullOrEmpty(request.oddnum))
+                    projects = projects.Where(u => u.oddnum.Contains(request.oddnum));
 
                 //if (!string.IsNullOrEmpty(request.Way))
                 //    projects = projects.Where(u => u.Way.Contains(request.Way));
@@ -1207,8 +1207,8 @@ namespace GMS.Project.BLL
                 //if (!string.IsNullOrEmpty(request.Toolname))
                 //    offices = offices.Where(u => u.Toolname.Contains(request.Toolname));
 
-                //if (!string.IsNullOrEmpty(request.obb))
-                //    offices = offices.Where(u => u.obb.Contains(request.obb));
+                if (!string.IsNullOrEmpty(request.oddnum))
+                    offices = offices.Where(u => u.oddnum.Contains(request.oddnum));
 
                 //if (!string.IsNullOrEmpty(request.Way))
                 //    offices = offices.Where(u => u.Way.Contains(request.Way));
@@ -1241,6 +1241,65 @@ namespace GMS.Project.BLL
         }
         #endregion
 
+        #region Odder CURD
+        public Odder GetOdder(int id)
+        {
+            using (var dbContext = new ProjectDbContext())
+            {
+                return dbContext.Find<Odder>(id);
+            }
+        }
+
+        public IEnumerable<Odder> GetOdderList(OdderRequest request = null)
+        {
+            request = request ?? new OdderRequest();
+            using (var dbContext = new ProjectDbContext())
+            {
+                IQueryable<Odder> projects = dbContext.Odders;
+
+
+                if (!string.IsNullOrEmpty(request.Buyer))
+
+                    projects = projects.Where(u => u.Buyer.Contains(request.Buyer));
+               // if (request.ProjectBasedataID > 0)
+                 //   projects = projects.Where(u => u.ProjectBasedataID == request.ProjectBasedataID);
+
+                //if (!string.IsNullOrEmpty(request.Stuffname))
+                //    projects = projects.Where(u => u.Stuffname.Contains(request.Stuffname));
+
+                if (!string.IsNullOrEmpty(request.oddnum))
+                    projects = projects.Where(u => u.oddnum.Contains(request.oddnum));
+
+                //if (!string.IsNullOrEmpty(request.Way))
+                //    projects = projects.Where(u => u.Way.Contains(request.Way));
+
+                return projects.OrderByDescending(u => u.ID).ToPagedList(request.PageIndex, request.PageSize);
+            }
+        }
+
+        public void SaveOdder(Odder project)
+        {
+            using (var dbContext = new ProjectDbContext())
+            {
+                if (project.ID > 0)
+                {
+                    dbContext.Update<Odder>(project);
+                }
+                else
+                {
+                    dbContext.Insert<Odder>(project);
+                }
+            }
+        }
+
+        public void DeleteOdder(List<int> ids)
+        {
+            using (var dbContext = new ProjectDbContext())
+            {
+                dbContext.Odders.Where(u => ids.Contains(u.ID)).Delete();
+            }
+        }
+        #endregion
 
     }
 }

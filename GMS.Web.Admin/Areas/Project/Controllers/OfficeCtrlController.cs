@@ -40,7 +40,12 @@ namespace GMS.Web.Admin.Areas.Project.Controllers
             var model = new OfficeCtrl();
             this.TryUpdateModel<OfficeCtrl>(model);
             model.oddnum = model.CreateTime.ToFileTimeUtc().ToString();
+            model.total = model.num * model.obb;
             this.ProjectService.SaveOfficeCtrl(model);
+
+            var odder = new Odder();
+            odder.oddnum = model.oddnum;
+            this.ProjectService.SaveOdder(odder);
             return this.RefreshParent();
         }
 
@@ -61,10 +66,33 @@ namespace GMS.Web.Admin.Areas.Project.Controllers
         {
             var model = this.ProjectService.GetOfficeCtrl(id);
             this.TryUpdateModel<OfficeCtrl>(model);
+            model.total = model.num * model.obb;
             this.ProjectService.SaveOfficeCtrl(model);
+
             return this.RefreshParent();
         }
+        public ActionResult Add(string oddNum)
+        {
+            var ProjectBasedataIDList = this.ProjectService.GetProjectBasedataList(new ProjectRequest());
+            this.ViewBag.ProjectBasedataID = new SelectList(ProjectBasedataIDList, "ID", "PName");
 
+            var model = new OfficeCtrl();
+            model.oddnum = oddNum;
+            return View("Edit", model);
+        }
+
+        [HttpPost]
+        public ActionResult Add(string oddNum, FormCollection collection)
+        {
+            var model = new OfficeCtrl();
+            //var model_last = this.ProjectService.GetProjectCtrl(id);
+            this.TryUpdateModel<OfficeCtrl>(model);
+            model.oddnum = oddNum;
+            model.total = model.num * model.obb;
+            this.ProjectService.SaveOfficeCtrl(model);
+
+            return this.RefreshParent();
+        }
         // POST: /Cms/Office/Delete/5
 
         [HttpPost]
