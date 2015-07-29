@@ -39,3 +39,17 @@ F:\GMS\Src\GMS.BasisData.Contract\obj\Debug\GMS.BasisData.Contract.csprojResolve
 F:\GMS\Src\GMS.BasisData.Contract\obj\Debug\GMS.BasisData.Contract.dll
 F:\GMS\Src\GMS.BasisData.Contract\obj\Debug\GMS.BasisData.Contract.pdb
 F:\GMS\Src\GMS.BasisData.Contract\bin\Debug\GMS.Framework.Utility.xml
+D:\Documents\GitHub\project\HaoTang\GMS.BasisData.Contract\bin\Debug\GMS.BasisData.Contract.dll
+D:\Documents\GitHub\project\HaoTang\GMS.BasisData.Contract\bin\Debug\GMS.BasisData.Contract.pdb
+D:\Documents\GitHub\project\HaoTang\GMS.BasisData.Contract\bin\Debug\EntityFramework.dll
+D:\Documents\GitHub\project\HaoTang\GMS.BasisData.Contract\bin\Debug\GMS.Framework.Contract.dll
+D:\Documents\GitHub\project\HaoTang\GMS.BasisData.Contract\bin\Debug\GMS.Framework.Utility.dll
+D:\Documents\GitHub\project\HaoTang\GMS.BasisData.Contract\bin\Debug\Newtonsoft.Json.dll
+D:\Documents\GitHub\project\HaoTang\GMS.BasisData.Contract\bin\Debug\EntityFramework.xml
+D:\Documents\GitHub\project\HaoTang\GMS.BasisData.Contract\bin\Debug\GMS.Framework.Contract.pdb
+D:\Documents\GitHub\project\HaoTang\GMS.BasisData.Contract\bin\Debug\GMS.Framework.Contract.xml
+D:\Documents\GitHub\project\HaoTang\GMS.BasisData.Contract\bin\Debug\GMS.Framework.Utility.pdb
+D:\Documents\GitHub\project\HaoTang\GMS.BasisData.Contract\bin\Debug\GMS.Framework.Utility.xml
+D:\Documents\GitHub\project\HaoTang\GMS.BasisData.Contract\obj\Debug\GMS.BasisData.Contract.csprojResolveAssemblyReference.cache
+D:\Documents\GitHub\project\HaoTang\GMS.BasisData.Contract\obj\Debug\GMS.BasisData.Contract.dll
+D:\Documents\GitHub\project\HaoTang\GMS.BasisData.Contract\obj\Debug\GMS.BasisData.Contract.pdb

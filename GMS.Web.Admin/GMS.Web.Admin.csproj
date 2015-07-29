@@ -69,6 +69,7 @@
     <Compile Include="Areas\Account\AccountAreaRegistration.cs" />
     <Compile Include="Areas\Account\Controllers\AuthController.cs" />
     <Compile Include="Areas\Account\Controllers\CommonController.cs" />
+    <Compile Include="Areas\Account\Controllers\LogController.cs" />
     <Compile Include="Areas\Account\Controllers\RoleController.cs" />
     <Compile Include="Areas\Account\Controllers\UserController.cs" />
     <Compile Include="Areas\BasisData\BasisDataAreaRegistration.cs" />
@@ -1370,6 +1371,7 @@
     <Content Include="Areas\Project\Views\ProjectCtrl\Index.cshtml" />
     <Content Include="Areas\Project\Views\Income\Index.cshtml" />
     <Content Include="Areas\Project\Views\Income\Edit.cshtml" />
+    <Content Include="Areas\Account\Views\Log\Index.cshtml" />
     <None Include="Assets\bootstrap-colorpicker\less\colorpicker.less" />
     <None Include="Assets\bootstrap-datepicker\less\datepicker.less" />
     <None Include="Assets\bootstrap-daterangepicker\README.md" />
@@ -1575,6 +1577,7 @@
     <Content Include="FileUpload.ashx" />
     <None Include="Properties\PublishProfiles\gms.pubxml" />
     <Content Include="Views\Shared\_Layout.supplier.cshtml" />
+    <Content Include="Views\Shared\_Content.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GMS.Account.BLL\GMS.Account.BLL.csproj">
@@ -1608,6 +1611,10 @@
     <ProjectReference Include="..\GMS.Core.Config\GMS.Core.Config.csproj">
       <Project>{3BF4147E-D01D-4FFF-B8E7-FE24959B2D7E}</Project>
       <Name>GMS.Core.Config</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GMS.Core.Log\GMS.Core.Log.csproj">
+      <Project>{8ae51ee2-67db-4f57-98fe-cbb890c9a5a2}</Project>
+      <Name>GMS.Core.Log</Name>
     </ProjectReference>
     <ProjectReference Include="..\GMS.Core.Module\GMS.Core.Module.csproj">
       <Project>{CD06E340-B210-43F0-B963-D99D16073B79}</Project>

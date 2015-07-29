@@ -13,3 +13,8 @@ F:\GMS\bin\GMS.Core.Upload.pdb
 F:\GMS\Src\GMS.Core.Upload\obj\Debug\GMS.Core.Upload.csprojResolveAssemblyReference.cache
 F:\GMS\Src\GMS.Core.Upload\obj\Debug\GMS.Core.Upload.dll
 F:\GMS\Src\GMS.Core.Upload\obj\Debug\GMS.Core.Upload.pdb
+D:\Documents\GitHub\project\bin\GMS.Core.Upload.dll
+D:\Documents\GitHub\project\bin\GMS.Core.Upload.pdb
+D:\Documents\GitHub\project\HaoTang\GMS.Core.Upload\obj\Debug\GMS.Core.Upload.csprojResolveAssemblyReference.cache
+D:\Documents\GitHub\project\HaoTang\GMS.Core.Upload\obj\Debug\GMS.Core.Upload.dll
+D:\Documents\GitHub\project\HaoTang\GMS.Core.Upload\obj\Debug\GMS.Core.Upload.pdb

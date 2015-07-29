@@ -32,7 +32,7 @@ namespace GMS.BasisData.Contract
         [StringLength(100)]
         public string Fax { get; set; }
 
-        [StringLength(100)]
+        [RegularExpression(@"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}", ErrorMessage = "电子邮件地址无效")]
         public string Email { get; set; }
 
 

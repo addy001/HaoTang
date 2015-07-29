@@ -14,7 +14,7 @@ namespace GMS.BasisData.BLL
 {
     public class BasisDataService : IBasisDataService
     {
-
+        #region ClassificationCURD
         public void DeleteClassification(List<int> ids)
         {
             using (var dbContext = new BasisDataDbContext())
@@ -23,26 +23,6 @@ namespace GMS.BasisData.BLL
                 dbContext.Classifications.Where(u => ids.Contains(u.ID)).Delete();
             }
         }
-
-        public void DeleteMaterial(List<int> ids)
-        {
-            using (var dbContext = new BasisDataDbContext())
-            {
-                dbContext.MaterialSuppliers.Where(u => ids.Contains(u.MaterialID)).Delete();
-                dbContext.Materials.Where(u => ids.Contains(u.ID)).Delete();
-            }
-        }
-
-        public void DeleteSupplier(List<int> ids)
-        {
-            using (var dbContext = new BasisDataDbContext())
-            {
-                dbContext.MaterialSuppliers.Where(u => ids.Contains(u.SupplierID)).Delete();
-
-                dbContext.Suppliers.Where(u => ids.Contains(u.ID)).Delete();
-            }
-        }
-
         public Classification GetClassification(int id)
         {
             using (var dbContext = new BasisDataDbContext())
@@ -68,6 +48,38 @@ namespace GMS.BasisData.BLL
             }
 
         }
+
+        public void SaveClassification(Classification classification)
+        {
+            using (var dbContext = new BasisDataDbContext())
+            {
+                if (classification.ID > 0)
+                {
+                    dbContext.Update<Classification>(classification);
+                }
+                else
+                {
+                    dbContext.Insert<Classification>(classification);
+                }
+            }
+        }
+        #endregion
+
+        #region MaterCURD
+        public void DeleteMaterial(List<int> ids)
+        {
+            using (var dbContext = new BasisDataDbContext())
+            {
+                dbContext.MaterialSuppliers.Where(u => ids.Contains(u.MaterialID)).Delete();
+                dbContext.Materials.Where(u => ids.Contains(u.ID)).Delete();
+            }
+        }
+
+
+
+
+
+        
 
         public Material GetMaterial(int id)
         {
@@ -98,11 +110,38 @@ namespace GMS.BasisData.BLL
             }
         }
 
+        public void SaveMaterial(Material material)
+        {
+            using (var dbContext = new BasisDataDbContext())
+            {
+                if (material.ID > 0)
+                {
+                    dbContext.Update<Material>(material);
+                }
+                else
+                {
+                    dbContext.Insert<Material>(material);
+                }
+            }
+        }
+#endregion
+
+        #region SupplierCURD
         public Supplier GetSupplier(int id)
         {
             using (var dbContext = new BasisDataDbContext())
             {
                 return dbContext.Find<Supplier>(id);
+            }
+        }
+
+        public void DeleteSupplier(List<int> ids)
+        {
+            using (var dbContext = new BasisDataDbContext())
+            {
+                dbContext.MaterialSuppliers.Where(u => ids.Contains(u.SupplierID)).Delete();
+
+                dbContext.Suppliers.Where(u => ids.Contains(u.ID)).Delete();
             }
         }
 
@@ -123,35 +162,9 @@ namespace GMS.BasisData.BLL
             }
         }
 
-        public void SaveClassification(Classification classification)
-        {
-            using (var dbContext = new BasisDataDbContext())
-            {
-                if (classification.ID > 0)
-                {
-                    dbContext.Update<Classification>(classification);
-                }
-                else
-                {
-                    dbContext.Insert<Classification>(classification);
-                }
-            }
-        }
+        
 
-        public void SaveMaterial(Material material)
-        {
-            using (var dbContext = new BasisDataDbContext())
-            {
-                if (material.ID > 0)
-                {
-                    dbContext.Update<Material>(material);
-                }
-                else
-                {
-                    dbContext.Insert<Material>(material);
-                }
-            }
-        }
+        
 
         public void SaveSupplier(Supplier supplier)
         {
@@ -168,7 +181,9 @@ namespace GMS.BasisData.BLL
             }
         }
 
+        #endregion
 
+        #region MaterialSupplierCURD
         public void DeleteMaterialSupplier(int mid, int sid)
         {
             using (var dbContext = new BasisDataDbContext())
@@ -226,5 +241,6 @@ namespace GMS.BasisData.BLL
                 }
             }
         }
+        #endregion
     }
 }

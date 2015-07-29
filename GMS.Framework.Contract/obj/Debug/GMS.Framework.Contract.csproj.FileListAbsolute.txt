@@ -16,3 +16,9 @@ F:\GMS\bin\GMS.Framework.Contract.pdb
 F:\GMS\Src\GMS.Framework.Contract\obj\Debug\GMS.Framework.Contract.csprojResolveAssemblyReference.cache
 F:\GMS\Src\GMS.Framework.Contract\obj\Debug\GMS.Framework.Contract.dll
 F:\GMS\Src\GMS.Framework.Contract\obj\Debug\GMS.Framework.Contract.pdb
+D:\Documents\GitHub\project\bin\GMS.Framework.Contract.XML
+D:\Documents\GitHub\project\bin\GMS.Framework.Contract.dll
+D:\Documents\GitHub\project\bin\GMS.Framework.Contract.pdb
+D:\Documents\GitHub\project\HaoTang\GMS.Framework.Contract\obj\Debug\GMS.Framework.Contract.csprojResolveAssemblyReference.cache
+D:\Documents\GitHub\project\HaoTang\GMS.Framework.Contract\obj\Debug\GMS.Framework.Contract.dll
+D:\Documents\GitHub\project\HaoTang\GMS.Framework.Contract\obj\Debug\GMS.Framework.Contract.pdb

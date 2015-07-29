@@ -22,6 +22,9 @@ namespace GMS.Account.Contract
         [EnumTitle("管理角色")]
         AccountManage_Role = 102,
 
+        [EnumTitle("管理日志")]
+        AccountManage_Log = 103,
+
 
 
         [EnumTitle("CMS管理文章")]

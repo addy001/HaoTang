@@ -13,3 +13,8 @@ F:\GMS\bin\GMS.Core.Module.pdb
 F:\GMS\Src\GMS.Core.Module\obj\Debug\GMS.Core.Module.csprojResolveAssemblyReference.cache
 F:\GMS\Src\GMS.Core.Module\obj\Debug\GMS.Core.Module.dll
 F:\GMS\Src\GMS.Core.Module\obj\Debug\GMS.Core.Module.pdb
+D:\Documents\GitHub\project\bin\GMS.Core.Module.dll
+D:\Documents\GitHub\project\bin\GMS.Core.Module.pdb
+D:\Documents\GitHub\project\HaoTang\GMS.Core.Module\obj\Debug\GMS.Core.Module.csprojResolveAssemblyReference.cache
+D:\Documents\GitHub\project\HaoTang\GMS.Core.Module\obj\Debug\GMS.Core.Module.dll
+D:\Documents\GitHub\project\HaoTang\GMS.Core.Module\obj\Debug\GMS.Core.Module.pdb

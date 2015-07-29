@@ -16,3 +16,9 @@ F:\GMS\bin\GMS.Framework.DAL.pdb
 F:\GMS\Src\GMS.Framework.DAL\obj\Debug\GMS.Framework.DAL.csprojResolveAssemblyReference.cache
 F:\GMS\Src\GMS.Framework.DAL\obj\Debug\GMS.Framework.DAL.dll
 F:\GMS\Src\GMS.Framework.DAL\obj\Debug\GMS.Framework.DAL.pdb
+D:\Documents\GitHub\project\bin\GMS.Framework.DAL.XML
+D:\Documents\GitHub\project\bin\GMS.Framework.DAL.dll
+D:\Documents\GitHub\project\bin\GMS.Framework.DAL.pdb
+D:\Documents\GitHub\project\HaoTang\GMS.Framework.DAL\obj\Debug\GMS.Framework.DAL.csprojResolveAssemblyReference.cache
+D:\Documents\GitHub\project\HaoTang\GMS.Framework.DAL\obj\Debug\GMS.Framework.DAL.dll
+D:\Documents\GitHub\project\HaoTang\GMS.Framework.DAL\obj\Debug\GMS.Framework.DAL.pdb

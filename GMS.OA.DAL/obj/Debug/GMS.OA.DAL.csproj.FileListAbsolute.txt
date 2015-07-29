@@ -13,3 +13,8 @@ F:\GMS\bin\GMS.OA.DAL.pdb
 F:\GMS\Src\GMS.OA.DAL\obj\Debug\GMS.OA.DAL.csprojResolveAssemblyReference.cache
 F:\GMS\Src\GMS.OA.DAL\obj\Debug\GMS.OA.DAL.dll
 F:\GMS\Src\GMS.OA.DAL\obj\Debug\GMS.OA.DAL.pdb
+D:\Documents\GitHub\project\bin\GMS.OA.DAL.dll
+D:\Documents\GitHub\project\bin\GMS.OA.DAL.pdb
+D:\Documents\GitHub\project\HaoTang\GMS.OA.DAL\obj\Debug\GMS.OA.DAL.csprojResolveAssemblyReference.cache
+D:\Documents\GitHub\project\HaoTang\GMS.OA.DAL\obj\Debug\GMS.OA.DAL.dll
+D:\Documents\GitHub\project\HaoTang\GMS.OA.DAL\obj\Debug\GMS.OA.DAL.pdb

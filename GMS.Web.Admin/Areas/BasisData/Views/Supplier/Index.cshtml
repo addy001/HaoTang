@@ -36,11 +36,7 @@
     </div>
 </div>
 
-<div class="alert">
-    <button class="close" data-dismiss="alert"></button>
-    <strong>用户权限相关：</strong>
-    请编辑其所属角色的权限，用户的权限是其所有角色所拥有的权限汇总！
-</div>
+
 
 @using (Html.BeginForm("Delete", "Supplier", FormMethod.Post, new { id = "mainForm" }))
 {
@@ -84,7 +80,7 @@
                             <input type="checkbox" class="checkboxes" name='ids' value='@m.ID' />
                         </td>
                         <td>
-                            <a href="ShowSupplierMaterial?id=@m.ID">
+                            <a class="btn mini  thickbox" href="@Url.Action("../Supplier/ShowSupplierMaterial", new { id = m.ID })?TB_iframe=true&height=400&width=787">
                                 @m.Name
                             </a>
                         </td>
@@ -109,7 +105,7 @@
                                 <i class="icon-edit"></i>
                                 编辑
                             </a>
-                            <a class="btn mini purple " title='添加供应材料' href="AddMaterial?id=@m.ID" >
+                            <a class="btn mini purple thickbox" title='添加供应材料' href="@Url.Action("../Supplier/AddMaterial", new { id = m.ID })?TB_iframe=true&height=400&width=787">
                                 <i class="icon-edit"></i>
                                 添加供应材料
                             </a>

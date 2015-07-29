@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using GMS.Core.Log;
 
 namespace GMS.Account.Contract
 {
@@ -22,6 +23,10 @@ namespace GMS.Account.Contract
 
         Guid SaveVerifyCode(string verifyCodeText);
         bool CheckVerifyCode(string verifyCodeText, Guid guid);
+
+
+        AuditLog GetLogBasedata(int id);
+        IEnumerable<AuditLog> GetLogList(LogRequest request = null);
 
 
     }

@@ -6,7 +6,7 @@
 @using GMS.Web.Admin.Common;
 @model PagedList<Material>
 @{
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_Content.cshtml";
 }
 <div class="row-fluid">
     <div class="span4">
@@ -35,11 +35,7 @@
     </div>
 </div>
 
-<div class="alert">
-    <button class="close" data-dismiss="alert"></button>
-    <strong>用户权限相关：</strong>
-    请编辑其所属角色的权限，用户的权限是其所有角色所拥有的权限汇总！
-</div>
+
 
 @using (Html.BeginForm("Delete", "Material", FormMethod.Post, new { id = "mainForm" }))
 {

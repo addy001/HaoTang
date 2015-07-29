@@ -68,7 +68,7 @@
                         <input type="checkbox" class="checkboxes" name='ids' value='@m.ID' />
                     </td>
                     <td>
-                        <a href="../Material/Index?id=@m.ID">@m.Name</a>
+                        @m.Name
 
                     </td>
                     @*    <td>
@@ -81,7 +81,7 @@
                             <i class="icon-edit"></i>
                             编辑
                         </a>
-                        <a class="btn mini purple " title='基础数据' href="AddMaterial?id=@m.ID" >
+                        <a class="btn mini purple thickbox" title='基础数据' href="@Url.Action("../Material/Index", new { id = m.ID })?TB_iframe=true&height=400&width=787">
                             <i class="icon-edit"></i>
                             编辑数据
                         </a>

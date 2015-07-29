@@ -10,6 +10,7 @@ using GMS.Framework.Contract;
 using EntityFramework.Extensions;
 using GMS.Core.Cache;
 using GMS.Core.Config;
+using GMS.Core.Log;
 
 namespace GMS.Account.BLL
 {
@@ -262,5 +263,34 @@ namespace GMS.Account.BLL
                 }
             }
         }
+        #region log;
+        public AuditLog GetLogBasedata(int id)
+        {
+            using (var dbContext = new LogDbContext())
+            {
+                return dbContext.Find<AuditLog>(id);
+            }
+        }
+
+        public IEnumerable<AuditLog> GetLogList(LogRequest request = null)
+        {
+            request = request ?? new LogRequest();
+            using (var dbContext = new LogDbContext())
+            {
+                IQueryable<AuditLog> AuditLogs = dbContext.AuditLogs;
+
+                if (!string.IsNullOrEmpty(request.UserName))
+                    AuditLogs = AuditLogs.Where(u => u.UserName.Contains(request.UserName));
+
+                return AuditLogs.OrderByDescending(u => u.ModelId).ToPagedList(request.PageIndex, request.PageSize);
+
+
+            }
+        }
+
+        #endregion
+    
+    
+    
     }
 }

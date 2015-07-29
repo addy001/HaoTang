@@ -13,3 +13,8 @@ F:\GMS\bin\GMS.Account.DAL.pdb
 F:\GMS\Src\GMS.Account.DAL\obj\Debug\GMS.Account.DAL.csprojResolveAssemblyReference.cache
 F:\GMS\Src\GMS.Account.DAL\obj\Debug\GMS.Account.DAL.dll
 F:\GMS\Src\GMS.Account.DAL\obj\Debug\GMS.Account.DAL.pdb
+D:\Documents\GitHub\project\bin\GMS.Account.DAL.dll
+D:\Documents\GitHub\project\bin\GMS.Account.DAL.pdb
+D:\Documents\GitHub\project\HaoTang\GMS.Account.DAL\obj\Debug\GMS.Account.DAL.csprojResolveAssemblyReference.cache
+D:\Documents\GitHub\project\HaoTang\GMS.Account.DAL\obj\Debug\GMS.Account.DAL.dll
+D:\Documents\GitHub\project\HaoTang\GMS.Account.DAL\obj\Debug\GMS.Account.DAL.pdb

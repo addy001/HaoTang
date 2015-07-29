@@ -13,3 +13,8 @@ F:\GMS\bin\GMS.Framework.Web.pdb
 F:\GMS\Src\GMS.Framework.Web\obj\Debug\GMS.Framework.Web.csprojResolveAssemblyReference.cache
 F:\GMS\Src\GMS.Framework.Web\obj\Debug\GMS.Framework.Web.dll
 F:\GMS\Src\GMS.Framework.Web\obj\Debug\GMS.Framework.Web.pdb
+D:\Documents\GitHub\project\bin\GMS.Framework.Web.dll
+D:\Documents\GitHub\project\bin\GMS.Framework.Web.pdb
+D:\Documents\GitHub\project\HaoTang\GMS.Framework.Web\obj\Debug\GMS.Framework.Web.csprojResolveAssemblyReference.cache
+D:\Documents\GitHub\project\HaoTang\GMS.Framework.Web\obj\Debug\GMS.Framework.Web.dll
+D:\Documents\GitHub\project\HaoTang\GMS.Framework.Web\obj\Debug\GMS.Framework.Web.pdb

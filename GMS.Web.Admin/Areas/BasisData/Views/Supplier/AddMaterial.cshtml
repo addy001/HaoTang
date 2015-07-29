@@ -7,7 +7,7 @@
 @model int
 
 @{
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_Content.cshtml";
 }
 <div class="row-fluid">
     <div class="span4" style="margin-bottom:20px;">
@@ -105,20 +105,30 @@
 @if (mse != null){
                         <td>
                         
-                            <input type="text" id='@("Price"+@m.ID)' value="@mse.Price" class="m-wrap small" />
+                            <input readonly="readonly" type="text" id='@("Price"+@m.ID)' value="@mse.Price" class="m-wrap small" />
                             </td>
     <td>
-        <input type="text" id='@("Remark"+@m.ID)' value="@mse.Remark" class="m-wrap small" /></td>
+        <input readonly="readonly" type="text" id='@("Remark"+@m.ID)' value="@mse.Remark" class="m-wrap small" /></td>
 }
 else
 {
     <td>
-        <input type="text" id='@("Price"+@m.ID)' value="" class="m-wrap small" />
+        <input readonly="readonly" type="text" id='@("Price"+@m.ID)' value="" class="m-wrap small" />
     </td>
     <td>
-        <input type="text" id='@("Remark"+@m.ID)' value="" class="m-wrap small" />
+        <input readonly="readonly" type="text" id='@("Remark"+@m.ID)' value="" class="m-wrap small" />
     </td>
 }
+                        <td>
+                            <a class="btn mini purple editSupplier" mid="@m.ID"  title='编辑' href="javascript:void(0)">
+                                <i class="icon-edit"></i>
+                                编辑
+                            </a>
+                            <a style="visibility: hidden" class="btn mini purple saveSupplier" mid="@m.ID"  title='保存' href="javascript:void(0)">
+                                <i class="icon-edit"></i>
+                                保存
+                            </a>
+                        </td>
                         
 
                        

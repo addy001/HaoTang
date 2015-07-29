@@ -14,4 +14,8 @@ namespace GMS.Account.Contract
     {
         public string RoleName { get; set; }
     }
+    public class LogRequest : Request
+    {
+        public string UserName { get; set; }
+    }
 }
